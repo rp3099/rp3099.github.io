@@ -1,0 +1,616 @@
+.aiaa-details-section {
+  background-color: #0b0c10;
+  color: #fff;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.aiaa-details-container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: burlywood;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #fff;
+  transform: translateX(-3px);
+}
+
+.report-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #8f9499;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.report-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #ffffff, #c5a880);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.download-card {
+  background: rgba(222, 184, 135, 0.05);
+  border: 1px dashed burlywood;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.download-text h3 {
+  color: burlywood;
+  margin-bottom: 0.4rem;
+  font-size: 1.3rem;
+}
+
+.download-text p {
+  color: #c5c6c7;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(222, 184, 135, 0.3);
+}
+
+.featured-image-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.featured-image {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.image-caption {
+  font-size: 0.9rem;
+  color: #8f9499;
+  margin-top: 0.8rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.report-section {
+  margin-bottom: 3rem;
+}
+
+.report-section h2 {
+  font-size: 1.8rem;
+  color: burlywood;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.report-section h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.report-section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #c5c6c7;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+/* Key Design Drivers grid */
+.key-drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.driver-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  transition: border-color 0.2s ease;
+}
+
+.driver-card:hover {
+  border-color: rgba(222, 184, 135, 0.2);
+}
+
+.driver-card .driver-icon {
+  color: burlywood;
+  font-size: 1.1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.driver-card h4 {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.driver-card p {
+  font-size: 0.9rem;
+  color: #8f9499;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+/* Team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.team-member-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.team-member-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(222, 184, 135, 0.2);
+}
+
+.team-member-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.team-member-card p {
+  font-size: 0.85rem;
+  color: #8f9499;
+  margin: 0;
+}
+
+.team-member-card.active-user {
+  border: 1px solid burlywood;
+  background: rgba(222, 184, 135, 0.05);
+}
+
+.team-member-card.active-user h4 {
+  color: burlywood;
+}
+
+/* Table styles */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.specs-table th, .specs-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 1rem;
+}
+
+.specs-table th {
+  background: rgba(222, 184, 135, 0.1);
+  color: burlywood;
+  font-weight: 700;
+}
+
+.specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.status-green {
+  color: #4caf50;
+  font-weight: 700;
+}
+
+/* Spec data grid (wing, propulsion) */
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.spec-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  text-align: center;
+}
+
+.spec-item .spec-label {
+  font-size: 0.8rem;
+  color: #8f9499;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.spec-item .spec-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+}
+
+/* Detail lists */
+.details-list {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.details-list li {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #c5c6c7;
+  margin-bottom: 0.6rem;
+  list-style-type: disc;
+}
+
+/* 2-column grid */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Card boxes */
+.card-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.card-title-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: burlywood;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.card-box ul {
+  padding-left: 1.2rem;
+}
+
+.card-box li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #c5c6c7;
+  margin-bottom: 0.6rem;
+  list-style-type: square;
+}
+
+.card-box p {
+  text-align: left;
+}
+
+/* Survivability feature cards */
+.survivability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.surv-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1.3rem;
+  transition: border-color 0.2s ease;
+}
+
+.surv-card:hover {
+  border-color: rgba(222, 184, 135, 0.15);
+}
+
+.surv-card h4 {
+  font-size: 1rem;
+  color: burlywood;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.surv-card p {
+  font-size: 0.92rem;
+  color: #c5c6c7;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+/* Image display styles */
+.images-row {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.image-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1.2rem;
+}
+
+.report-img {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.report-img:hover {
+  transform: scale(1.02);
+}
+
+.fig-caption {
+  font-size: 0.85rem;
+  color: #8f9499;
+  margin-top: 0.8rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.single-image-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.report-img-full {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Results / metric cards */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.result-metric-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: burlywood;
+}
+
+.metric-label {
+  font-size: 0.95rem;
+  color: #8f9499;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+}
+
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.metric-comparison {
+  font-size: 0.85rem;
+  color: #c5c6c7;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 0.8rem;
+  width: 100%;
+}
+
+/* Cost breakdown table */
+.cost-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cost-table th, .cost-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.95rem;
+}
+
+.cost-table th {
+  color: burlywood;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cost-table td {
+  color: #c5c6c7;
+}
+
+.cost-table td:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.cost-table tr:last-child td {
+  border-bottom: none;
+}
+
+.cost-table .cost-total-row td {
+  border-top: 2px solid rgba(222, 184, 135, 0.3);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Highlight stat inline box */
+.highlight-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(222, 184, 135, 0.08);
+  border: 1px solid rgba(222, 184, 135, 0.15);
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.95rem;
+  color: burlywood;
+  font-weight: 600;
+  margin: 0 0.2rem;
+}
+
+/* Utility classes */
+.mt-2 { margin-top: 2rem; }
+.list-unstyled { list-style: none; padding-left: 0; }
+
+.bottom-nav {
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 2rem;
+}
+
+/* Responsive queries */
+@media screen and (max-width: 962px) {
+  .grid-2col, .results-grid, .team-grid, .key-drivers-grid, .survivability-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .download-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .images-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .aiaa-details-section {
+    padding: 3rem 1rem;
+  }
+  
+  .report-title {
+    font-size: 2.2rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+}

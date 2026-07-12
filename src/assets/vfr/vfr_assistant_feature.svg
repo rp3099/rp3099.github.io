@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="VFR PPL Assistant — AI Flight Partner">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1526"/>
+      <stop offset="0.55" stop-color="#0b0c10"/>
+      <stop offset="1" stop-color="#08090c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.45" r="0.5">
+      <stop offset="0" stop-color="#deb887" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#deb887" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="planeLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efd5ac"/>
+      <stop offset="1" stop-color="#d3a86f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  <circle cx="600" cy="300" r="380" fill="url(#glow)"/>
+
+  <!-- Faint sectional-chart lines -->
+  <g stroke="#deb887" stroke-opacity="0.05" stroke-width="1.5">
+    <line x1="0" y1="170" x2="1200" y2="120"/>
+    <line x1="0" y1="470" x2="1200" y2="540"/>
+    <line x1="250" y1="0" x2="180" y2="675"/>
+    <line x1="980" y1="0" x2="1050" y2="675"/>
+  </g>
+
+  <!-- Top status pill -->
+  <g transform="translate(600 62)">
+    <rect x="-208" y="-25" width="416" height="50" rx="25" fill="#ffffff" fill-opacity="0.05" stroke="#deb887" stroke-opacity="0.4"/>
+    <circle cx="-170" cy="0" r="6" fill="#7ee0a1"/>
+    <text x="18" y="7" text-anchor="middle" fill="#e8d9c0" font-family="Helvetica Neue, Arial, sans-serif" font-size="21" font-weight="600" letter-spacing="3">FAA-GROUNDED · CITE OR FLAG</text>
+  </g>
+
+  <!-- Compass ring -->
+  <g>
+    <circle cx="600" cy="300" r="182" fill="none" stroke="#deb887" stroke-opacity="0.35" stroke-width="2"/>
+    <circle cx="600" cy="300" r="150" fill="none" stroke="#deb887" stroke-opacity="0.12" stroke-width="1.5" stroke-dasharray="2 12"/>
+    <g stroke="#deb887" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round">
+      <line x1="600" y1="118" x2="600" y2="140"/>
+      <line x1="600" y1="460" x2="600" y2="482"/>
+      <line x1="418" y1="300" x2="440" y2="300"/>
+      <line x1="760" y1="300" x2="782" y2="300"/>
+    </g>
+    <polygon points="600,104 611,126 589,126" fill="#deb887"/>
+    <text x="600" y="96" text-anchor="middle" fill="#deb887" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="1">N</text>
+  </g>
+
+  <!-- Flight trajectory -->
+  <path d="M150 540 C 420 470 470 360 600 300 S 900 200 1050 150"
+        fill="none" stroke="#deb887" stroke-opacity="0.55" stroke-width="3"
+        stroke-linecap="round" stroke-dasharray="2 16"/>
+  <circle cx="150" cy="540" r="7" fill="none" stroke="#deb887" stroke-opacity="0.7" stroke-width="3"/>
+  <circle cx="1050" cy="150" r="5" fill="#deb887" fill-opacity="0.8"/>
+
+  <!-- Paper plane (flight + "send"/AI motif) -->
+  <ellipse cx="612" cy="392" rx="120" ry="20" fill="#000000" fill-opacity="0.28"/>
+  <g transform="translate(600 300) rotate(-18) translate(-130 -90)">
+    <path d="M0 0 L260 90 L70 90 Z" fill="url(#planeLight)"/>
+    <path d="M0 180 L260 90 L70 90 Z" fill="#c39a63"/>
+    <path d="M70 90 L260 90" stroke="#0b0c10" stroke-opacity="0.25" stroke-width="3"/>
+    <path d="M0 0 L70 90 L0 180" fill="none" stroke="#f3e2c6" stroke-opacity="0.5" stroke-width="2"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="566" text-anchor="middle" fill="#ffffff" font-family="Helvetica Neue, Arial, sans-serif" font-size="66" font-weight="800" letter-spacing="6">VFR PPL ASSISTANT</text>
+  <text x="600" y="606" text-anchor="middle" fill="#deb887" font-family="Helvetica Neue, Arial, sans-serif" font-size="25" font-weight="600" letter-spacing="10">AI FLIGHT PARTNER</text>
+</svg>

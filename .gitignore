@@ -1,0 +1,26 @@
+# dependencies
+/node_modules
+
+# production build (deployed by GitHub Actions, not committed)
+/build
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env
+.env
+.env.local
+.env.*.local
+
+# test coverage
+/coverage
+
+# local Claude Code settings (not the shared launch.json)
+.claude/settings.local.json
+
+# archived / unused assets kept locally but not published or deployed
+/src/assets/unused
