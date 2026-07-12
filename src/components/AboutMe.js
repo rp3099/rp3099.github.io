@@ -45,9 +45,8 @@ const AboutMe = () => {
           </div>
 
           <div className="about-buttons">
-            {/* Resume Placeholder */}
             <a
-              href="/resume-placeholder.pdf"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="button resume-button"
