@@ -17,12 +17,6 @@ const MLvsDLDetails = () => {
             <FaArrowLeft /> Back to Projects
           </Link>
 
-          <div className="ml-meta">
-            <span><strong>Course:</strong> AIML-500 Machine Learning Fundamentals</span>
-            <span><strong>Assignment:</strong> 2.3</span>
-            <span><strong>Institution:</strong> Indiana Wesleyan University</span>
-          </div>
-
           <h1 className="ml-title">Machine Learning vs. Deep Learning</h1>
 
           {/* ─── Overview ─── */}
