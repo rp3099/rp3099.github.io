@@ -38,7 +38,7 @@
   <circle cx="500" cy="240" r="13" fill="none" stroke="#ffffff" stroke-width="4"/>
 
   <!-- labels -->
-  <text x="700" y="440" fill="#deb887" font-family="Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="700">Decision boundary (w·x + b = 0)</text>
-  <text x="700" y="468" fill="#8f9499" font-family="Helvetica Neue, Arial, sans-serif" font-size="17">Dashed lines = maximum margin</text>
+  <text x="878" y="438" text-anchor="end" fill="#deb887" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="700">Decision boundary (w·x + b = 0)</text>
+  <text x="878" y="465" text-anchor="end" fill="#8f9499" font-family="Helvetica Neue, Arial, sans-serif" font-size="16">Dashed lines = maximum margin</text>
   <text x="360" y="455" fill="#ffffff" font-family="Helvetica Neue, Arial, sans-serif" font-size="15">support vector</text>
 </svg>
