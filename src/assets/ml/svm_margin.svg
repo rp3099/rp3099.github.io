@@ -1,44 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-label="SVM maximum-margin separating hyperplane">
-  <defs>
-    <linearGradient id="svmbg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#11121a"/>
-      <stop offset="1" stop-color="#0b0c10"/>
-    </linearGradient>
-  </defs>
-  <rect width="900" height="520" rx="10" fill="url(#svmbg)"/>
-
-  <!-- margin band shading -->
-  <polygon points="150,470 470,90 640,90 320,470" fill="#deb887" fill-opacity="0.06"/>
-
-  <!-- decision boundary + margins -->
-  <line x1="235" y1="470" x2="555" y2="90" stroke="#deb887" stroke-width="3"/>
-  <line x1="150" y1="470" x2="470" y2="90" stroke="#deb887" stroke-opacity="0.5" stroke-width="1.6" stroke-dasharray="5 8"/>
-  <line x1="320" y1="470" x2="640" y2="90" stroke="#deb887" stroke-opacity="0.5" stroke-width="1.6" stroke-dasharray="5 8"/>
-
-  <!-- margin arrow -->
-  <g stroke="#8f9499" stroke-width="1.5">
-    <line x1="300" y1="300" x2="405" y2="300"/>
-  </g>
-  <text x="352" y="290" text-anchor="middle" fill="#8f9499" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-style="italic">margin</text>
-
-  <!-- Class A (filled) lower-left -->
-  <g fill="#deb887">
-    <circle cx="210" cy="330" r="11"/><circle cx="255" cy="400" r="11"/><circle cx="170" cy="410" r="11"/>
-    <circle cx="300" cy="360" r="11"/><circle cx="230" cy="260" r="11"/>
-  </g>
-  <!-- support vector (class A) highlighted -->
-  <circle cx="300" cy="430" r="13" fill="#deb887" stroke="#ffffff" stroke-width="3"/>
-
-  <!-- Class B (open) upper-right -->
-  <g fill="none" stroke="#ffffff" stroke-width="2.5">
-    <circle cx="560" cy="180" r="11"/><circle cx="620" cy="230" r="11"/><circle cx="590" cy="130" r="11"/>
-    <circle cx="670" cy="190" r="11"/><circle cx="640" cy="300" r="11"/>
-  </g>
-  <!-- support vector (class B) highlighted -->
-  <circle cx="500" cy="240" r="13" fill="none" stroke="#ffffff" stroke-width="4"/>
-
-  <!-- labels -->
-  <text x="878" y="438" text-anchor="end" fill="#deb887" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="700">Decision boundary (w·x + b = 0)</text>
-  <text x="878" y="465" text-anchor="end" fill="#8f9499" font-family="Helvetica Neue, Arial, sans-serif" font-size="16">Dashed lines = maximum margin</text>
-  <text x="360" y="455" fill="#ffffff" font-family="Helvetica Neue, Arial, sans-serif" font-size="15">support vector</text>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 900 520" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <path d="M900,10L900,510C900,515.519 895.519,520 890,520L10,520C4.481,520 0,515.519 0,510L0,10C0,4.481 4.481,0 10,0L890,0C895.519,0 900,4.481 900,10Z" style="fill:url(#_Linear1);"/>
+    <path d="M150,470L470,90L640,90L320,470L150,470Z" style="fill:rgb(222,184,135);fill-opacity:0.06;fill-rule:nonzero;"/>
+    <path d="M235,470L555,90" style="fill:none;fill-rule:nonzero;stroke:rgb(222,184,135);stroke-width:3px;"/>
+    <path d="M150,470L470,90" style="fill:none;fill-rule:nonzero;stroke:rgb(222,184,135);stroke-opacity:0.5;stroke-width:1.6px;stroke-dasharray:5,8;"/>
+    <path d="M320,470L640,90" style="fill:none;fill-rule:nonzero;stroke:rgb(222,184,135);stroke-opacity:0.5;stroke-width:1.6px;stroke-dasharray:5,8;"/>
+    <g transform="matrix(1.514286,0,0,1,-154.285714,0)">
+        <path d="M300,300L405,300" style="fill:none;fill-rule:nonzero;stroke:rgb(143,148,153);stroke-width:1.5px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,352,290)">
+        <text x="-27.51px" y="0px" style="font-family:'Helvetica-Oblique', 'Helvetica';font-style:italic;font-size:18px;fill:rgb(143,148,153);">margin</text>
+    </g>
+    <g>
+        <circle cx="210" cy="330" r="11" style="fill:rgb(222,184,135);"/>
+        <circle cx="255" cy="400" r="11" style="fill:rgb(222,184,135);"/>
+        <circle cx="170" cy="410" r="11" style="fill:rgb(222,184,135);"/>
+        <circle cx="300" cy="360" r="11" style="fill:rgb(222,184,135);"/>
+        <circle cx="230" cy="260" r="11" style="fill:rgb(222,184,135);"/>
+    </g>
+    <circle cx="300" cy="430" r="13" style="fill:rgb(222,184,135);stroke:white;stroke-width:3px;"/>
+    <g>
+        <circle cx="560" cy="180" r="11" style="fill:none;stroke:white;stroke-width:2.5px;"/>
+        <circle cx="620" cy="230" r="11" style="fill:none;stroke:white;stroke-width:2.5px;"/>
+        <circle cx="590" cy="130" r="11" style="fill:none;stroke:white;stroke-width:2.5px;"/>
+        <circle cx="670" cy="190" r="11" style="fill:none;stroke:white;stroke-width:2.5px;"/>
+        <circle cx="640" cy="300" r="11" style="fill:none;stroke:white;stroke-width:2.5px;"/>
+    </g>
+    <circle cx="500" cy="240" r="13" style="fill:none;stroke:white;stroke-width:4px;"/>
+    <g transform="matrix(1,0,0,1,878,438)">
+        <text x="-270.062px" y="0px" style="font-family:'Helvetica-Bold', 'Helvetica';font-weight:700;font-size:18px;fill:rgb(222,184,135);">Decision boundary (w·x + b = 0)</text>
+    </g>
+    <g transform="matrix(1,0,0,1,878,465)">
+        <text x="-233.422px" y="0px" style="font-family:'Helvetica';font-size:16px;fill:rgb(143,148,153);">Dashed lines = maximum margin</text>
+    </g>
+    <g transform="matrix(1,0,0,1,360,455)">
+        <text x="0px" y="0px" style="font-family:'Helvetica';font-size:15px;fill:white;">support vector</text>
+    </g>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,520,-520,0,0,0)"><stop offset="0" style="stop-color:rgb(17,18,26);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(11,12,16);stop-opacity:1"/></linearGradient>
+    </defs>
 </svg>
