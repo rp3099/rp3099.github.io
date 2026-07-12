@@ -8,7 +8,7 @@ const HomeIntro = () => (
   <div className="home-about-section">
     <img src="/profile_picture.jpeg" alt="Rudra Patel" className="profile-photo profile-photo-top" />
     <div className="home-intro-content">
-      <span className="subtitle">Biography</span>
+      /*<span className="subtitle">Biography</span>*/
       <h2 className="title">About Me</h2>
       <p className="bio-text">
         I'm an Aerospace Engineer at Honda Aircraft Company working on advanced flight
