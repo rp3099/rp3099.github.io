@@ -1,6 +1,6 @@
 import React from 'react';
 import './MLvsDLDetailsStyles.css';
-import { FaArrowLeft, FaBookOpen, FaChartLine, FaCarSide, FaBalanceScale, FaListOl, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import { FaArrowLeft, FaBookOpen, FaBullseye, FaChartLine, FaCarSide, FaBalanceScale, FaCogs, FaToolbox, FaLightbulb, FaListOl, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Lightbox from './Lightbox.js';
 
@@ -42,6 +42,18 @@ const MLvsDLDetails = () => {
               <strong> autonomous driving</strong>, a deep learning task built on convolutional neural
               networks (CNNs). For both, I identify a real-world application and justify why the chosen
               approach fits the problem and why the alternative does not.
+            </p>
+          </section>
+
+          {/* ─── Objective ─── */}
+          <section className="ml-section">
+            <h2><FaBullseye /> Objective</h2>
+            <p>
+              I created this report for AIML-500 Machine Learning Fundamentals (Assignment 2.3) to
+              develop and demonstrate the judgment needed to decide when a problem calls for classical
+              machine learning versus deep learning. Rather than treating one method as universally
+              better, the goal was to justify each choice against the structure of the data, the volume
+              available, and the cost the problem can bear.
             </p>
           </section>
 
@@ -162,6 +174,41 @@ const MLvsDLDetails = () => {
               nothing simpler can reach the required performance. The decision is not which method is better
               in the abstract, but matching model complexity to the structure and dimensionality of the data
               and to the cost the problem can bear.
+            </p>
+          </section>
+
+          {/* ─── Process ─── */}
+          <section className="ml-section">
+            <h2><FaCogs /> Process</h2>
+            <p>
+              I started from the course lecture on machine learning versus deep learning, then selected
+              two contrasting real-world applications — customer churn prediction and autonomous driving.
+              For each, I researched why the chosen approach fits and why the alternative fails, grounding
+              every claim in peer-reviewed and primary industry sources. I created original diagrams to
+              illustrate the SVM decision margin and the CNN feature hierarchy, and organized the analysis
+              into a structured report with a clear trade-off summary and citations.
+            </p>
+          </section>
+
+          {/* ─── Tools ─── */}
+          <section className="ml-section">
+            <h2><FaToolbox /> Tools</h2>
+            <ul className="ml-tools">
+              <li><strong>Microsoft Word</strong> — writing and formatting the report.</li>
+              <li><strong>Academic &amp; industry sources</strong> — IBM, Nature, NVIDIA, Tesla, and arXiv for evidence and citations.</li>
+              <li><strong>React portfolio</strong> — presenting the artifact on this website, with original SVG diagrams.</li>
+            </ul>
+          </section>
+
+          {/* ─── Value Proposition ─── */}
+          <section className="ml-section">
+            <h2><FaLightbulb /> Value Proposition</h2>
+            <p>
+              This artifact demonstrates my ability to match model complexity to a problem rather than
+              defaulting to the most powerful method available. It shows that I can analyze a problem's
+              data type, scale, and constraints, justify an engineering decision with evidence, and
+              communicate the trade-offs clearly — the same judgment required to choose cost-effective,
+              maintainable solutions in real machine-learning work.
             </p>
           </section>
 

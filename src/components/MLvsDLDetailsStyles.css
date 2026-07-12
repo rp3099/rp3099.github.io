@@ -133,6 +133,29 @@
   overflow-x: auto;
 }
 
+.ml-tools {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.ml-tools li {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 3px solid #deb887;
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
+  color: #c5c6c7;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.ml-tools li strong {
+  color: #deb887;
+}
+
 .ml-refs {
   list-style: decimal;
   padding-left: 1.5rem;
