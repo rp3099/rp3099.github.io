@@ -7,6 +7,7 @@ import Project from "./routes/Project.js";
 import CFDProject from "./routes/CFDProject.js";
 import AIAAProject from "./routes/AIAAProject.js";
 import VFRAssistantProject from "./routes/VFRAssistantProject.js";
+import MLvsDLProject from "./routes/MLvsDLProject.js";
 import ThesisProject from "./routes/ThesisProject.js";
 import {Route,Routes} from "react-router-dom";
 
@@ -20,6 +21,7 @@ function App() {
     <Route path="/project/cfd" element={<CFDProject />}/>
     <Route path="/project/aiaa" element={<AIAAProject />}/>
     <Route path="/project/vfr-assistant" element={<VFRAssistantProject />}/>
+    <Route path="/project/ml-vs-dl" element={<MLvsDLProject />}/>
     <Route path="/project/lvad-thesis" element={<ThesisProject />}/>
     <Route path="/about" element={<About />}/>
     <Route path="/contact" element={<Contact />}/>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-label="SVM maximum-margin separating hyperplane">
+  <defs>
+    <linearGradient id="svmbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#11121a"/>
+      <stop offset="1" stop-color="#0b0c10"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" rx="10" fill="url(#svmbg)"/>
+
+  <!-- margin band shading -->
+  <polygon points="150,470 470,90 640,90 320,470" fill="#deb887" fill-opacity="0.06"/>
+
+  <!-- decision boundary + margins -->
+  <line x1="235" y1="470" x2="555" y2="90" stroke="#deb887" stroke-width="3"/>
+  <line x1="150" y1="470" x2="470" y2="90" stroke="#deb887" stroke-opacity="0.5" stroke-width="1.6" stroke-dasharray="5 8"/>
+  <line x1="320" y1="470" x2="640" y2="90" stroke="#deb887" stroke-opacity="0.5" stroke-width="1.6" stroke-dasharray="5 8"/>
+
+  <!-- margin arrow -->
+  <g stroke="#8f9499" stroke-width="1.5">
+    <line x1="300" y1="300" x2="405" y2="300"/>
+  </g>
+  <text x="352" y="290" text-anchor="middle" fill="#8f9499" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-style="italic">margin</text>
+
+  <!-- Class A (filled) lower-left -->
+  <g fill="#deb887">
+    <circle cx="210" cy="330" r="11"/><circle cx="255" cy="400" r="11"/><circle cx="170" cy="410" r="11"/>
+    <circle cx="300" cy="360" r="11"/><circle cx="230" cy="260" r="11"/>
+  </g>
+  <!-- support vector (class A) highlighted -->
+  <circle cx="300" cy="430" r="13" fill="#deb887" stroke="#ffffff" stroke-width="3"/>
+
+  <!-- Class B (open) upper-right -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5">
+    <circle cx="560" cy="180" r="11"/><circle cx="620" cy="230" r="11"/><circle cx="590" cy="130" r="11"/>
+    <circle cx="670" cy="190" r="11"/><circle cx="640" cy="300" r="11"/>
+  </g>
+  <!-- support vector (class B) highlighted -->
+  <circle cx="500" cy="240" r="13" fill="none" stroke="#ffffff" stroke-width="4"/>
+
+  <!-- labels -->
+  <text x="700" y="440" fill="#deb887" font-family="Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="700">Decision boundary (w·x + b = 0)</text>
+  <text x="700" y="468" fill="#8f9499" font-family="Helvetica Neue, Arial, sans-serif" font-size="17">Dashed lines = maximum margin</text>
+  <text x="360" y="455" fill="#ffffff" font-family="Helvetica Neue, Arial, sans-serif" font-size="15">support vector</text>
+</svg>

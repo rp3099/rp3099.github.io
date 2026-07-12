@@ -1,6 +1,7 @@
 import pro1 from "../assets/main/cfdsim.png";
 import pro2 from "../assets/main/seniordesign.png";
 import ai3 from "../assets/vfr/vfr_assistant_feature.svg";
+import mlvsdl from "../assets/ml/ml_vs_dl_feature.svg";
 import thesisImg from "../assets/thesis/page_16_img_1.png";
 
 const ProjectCardData = [
@@ -32,6 +33,13 @@ const ProjectCardData = [
         title: "VFR PPL Assistant",
         text: "Custom GPT study aid grounded in official FAA source hierarchies and 'cite or flag' rules to assist student pilots in earning their Private Pilot License.",
         view: "/project/vfr-assistant"
+    },
+    {
+        category: "ai",
+        imgsrc: mlvsdl,
+        title: "Machine Learning vs. Deep Learning",
+        text: "When to use classical ML versus deep learning — SVM churn prediction vs. CNN autonomous driving — and the engineering trade-offs behind each choice.",
+        view: "/project/ml-vs-dl"
     }
 ];
 
