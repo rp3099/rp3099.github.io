@@ -14,11 +14,15 @@ export function startAnimatedFavicon() {
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  let link = document.querySelector("link[rel~='icon']");
-  if (!link) {
-    link = document.createElement('link');
-    link.rel = 'icon';
-    document.head.appendChild(link);
+  // Update every declared icon link so whichever one the browser picks shows
+  // the animation. (Safari ignores these JS updates and keeps the static
+  // ICO/PNG files declared in index.html — that's the intended fallback.)
+  let links = Array.from(document.querySelectorAll("link[rel~='icon']"));
+  if (!links.length) {
+    const l = document.createElement('link');
+    l.rel = 'icon';
+    document.head.appendChild(l);
+    links = [l];
   }
 
   const img = new Image();
@@ -62,7 +66,8 @@ export function startAnimatedFavicon() {
     ctx.stroke();
 
     angle += 0.2;
-    link.href = canvas.toDataURL('image/png');
+    const url = canvas.toDataURL('image/png');
+    for (const l of links) l.href = url;
   };
 
   frame();
