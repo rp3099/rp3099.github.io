@@ -29,8 +29,8 @@ const Work = () => {
   return (
     <div className="work-container">
       {/* <h1 className="project-heading">Projects</h1> */}
-      <ProjectSection heading="Aerospace Projects" projects={byCategory("aerospace")} />
       <ProjectSection heading="AI Projects" projects={byCategory("ai")} />
+      <ProjectSection heading="Aerospace Projects" projects={byCategory("aerospace")} />
     </div>
   );
 };
