@@ -10,7 +10,7 @@ const ProjectCard = (props) => {
       {props.videosrc ? (
         <video className="project-video" src={props.videosrc} autoPlay loop muted playsInline />
       ) : (
-        <img src={props.imgsrc} alt={props.title} />
+        <img src={props.imgsrc} alt={props.title} loading="lazy" />
       )}
       <h2 className="project-title">{props.title}</h2>
       <div className="project-details">

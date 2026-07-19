@@ -105,11 +105,11 @@ const ThesisDetails = () => {
 
           <div className="images-row">
             <div className="image-frame">
-              <img src={tankDesign} alt="Compliance and Reservoir Tank Designs" className="report-img" />
+              <img src={tankDesign} alt="Compliance and Reservoir Tank Designs" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 2: CAD blueprints for compliance and reservoir tank designs.</span>
             </div>
             <div className="image-frame">
-              <img src={valveConnector} alt="Aortic and Mitral Valve Connectors" className="report-img" />
+              <img src={valveConnector} alt="Aortic and Mitral Valve Connectors" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 3: Custom mechanical connectors and valve adapters.</span>
             </div>
           </div>
@@ -128,11 +128,11 @@ const ThesisDetails = () => {
 
           <div className="images-row">
             <div className="image-frame">
-              <img src={moldFabrication} alt="CNC Mold Assemblies" className="report-img" />
+              <img src={moldFabrication} alt="CNC Mold Assemblies" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 4: CNC-milled aluminum mold assemblies used to cast the transparent phantoms.</span>
             </div>
             <div className="image-frame">
-              <img src={surfaceRoughness} alt="Surface Profiler Roughness Data" className="report-img" />
+              <img src={surfaceRoughness} alt="Surface Profiler Roughness Data" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 5: Profilometer scan showing surface finish comparisons of different molds.</span>
             </div>
           </div>
@@ -150,7 +150,7 @@ const ThesisDetails = () => {
           </p>
 
           <div className="featured-image-container">
-            <img src={flowMeter} alt="Transonic Ultrasonic Flow Meter Module" className="report-img" />
+            <img src={flowMeter} alt="Transonic Ultrasonic Flow Meter Module" className="report-img" loading="lazy" />
             <p className="image-caption">Figure 6: Transonic ultrasonic flow meter module used to capture real-time volumetric flow rate.</p>
           </div>
 
@@ -167,7 +167,7 @@ const ThesisDetails = () => {
           </p>
 
           <div className="featured-image-container">
-            <img src={glycerolMatching} alt="Phantom Submerged in Glycerol-Water Matching Fluid" className="featured-image" />
+            <img loading="lazy" src={glycerolMatching} alt="Phantom Submerged in Glycerol-Water Matching Fluid" className="featured-image" />
             <p className="image-caption">Figure 7: Phantom submerged in the glycerol-water matching fluid — the wall becomes nearly optically invisible against the PIV speckle background, confirming refractive index matching.</p>
           </div>
 

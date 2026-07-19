@@ -230,7 +230,7 @@ const AIAADetails = () => {
           </p>
 
           <div className="single-image-frame">
-            <img src={systemLayout} alt="Aircraft System Layout" className="report-img-full" />
+            <img src={systemLayout} alt="Aircraft System Layout" className="report-img-full" loading="lazy" />
             <span className="fig-caption">Figure 2: Preferred System Concept — internal airframe structural layout showing self-sealing fuel tanks, armor tub, landing gear bay, and weapons stations.</span>
           </div>
 
@@ -348,11 +348,11 @@ const AIAADetails = () => {
 
           <div className="images-row">
             <div className="image-frame">
-              <img src={designEvolution} alt="Design Evolution Steps" className="report-img" />
+              <img src={designEvolution} alt="Design Evolution Steps" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 3: Geometric design evolution of the PSC through iterative sizing and concept refinement.</span>
             </div>
             <div className="image-frame">
-              <img src={cgEnvelope} alt="Center of Gravity Envelope" className="report-img" />
+              <img src={cgEnvelope} alt="Center of Gravity Envelope" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 4: A-13 Lizardskin CG.</span>
             </div>
           </div>

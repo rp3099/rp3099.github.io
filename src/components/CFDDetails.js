@@ -88,11 +88,11 @@ const CFDDetails = () => {
 
           <div className="images-row">
             <div className="image-frame">
-              <img src={propellerRender} alt="Propeller Render" className="report-img" />
+              <img src={propellerRender} alt="Propeller Render" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 1: Propeller Render</span>
             </div>
             <div className="image-frame">
-              <img src={propellerFoils} alt="Propeller Foil Sections" className="report-img" />
+              <img src={propellerFoils} alt="Propeller Foil Sections" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 2: Propeller with Foil Sections</span>
             </div>
           </div>
@@ -138,11 +138,11 @@ const CFDDetails = () => {
 
           <div className="images-row">
             <div className="image-frame">
-              <img src={fluidDomainDims} alt="Fluid Domain Dimensions" className="report-img" />
+              <img src={fluidDomainDims} alt="Fluid Domain Dimensions" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 3: Fluid Domain Design & Dimensions</span>
             </div>
             <div className="image-frame">
-              <img src={rotatingDomainDims} alt="Rotating Domain Dimensions" className="report-img" />
+              <img src={rotatingDomainDims} alt="Rotating Domain Dimensions" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 4: Rotating Domain Design & Dimensions (6mm gap)</span>
             </div>
           </div>
@@ -160,11 +160,11 @@ const CFDDetails = () => {
 
           <div className="images-row">
             <div className="image-frame">
-              <img src={fluidDomainMesh} alt="Fluid Domain Mesh" className="report-img" />
+              <img src={fluidDomainMesh} alt="Fluid Domain Mesh" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 5: Static Fluid Domain Mesh Layout</span>
             </div>
             <div className="image-frame">
-              <img src={propellerMesh} alt="Propeller Polyhedral Mesh" className="report-img" />
+              <img src={propellerMesh} alt="Propeller Polyhedral Mesh" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 6: Propeller Surface Polyhedral Mesh View</span>
             </div>
           </div>
@@ -203,7 +203,7 @@ const CFDDetails = () => {
           </div>
 
           <div className="single-image-frame mt-2">
-            <img src={prismLayer} alt="Propeller Prism Layer View" className="report-img-full" />
+            <img src={prismLayer} alt="Propeller Prism Layer View" className="report-img-full" loading="lazy" />
             <span className="fig-caption">Figure 7: Prism layer cell visualization along the propeller surface boundary.</span>
           </div>
 
@@ -293,11 +293,11 @@ const CFDDetails = () => {
 
           <div className="images-row mt-2">
             <div className="image-frame">
-              <img src={residualPlot} alt="Residual Plot" className="report-img" />
+              <img src={residualPlot} alt="Residual Plot" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 8: Iterative Residual Convergence Plot</span>
             </div>
             <div className="image-frame">
-              <img src={thrustPlot} alt="Thrust Monitor Plot" className="report-img" />
+              <img src={thrustPlot} alt="Thrust Monitor Plot" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 9: Thrust Force Monitor Convergence (N)</span>
             </div>
           </div>
@@ -341,11 +341,11 @@ const CFDDetails = () => {
 
           <div className="images-row mt-2">
             <div className="image-frame">
-              <img src={ctPlot} alt="Coefficient of Thrust Validation Plot" className="report-img" />
+              <img src={ctPlot} alt="Coefficient of Thrust Validation Plot" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 10: Thrust Coefficient (C_T) vs Advanced Ratio (J)</span>
             </div>
             <div className="image-frame">
-              <img src={efficiencyPlot} alt="Efficiency Validation Curve" className="report-img" />
+              <img src={efficiencyPlot} alt="Efficiency Validation Curve" className="report-img" loading="lazy" />
               <span className="fig-caption">Figure 11: Efficiency (η) Curve vs Advanced Ratio (J)</span>
             </div>
           </div>

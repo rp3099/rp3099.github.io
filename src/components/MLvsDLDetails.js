@@ -66,7 +66,7 @@ const MLvsDLDetails = () => {
             </p>
 
             <div className="ml-figure">
-              <img src={svmMargin} alt="SVM maximum-margin separating hyperplane with support vectors" />
+              <img loading="lazy" src={svmMargin} alt="SVM maximum-margin separating hyperplane with support vectors" />
               <div className="ml-caption">
                 Figure 1: An SVM finds the maximum-margin boundary separating churners from non-churners;
                 the closest points (support vectors) define the margin.
@@ -120,7 +120,7 @@ const MLvsDLDetails = () => {
             </p>
 
             <div className="ml-figure">
-              <img src={cnnHierarchy} alt="CNN feature hierarchy: raw pixels to edges to object parts to whole objects" />
+              <img loading="lazy" src={cnnHierarchy} alt="CNN feature hierarchy: raw pixels to edges to object parts to whole objects" />
               <div className="ml-caption">
                 Figure 2: A CNN learns a hierarchy of features directly from raw input — edges, then object
                 parts, then whole objects — removing the need for hand-engineered detectors.

@@ -2,6 +2,7 @@ import pro1 from "../assets/main/cfdsim.png";
 import pro2 from "../assets/main/seniordesign.png";
 import ai3 from "../assets/vfr/vfr_assistant_feature.svg";
 import mlvsdl from "../assets/ml/ml_vs_dl_feature.svg";
+import atcTrainer from "../assets/atc/atc_trainer_feature.svg";
 import thesisImg from "../assets/thesis/page_16_img_1.png";
 
 const ProjectCardData = [
@@ -33,6 +34,13 @@ const ProjectCardData = [
         title: "VFR PPL Assistant",
         text: "Custom GPT study aid grounded in official FAA source hierarchies and 'cite or flag' rules to assist student pilots in earning their Private Pilot License.",
         view: "/project/vfr-assistant"
+    },
+    {
+        category: "ai",
+        imgsrc: atcTrainer,
+        title: "ATC Trainer GPT Evaluation",
+        text: "Adversarial seven-turn evaluation of an ATC-phraseology custom GPT — documenting a confidently fabricated departure procedure, clean self-corrections, and what that means for trusting LLMs in aviation.",
+        view: "/project/atc-trainer"
     },
     {
         category: "ai",
