@@ -1,0 +1,233 @@
+.tm-details-section {
+  background-color: #0b0c10;
+  color: #fff;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.tm-details-container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.tm-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #00d2ff;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.tm-back-link:hover {
+  color: #fff;
+  transform: translateX(-3px);
+}
+
+.tm-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #8f9499;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tm-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #ffffff, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tm-intro-card {
+  background: rgba(0, 210, 255, 0.05);
+  border: 1px dashed #00d2ff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.tm-intro-card h3 {
+  color: #00d2ff;
+  margin-bottom: 0.4rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.tm-intro-card p {
+  color: #c5c6c7;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tm-figure {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tm-figure img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.tm-caption {
+  font-size: 0.9rem;
+  color: #8f9499;
+  margin-top: 0.8rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.tm-section {
+  margin-bottom: 3rem;
+}
+
+.tm-section h2 {
+  font-size: 1.8rem;
+  color: #00d2ff;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.tm-section > p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #c5c6c7;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+/* Chat transcript */
+.tm-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin: 2rem 0;
+}
+
+.tm-msg {
+  border-radius: 12px;
+  padding: 1.1rem 1.4rem;
+  max-width: 92%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tm-msg-user {
+  align-self: flex-end;
+  background: rgba(0, 210, 255, 0.07);
+  border-color: rgba(0, 210, 255, 0.25);
+  border-bottom-right-radius: 4px;
+}
+
+.tm-msg-ai {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom-left-radius: 4px;
+}
+
+.tm-msg-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.tm-msg-user .tm-msg-role {
+  color: #00d2ff;
+}
+
+.tm-msg-ai .tm-msg-role {
+  color: #7ee0a1;
+}
+
+.tm-msg p {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: #c5c6c7;
+  margin: 0 0 0.8rem 0;
+  text-align: left;
+}
+
+.tm-msg p:last-child,
+.tm-msg ul:last-child,
+.tm-msg ol:last-child {
+  margin-bottom: 0;
+}
+
+.tm-msg h4 {
+  font-size: 1.02rem;
+  color: #fff;
+  margin: 1.1rem 0 0.5rem 0;
+}
+
+.tm-msg h4:first-of-type {
+  margin-top: 0.2rem;
+}
+
+.tm-msg ul,
+.tm-msg ol {
+  margin: 0 0 0.9rem 0;
+  padding-left: 1.3rem;
+}
+
+.tm-msg li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #c5c6c7;
+  margin-bottom: 0.35rem;
+}
+
+.tm-msg .tm-eq {
+  display: inline-block;
+  background: rgba(0, 210, 255, 0.07);
+  border: 1px solid rgba(0, 210, 255, 0.12);
+  border-radius: 4px;
+  padding: 0.05rem 0.45rem;
+  font-family: "Menlo", "Consolas", monospace;
+  font-size: 0.88em;
+  color: #9fe8ff;
+  white-space: nowrap;
+}
+
+.tm-transcript-note {
+  font-size: 0.9rem;
+  color: #8f9499;
+  font-style: italic;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.2rem;
+}
+
+.tm-bottom-nav {
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 2rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .tm-msg {
+    max-width: 100%;
+  }
+}
