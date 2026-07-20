@@ -1,21 +1,12 @@
 import React from 'react';
 import './TrainingMethodsDetailsStyles.css';
-import { FaArrowLeft, FaRobot, FaUser, FaComments, FaBookOpen } from 'react-icons/fa';
+import { FaArrowLeft, FaComments, FaThLarge, FaCogs, FaQuestionCircle, FaProjectDiagram, FaLink, FaGamepad, FaListOl, FaSearch, FaLightbulb, FaGem } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 // Import assets
 import tmFeature from '../assets/mltm/training_methods_feature.svg';
 
 const Eq = ({ children }) => <span className="tm-eq">{children}</span>;
-
-const Msg = ({ role, children }) => (
-  <div className={`tm-msg ${role === 'user' ? 'tm-msg-user' : 'tm-msg-ai'}`}>
-    <span className="tm-msg-role">
-      {role === 'user' ? <><FaUser /> Me</> : <><FaRobot /> SchoolAI</>}
-    </span>
-    {children}
-  </div>
-);
 
 const TrainingMethodsDetails = () => {
   return (
@@ -36,441 +27,394 @@ const TrainingMethodsDetails = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="tm-title">Machine Learning Training Methods: A Guided Chat Exploration</h1>
+        <h1 className="tm-title">Machine Learning Training Methods: From Paradigms to Practice</h1>
 
-        {/* Intro */}
+        {/* Provenance */}
         <div className="tm-intro-card">
-          <h3><FaBookOpen /> About This Conversation</h3>
+          <h3><FaComments /> How This Guide Was Made</h3>
           <p>
-            This is a transcript of a working session with the AIML-500 course chatbot on SchoolAI.
-            Starting from a simple question — "what are the primary training methods?" — the
-            conversation drills progressively deeper: from the four learning paradigms, into the
-            step-by-step mechanics of training, through hyperparameter questions, and finally into
-            the flagship algorithm of each paradigm (XGBoost, K-Means, Self-Training, and PPO).
+            This guide was distilled from a multi-turn working session with the AIML-500 course
+            chatbot on SchoolAI. Rather than asking one broad question, I drove the conversation
+            progressively deeper — starting from "what are the primary training methods?", drilling
+            into the mechanics of each, challenging the bot with follow-up questions about
+            hyperparameters and stopping criteria, and finally requesting that every paradigm and
+            flagship algorithm be explained through the <em>same seven-step structure</em> so they
+            could be compared side by side. The result of that conversation is organized here as a
+            reference.
           </p>
         </div>
 
         {/* Featured Image */}
         <div className="tm-figure">
-          <img src={tmFeature} alt="The four machine learning training paradigms covered in the conversation" />
-          <p className="tm-caption">Figure 1: The four training paradigms explored in the conversation — supervised, unsupervised, semi-supervised, and reinforcement learning.</p>
+          <img src={tmFeature} alt="The four machine learning training paradigms" />
+          <p className="tm-caption">Figure 1: The four training paradigms covered in this guide — supervised, unsupervised, semi-supervised, and reinforcement learning.</p>
         </div>
 
-        {/* ─── Transcript ─── */}
+        {/* ─── The Four Paradigms ─── */}
         <section className="tm-section">
-          <h2><FaComments /> The Conversation</h2>
-          <div className="tm-chat">
-
-            <Msg role="ai">
-              <p>Hello. Welcome to AIML-500. I'm here to help you navigate the training methods and optimization techniques we're covering. What's on your mind today?</p>
-            </Msg>
-
-            <Msg role="user">
-              <p>Hello I wanted to learn about machine learning methods. Can you list out some primary training methods?</p>
-            </Msg>
-
-            <Msg role="ai">
-              <p>In the context of this course, we generally categorize primary training methods based on how the algorithm receives data and updates its model parameters. The main categories are:</p>
-              <ul>
-                <li><strong>Supervised Learning:</strong> The model learns from labeled data — input pairs where the correct output is known. You're essentially teaching by example.</li>
-                <li><strong>Unsupervised Learning:</strong> The model works with unlabeled data to find hidden structures or patterns on its own.</li>
-                <li><strong>Semi-supervised Learning:</strong> A hybrid approach using a small amount of labeled data with a larger amount of unlabeled data to improve learning accuracy.</li>
-                <li><strong>Reinforcement Learning:</strong> An agent learns to make decisions by performing actions in an environment and receiving feedback through rewards or penalties.</li>
-              </ul>
-            </Msg>
-
-            <Msg role="user">
-              <p>For these training methods I listed, I want you to list some popular use cases for each of these methods, how the training is performed and what are some of the popular algorithms. I also want you to list the date when the training method was invented.</p>
-            </Msg>
-
-            <Msg role="ai">
-              <h4>1. Supervised Learning</h4>
-              <ul>
-                <li><strong>Popular Use Cases:</strong> Image classification, spam detection, medical diagnosis, predictive maintenance.</li>
-                <li><strong>How Training is Performed:</strong> The algorithm is fed a dataset containing input features and corresponding correct labels (e.g., photos of cats labeled "cat"). It iteratively makes predictions, calculates the error between its prediction and the actual label, and adjusts its internal parameters (weights) to minimize that error.</li>
-                <li><strong>Popular Algorithms:</strong> Linear Regression, Logistic Regression, Support Vector Machines (SVM), Random Forest, Neural Networks (CNNs, RNNs).</li>
-                <li><strong>Invention Date:</strong> While the foundational concepts date back earlier, the formalization of statistical learning theory began in the 1950s (e.g., the Perceptron in 1957).</li>
-              </ul>
-              <h4>2. Unsupervised Learning</h4>
-              <ul>
-                <li><strong>Popular Use Cases:</strong> Customer segmentation, anomaly detection (fraud), recommendation systems, dimensionality reduction.</li>
-                <li><strong>How Training is Performed:</strong> The algorithm is given data without labels. It attempts to learn the underlying structure or distribution of the data by finding similarities, clusters, or relationships between data points without explicit feedback on "correctness."</li>
-                <li><strong>Popular Algorithms:</strong> K-Means Clustering, Hierarchical Clustering, Principal Component Analysis (PCA), Autoencoders.</li>
-                <li><strong>Invention Date:</strong> Early clustering methods like K-Means were developed in the 1950s (specifically 1957 by Hugo Steinhaus), though the field expanded significantly in the 1990s.</li>
-              </ul>
-              <h4>3. Semi-Supervised Learning</h4>
-              <ul>
-                <li><strong>Popular Use Cases:</strong> Web page classification, speech recognition, protein sequence classification — scenarios where labeled data is scarce but unlabeled data is abundant.</li>
-                <li><strong>How Training is Performed:</strong> It combines a small amount of labeled data with a large amount of unlabeled data. The model uses the labeled data to establish a baseline and leverages the unlabeled data to understand the structure of the input space (often using assumptions like continuity or low-density separation), improving generalization.</li>
-                <li><strong>Popular Algorithms:</strong> Self-training, Co-training, Graph-based methods, Semi-Supervised SVMs.</li>
-                <li><strong>Invention Date:</strong> Research gained traction in the mid-1990s, though theoretical discussions occurred earlier.</li>
-              </ul>
-              <h4>4. Reinforcement Learning</h4>
-              <ul>
-                <li><strong>Popular Use Cases:</strong> Robotics, game playing (e.g., AlphaGo), autonomous driving, resource management.</li>
-                <li><strong>How Training is Performed:</strong> An agent interacts with an environment. It takes an action, observes the consequence (a new state and a reward or penalty), and updates its policy (strategy) to maximize the cumulative long-term reward. It learns through trial and error rather than being shown the "correct" action.</li>
-                <li><strong>Popular Algorithms:</strong> Q-Learning, Deep Q-Networks (DQN), Proximal Policy Optimization (PPO), Actor-Critic methods.</li>
-                <li><strong>Invention Date:</strong> The foundational concept, the "Markov Decision Process," was formalized in the 1950s, but major algorithmic breakthroughs like Q-Learning came in 1989.</li>
-              </ul>
-            </Msg>
-
-            <Msg role="user">
-              <p>Lets now dive into the topics. For a supervised learning how is the training performed. Can you explain in detail?</p>
-            </Msg>
-
-            <Msg role="ai">
-              <p>At a high level, supervised training is an optimization process: we are searching for the set of parameters (weights) that make our model's predictions match the target labels as closely as possible.</p>
-              <h4>1. Data Preparation and Splitting</h4>
-              <p>We prepare our dataset <Eq>{'D = {(x⁽ⁱ⁾, y⁽ⁱ⁾)}, i = 1…N'}</Eq>, where <Eq>x</Eq> represents the input features and <Eq>y</Eq> represents the target label.</p>
-              <ul>
-                <li><strong>Train/Test Split:</strong> We typically split the data into training, validation, and test sets. The model only "sees" the training data during this process.</li>
-                <li><strong>Preprocessing:</strong> Features are often normalized or standardized to ensure the optimization algorithm converges efficiently.</li>
-              </ul>
-              <h4>2. Initialization</h4>
-              <p>The model parameters (weights <Eq>θ</Eq>) are initialized, usually with small random numbers. If we started with all zeros, the model would be symmetric and fail to learn distinct features.</p>
-              <h4>3. The Forward Pass (Inference)</h4>
-              <ul>
-                <li><strong>Linear Combination:</strong> The inputs are multiplied by the weights and summed with biases: <Eq>{'z = θᵀx + b'}</Eq>.</li>
-                <li><strong>Activation:</strong> A non-linear activation function (like ReLU, Sigmoid, or Tanh) is applied to <Eq>z</Eq> to produce the output prediction <Eq>ŷ</Eq>.</li>
-                <li><strong>Output Layer:</strong> The final layer produces a prediction in the format required by the task (e.g., a probability distribution for classification, a continuous value for regression).</li>
-              </ul>
-              <h4>4. Loss Calculation (The Error)</h4>
-              <p>We compare the model's prediction <Eq>ŷ</Eq> against the actual ground truth label <Eq>y</Eq> using a Loss Function.</p>
-              <ul>
-                <li><strong>For Regression:</strong> Mean Squared Error (MSE): <Eq>{'L = (1/N) Σ (y − ŷ)²'}</Eq>.</li>
-                <li><strong>For Classification:</strong> Cross-Entropy Loss: <Eq>{'L = −Σ y·log(ŷ)'}</Eq>.</li>
-              </ul>
-              <p>The goal of training is to minimize this loss value.</p>
-              <h4>5. The Backward Pass (Backpropagation)</h4>
-              <ul>
-                <li><strong>Gradient Calculation:</strong> We calculate the gradient of the loss function with respect to each weight using the chain rule of calculus. This tells us the "direction of steepest ascent."</li>
-                <li><strong>Backpropagation:</strong> This gradient is computed recursively from the output layer back to the input layer.</li>
-              </ul>
-              <h4>6. Parameter Update (Optimization)</h4>
-              <p>Once we have the gradients, we update the weights in the opposite direction of the gradient using an Optimizer (like Gradient Descent).</p>
-              <ul>
-                <li><strong>Update Rule:</strong> <Eq>{'θ_new = θ_old − η·∇L(θ)'}</Eq></li>
-                <li><Eq>η</Eq> (eta) is the Learning Rate, a hyperparameter that controls the size of the step.</li>
-                <li><Eq>{'∇L(θ)'}</Eq> is the gradient.</li>
-              </ul>
-              <h4>7. Iteration (Epochs)</h4>
-              <ul>
-                <li><strong>Batch:</strong> One update step is performed after processing a subset (batch) of data.</li>
-                <li><strong>Epoch:</strong> One full pass through the entire training dataset.</li>
-                <li>Training continues for multiple epochs until the loss stops decreasing (convergence) or meets a predefined stopping criterion.</li>
-              </ul>
-            </Msg>
-
-            <Msg role="user">
-              <p>Couple of questions. 1. How is the amount of data to be split determined? Are the initial weights just randomly assigned? How are activation functions determined, can you show a simple example of where each of these functions are used? For the loss calculation how do I decide if to use MSE or cross entropy? For updating the parameters is the learning rate pre-determined or something set by the developer?</p>
-            </Msg>
-
-            <Msg role="ai">
-              <h4>1. How is the data split determined?</h4>
-              <p>There isn't a hard mathematical rule, but there are standard conventions based on dataset size:</p>
-              <ul>
-                <li><strong>Small Datasets</strong> (a few thousand examples): a split like 60/20/20 (Train/Validation/Test). You need more data for testing to get a reliable metric.</li>
-                <li><strong>Large Datasets</strong> (millions of examples): 98/1/1 or even 99/0.5/0.5. Even 1% is thousands of examples, statistically significant for evaluation.</li>
-                <li><strong>Stratification:</strong> For classification tasks, you usually perform stratified sampling so the proportion of classes is preserved across all three splits.</li>
-              </ul>
-              <h4>2. Are initial weights just randomly assigned?</h4>
-              <p>Yes, but with a specific strategy. You rarely initialize from a wide range.</p>
-              <ul>
-                <li><strong>Why not pure random?</strong> If weights are too large, activations can saturate and gradients become zero (the "vanishing gradient" problem).</li>
-                <li><strong>Xavier/Glorot Initialization:</strong> Designed for Sigmoid/Tanh activations. Keeps output variance consistent with input variance.</li>
-                <li><strong>He Initialization:</strong> Designed for ReLU activations. Accounts for ReLU zeroing out negative values.</li>
-              </ul>
-              <h4>3. How are activation functions determined? (Examples)</h4>
-              <ul>
-                <li><strong>ReLU:</strong> <Eq>{'f(x) = max(0, x)'}</Eq> — default choice for most hidden layers, especially computer vision. Computationally efficient and mitigates vanishing gradients.</li>
-                <li><strong>Sigmoid:</strong> <Eq>{'f(x) = 1 / (1 + e⁻ˣ)'}</Eq> (squashes output between 0 and 1) — output layer for binary classification. Provides a clear probability score.</li>
-                <li><strong>Softmax:</strong> generalizes Sigmoid for multiple classes — output layer for multi-class classification. Converts outputs into a probability distribution that sums to 1.</li>
-                <li><strong>Tanh:</strong> <Eq>{'f(x) = (eˣ − e⁻ˣ) / (eˣ + e⁻ˣ)'}</Eq> (squashes between −1 and 1) — often used in RNNs or when data is centered around zero.</li>
-              </ul>
-              <h4>4. How to decide between MSE and Cross Entropy?</h4>
-              <ul>
-                <li><strong>MSE:</strong> Use for <strong>Regression</strong> problems. Example: predicting house prices ($350,000 vs $355,000) — a continuous numerical value.</li>
-                <li><strong>Cross-Entropy Loss:</strong> Use for <strong>Classification</strong> problems. Example: predicting if an email is spam. Cross-entropy penalizes confident wrong answers much more heavily than MSE, leading to better convergence for classification.</li>
-              </ul>
-              <h4>5. Is the learning rate pre-determined?</h4>
-              <p>It is a hyperparameter set by the developer, but rarely static.</p>
-              <ul>
-                <li><strong>Initial Setting:</strong> Pick a starting value (e.g., 0.001, 0.01) based on the optimizer used (Adam or SGD).</li>
-                <li><strong>Learning Rate Schedulers:</strong> Often used to change the rate during training — <strong>Decay</strong> (start high to learn fast, then decrease to fine-tune) and <strong>Warm-up</strong> (start low and increase to prevent instability in the early stages).</li>
-              </ul>
-            </Msg>
-
-            <Msg role="user">
-              <p>Yes that clarifies it. Can you now explain unsupervised learning? How is it different from supervised learning? Consider the past conversation we had with supervised learning and the follow up questions. I want your explanation to be in depth and preserve same structure.</p>
-            </Msg>
-
-            <Msg role="ai">
-              <p>The fundamental difference lies in the objective. In Supervised Learning, the objective is <strong>prediction</strong> — mapping inputs to known labels. In Unsupervised Learning, the objective is <strong>representation</strong> — discovering the underlying structure, patterns, or relationships in the data without any guidance on what the "correct" output looks like.</p>
-              <h4>1. Data Preparation and Splitting</h4>
-              <ul>
-                <li><strong>Dataset:</strong> <Eq>{'D = {x⁽ⁱ⁾}, i = 1…N'}</Eq>. Notice the absence of <Eq>y</Eq> (labels).</li>
-                <li><strong>Splitting:</strong> Since we don't have labels to verify accuracy against, a "Test Set" for performance metrics is different. We still split data (Train/Validation) to check stability or tune hyperparameters, but we don't calculate "accuracy" in the traditional sense.</li>
-              </ul>
-              <h4>2. Initialization</h4>
-              <ul>
-                <li><strong>Centroid Initialization (Clustering):</strong> For K-Means, we might randomly select <Eq>k</Eq> data points as the starting centroids.</li>
-                <li><strong>Weight Initialization (Neural Networks):</strong> For autoencoders or self-organizing maps, we use strategies like Xavier or He initialization.</li>
-              </ul>
-              <h4>3. The Forward Pass (Encoding/Mapping)</h4>
-              <p>Instead of predicting a label, the model transforms the data.</p>
-              <ul>
-                <li><strong>Example (Autoencoder):</strong> The input passes through an "encoder" network to produce a compressed code <Eq>z</Eq>.</li>
-                <li><strong>Example (K-Means):</strong> Each data point calculates its distance to the current centroids to determine which cluster it belongs to.</li>
-              </ul>
-              <h4>4. Loss Calculation (Reconstruction or Intra-Cluster Distance)</h4>
-              <ul>
-                <li><strong>Reconstruction Loss (Autoencoders):</strong> The model recreates its own input. Loss is the difference between input <Eq>x</Eq> and reconstruction <Eq>x̂</Eq> (e.g., MSE: <Eq>{'L = ‖x − x̂‖²'}</Eq>).</li>
-                <li><strong>Inertia/Compactness (Clustering):</strong> The sum of squared distances between each point and the centroid of its assigned cluster. The goal is to make clusters as tight as possible.</li>
-              </ul>
-              <h4>5. The Backward Pass (or Optimization Step)</h4>
-              <ul>
-                <li><strong>Backpropagation (Autoencoders):</strong> Since autoencoders are neural networks, we use backpropagation to update the encoder and decoder simultaneously.</li>
-                <li><strong>Expectation-Maximization (Clustering):</strong> In K-Means we use an iterative process — <strong>Assignment Step (E):</strong> assign points to the nearest centroid; <strong>Update Step (M):</strong> move the centroid to the mean position of assigned points. Repeats until centroids stop moving.</li>
-              </ul>
-              <h4>6. Parameter Update</h4>
-              <ul>
-                <li><strong>Neural Approaches:</strong> Weights updated using optimizers (SGD, Adam) based on reconstruction gradients.</li>
-                <li><strong>Clustering Approaches:</strong> Centroid locations updated by taking the mean of assigned data points.</li>
-              </ul>
-              <h4>7. Iteration (Convergence)</h4>
-              <ul>
-                <li><strong>For Autoencoders:</strong> When reconstruction error stops improving.</li>
-                <li><strong>For Clustering:</strong> When data points stop switching clusters between iterations.</li>
-              </ul>
-              <h4>Summary of Differences</h4>
-              <ul>
-                <li><strong>Labels:</strong> Supervised uses <Eq>y</Eq>; Unsupervised does not.</li>
-                <li><strong>Goal:</strong> Supervised minimizes prediction error; Unsupervised minimizes reconstruction error or maximizes separation between data groups.</li>
-                <li><strong>Feedback:</strong> Supervised gets external feedback (the label); Unsupervised gets internal feedback (the structure of the data itself).</li>
-              </ul>
-            </Msg>
-
-            <Msg role="user">
-              <p>Yes lets move to semi-supervised learning</p>
-            </Msg>
-
-            <Msg role="ai">
-              <p>This method sits at the intersection of the two. It addresses a common real-world constraint: labeled data is expensive and scarce, but unlabeled data is cheap and abundant. The core idea is to leverage the massive amount of unlabeled data to uncover the structure of the input space (like Unsupervised Learning) and use that structure to improve how the model learns from the small amount of labeled data (like Supervised Learning).</p>
-              <h4>1. Data Preparation and Splitting</h4>
-              <ul>
-                <li><strong>Dataset:</strong> A small labeled set <Eq>L</Eq> and a large unlabeled set <Eq>U</Eq> (where <Eq>{'u ≫ l'}</Eq>).</li>
-                <li><strong>Splitting:</strong> We reserve a purely labeled test set for final evaluation, but during training the model consumes both <Eq>L</Eq> and <Eq>U</Eq>.</li>
-              </ul>
-              <h4>2. Initialization</h4>
-              <ul>
-                <li><strong>Model Initialization:</strong> Weights initialized randomly, as in supervised learning.</li>
-                <li><strong>Pseudo-Labeling (Optional):</strong> Some methods first train a basic model on only <Eq>L</Eq> to generate "pseudo-labels" for <Eq>U</Eq>, which are then refined.</li>
-              </ul>
-              <h4>3. The Forward Pass</h4>
-              <ul>
-                <li><strong>Supervised Stream:</strong> Labeled inputs are passed through the network to generate predictions.</li>
-                <li><strong>Unsupervised Stream:</strong> Unlabeled inputs are passed through the network to enforce consistency. In <strong>Consistency Regularization</strong>, we take an unlabeled image, add noise (crop, rotate), and pass both versions through — the model should predict the same output for both.</li>
-              </ul>
-              <h4>4. Loss Calculation (The Hybrid Objective)</h4>
-              <p><Eq>{'L_total = L_supervised + λ·L_unsupervised'}</Eq></p>
-              <ul>
-                <li><strong>Supervised Loss:</strong> e.g. Cross-Entropy, calculated only on labeled data <Eq>L</Eq>. Ensures the model learns the correct mapping for known examples.</li>
-                <li><strong>Unsupervised Loss:</strong> Acts as a regularizer using <Eq>U</Eq> to enforce assumptions — <strong>Smoothness</strong> (points close in input space should have similar labels) and <strong>Low-Density Separation</strong> (the decision boundary should lie in a region with few data points).</li>
-                <li><strong><Eq>λ</Eq> (Lambda):</strong> Hyperparameter controlling how much influence the unlabeled data has.</li>
-              </ul>
-              <h4>5. The Backward Pass</h4>
-              <ul>
-                <li><strong>Combined Signal:</strong> Gradients from the labeled loss pull the model toward correct answers, while gradients from the unsupervised loss pull it toward a smooth decision boundary that respects the geometry of the whole dataset.</li>
-              </ul>
-              <h4>6. Parameter Update</h4>
-              <ul>
-                <li><strong>Update Rule:</strong> <Eq>{'θ_new = θ_old − η·∇L_total'}</Eq>. Informed by both explicit labels and implicit structure.</li>
-              </ul>
-              <h4>7. Iteration</h4>
-              <ul>
-                <li>As the model improves, its predictions on unlabeled data become more confident. In Self-Training, these confident predictions are added to the labeled set (as pseudo-labels) for the next epoch, effectively growing the training data.</li>
-              </ul>
-              <h4>Summary of the "Bridge"</h4>
-              <ul>
-                <li><strong>Borrows from Supervised:</strong> Still requires some labels to anchor the meaning of the classes.</li>
-                <li><strong>Borrows from Unsupervised:</strong> Uses the shape and density of the data to generalize better than it could on the limited labels alone.</li>
-              </ul>
-            </Msg>
-
-            <Msg role="user">
-              <p>Yes explain reinforcement learning.</p>
-            </Msg>
-
-            <Msg role="ai">
-              <p>This is a fundamental departure. Supervised, Unsupervised, and Semi-Supervised learning are all <strong>static</strong> — they learn from a fixed dataset. Reinforcement Learning is <strong>dynamic</strong> — it learns by interacting with an environment. In RL, we have an Agent that must learn a Policy (a strategy) to maximize a numerical Reward signal, through trial and error.</p>
-              <h4>1. Environment and State Definition</h4>
-              <ul>
-                <li><strong>State Space (S):</strong> The agent observes the current state <Eq>sₜ</Eq>.</li>
-                <li><strong>Action Space (A):</strong> The agent takes actions <Eq>aₜ</Eq>.</li>
-                <li><strong>No Dataset:</strong> Data is generated on the fly as the agent interacts with the environment.</li>
-              </ul>
-              <h4>2. Initialization</h4>
-              <ul>
-                <li><strong>Policy (π):</strong> Initialized, often as a Neural Network taking state <Eq>sₜ</Eq> and outputting action probabilities. Initially random.</li>
-                <li><strong>Value Function (V) / Q-Function (Q):</strong> A "Critic" network that estimates how good a state or state-action pair is.</li>
-              </ul>
-              <h4>3. The Forward Pass (Interaction Loop)</h4>
-              <p>In each step of an episode: the agent <strong>observes</strong> state <Eq>sₜ</Eq>, uses policy <Eq>π</Eq> to <strong>select</strong> action <Eq>aₜ</Eq>, <strong>executes</strong> it, the environment <strong>transitions</strong> to new state <Eq>{'sₜ₊₁'}</Eq>, and provides a scalar <strong>reward</strong> <Eq>rₜ</Eq>.</p>
-              <h4>4. Return Calculation (The Goal)</h4>
-              <ul>
-                <li><strong>Return (Gₜ):</strong> The sum of all future rewards: <Eq>{'Gₜ = rₜ + γ·rₜ₊₁ + γ²·rₜ₊₂ + …'}</Eq></li>
-                <li><strong>Discount Factor (γ):</strong> Between 0 and 1; determines how much we care about future vs. immediate rewards. <Eq>γ</Eq> close to 1 means the agent is farsighted.</li>
-              </ul>
-              <h4>5. Loss Calculation (The Temporal Difference)</h4>
-              <ul>
-                <li><strong>TD Target:</strong> <Eq>{'y = rₜ + γ·V(sₜ₊₁)'}</Eq>.</li>
-                <li><strong>TD Error:</strong> The difference between predicted value and the TD target.</li>
-                <li><strong>Loss Function:</strong> Minimize the difference between the Critic's prediction and the TD Target (often MSE or Huber Loss).</li>
-              </ul>
-              <h4>6. The Backward Pass</h4>
-              <ul>
-                <li><strong>Policy Gradient:</strong> Update the Policy to increase the probability of actions that led to higher-than-expected rewards.</li>
-              </ul>
-              <h4>7. Parameter Update</h4>
-              <ul>
-                <li><strong>Update Rule:</strong> Use optimizers (like Adam) to update weights of both the Policy (Actor) and Value (Critic) networks.</li>
-                <li><strong>Exploration vs. Exploitation:</strong> Force the agent to take random actions occasionally (exploration) to avoid sub-optimal strategies, reducing randomness over time.</li>
-              </ul>
-              <h4>8. Iteration (Episodes)</h4>
-              <ul>
-                <li>Training continues over thousands or millions of episodes. As the policy updates, behavior changes, generating new data — a feedback loop. Stops when the agent achieves a consistent high score or converges to an optimal policy.</li>
-              </ul>
-              <h4>Summary of the Paradigm Shift</h4>
-              <ul>
-                <li><strong>Feedback:</strong> RL uses delayed, scalar rewards rather than immediate, instructional labels.</li>
-                <li><strong>Consequence:</strong> The agent must associate a reward with the sequence of actions that caused it (the "credit assignment problem").</li>
-                <li><strong>Data:</strong> The data distribution changes as the policy improves (non-stationary).</li>
-              </ul>
-            </Msg>
-
-            <Msg role="user">
-              <p>For reinforcement learning, e.g. chess board there are so many possibilities. When do we decide when to stop iterating?</p>
-            </Msg>
-
-            <Msg role="ai">
-              <p>In a game like chess, the state space is so vast (<Eq>10¹²⁰</Eq> possible game states) that you can never truly explore every possibility. You are usually balancing performance against compute constraints and stability.</p>
-              <h4>1. Convergence of the Reward (The Performance Plateau)</h4>
-              <ul>
-                <li><strong>Moving Average:</strong> Track the average reward over the last N episodes (e.g., last 100 games). If it stabilizes within a small variance, the agent has likely learned the optimal strategy for its architecture.</li>
-                <li><strong>Threshold:</strong> If a known "expert" level exists (e.g., a Stockfish rating of 3000), stop when the agent consistently reaches or exceeds it.</li>
-              </ul>
-              <h4>2. The "Target" is Beaten (AlphaGo Zero Example)</h4>
-              <ul>
-                <li><strong>Self-Play Tournament:</strong> The current agent periodically plays the best previous agent.</li>
-                <li><strong>Stop Condition:</strong> When the current agent wins &gt;55% of games against the champion, it becomes the new champion. If it fails to beat the champion after a set number of games, training is halted.</li>
-              </ul>
-              <h4>3. Stability of the Value Function</h4>
-              <ul>
-                <li>Since chess rewards are sparse (+1 win, −1 loss, 0 draw at the very end), we look at the Value Function <Eq>V</Eq>.</li>
-                <li><strong>Stop Condition:</strong> When the TD Error (difference between predicted value and actual result) stops decreasing, the agent has learned to accurately evaluate positions.</li>
-              </ul>
-              <h4>4. Computational Budget (The Hard Stop)</h4>
-              <ul>
-                <li><strong>Wall Time / Steps:</strong> e.g., "40 days of compute" or "10 million steps."</li>
-                <li><strong>Checkpointing:</strong> Save the model periodically. Even if you stop on time, select the checkpoint that performed best on a validation set of grandmaster games.</li>
-              </ul>
-              <h4>5. Catastrophic Forgetting or Instability</h4>
-              <ul>
-                <li>The agent might learn to beat its current opponent but "forget" older edge cases.</li>
-                <li><strong>Stop Condition:</strong> If performance drops drastically and doesn't recover, halt training, revert to a previous checkpoint, and adjust hyperparameters.</li>
-              </ul>
-            </Msg>
-
-            <Msg role="user">
-              <p>Yes that makes sense. What are different algorithms used for each of the 4 methods you mentioned. Can you pick multiple examples sorted by popularity for each of them</p>
-            </Msg>
-
-            <Msg role="ai">
-              <h4>1. Supervised Learning</h4>
-              <ul>
-                <li><strong>Gradient Boosted Trees (XGBoost, LightGBM, CatBoost):</strong> The undisputed king of structured data. Wins Kaggle competitions; standard for credit scoring, fraud detection, churn prediction.</li>
-                <li><strong>Random Forest:</strong> A robust out-of-the-box workhorse. Harder to overfit than a single decision tree, handles high-dimensional data, little tuning needed.</li>
-                <li><strong>Logistic Regression:</strong> The baseline for binary classification. Highly interpretable, computationally cheap.</li>
-                <li><strong>Support Vector Machines (SVM):</strong> Standard for smaller, complex datasets where maximizing the margin between classes is critical.</li>
-                <li><strong>Convolutional Neural Networks (CNNs):</strong> The standard for computer vision. Architectures like ResNet and EfficientNet dominate.</li>
-              </ul>
-              <h4>2. Unsupervised Learning</h4>
-              <ul>
-                <li><strong>K-Means Clustering:</strong> The "Hello World" of clustering. Simple, fast, effective for partitioning data (e.g., customer segmentation).</li>
-                <li><strong>Principal Component Analysis (PCA):</strong> The go-to for dimensionality reduction; essential for visualizing high-dimensional data and removing noise.</li>
-                <li><strong>Hierarchical Clustering:</strong> Used to understand the taxonomy of data (dendrograms); popular in biology and genomics.</li>
-                <li><strong>Autoencoders:</strong> The deep learning approach; widely used for anomaly detection and denoising images.</li>
-                <li><strong>DBSCAN:</strong> Preferred over K-Means when clusters have irregular shapes or when there is noise (identifies outliers as "noise").</li>
-              </ul>
-              <h4>3. Semi-Supervised Learning</h4>
-              <ul>
-                <li><strong>Self-Training (Pseudo-Labeling):</strong> Simplest and most intuitive; easy to implement on top of any supervised model.</li>
-                <li><strong>Label Propagation / Label Spreading:</strong> Graph-based methods; effective when labels need to "flow" to similar neighbors.</li>
-                <li><strong>Consistency Regularization (FixMatch, Pi-Model):</strong> The modern standard for deep semi-supervised learning; state-of-the-art for image classification with few labels.</li>
-                <li><strong>GANs for Semi-Supervised Learning:</strong> Modify the discriminator to output class labels, leveraging the generator to create synthetic data.</li>
-              </ul>
-              <h4>4. Reinforcement Learning</h4>
-              <ul>
-                <li><strong>Proximal Policy Optimization (PPO):</strong> The default for many applications (including how ChatGPT was fine-tuned). Balances ease of implementation, sample efficiency, and stability.</li>
-                <li><strong>Deep Q-Networks (DQN):</strong> The breakthrough that combined Deep Learning with RL (Atari games); foundational for discrete action spaces.</li>
-                <li><strong>Soft Actor-Critic (SAC):</strong> The dominant algorithm for continuous control (robotics); maximizes reward and entropy.</li>
-                <li><strong>Q-Learning:</strong> The classic model-free algorithm; theoretical foundation for modern Deep RL, still used for tabular state spaces.</li>
-              </ul>
-            </Msg>
-
-            <Msg role="user">
-              <p>Using the same structure explain in detail each of these methods</p>
-            </Msg>
-
-            <Msg role="ai">
-              <h4>1. Supervised Learning: Gradient Boosted Trees (e.g., XGBoost)</h4>
-              <ol>
-                <li><strong>Data Preparation:</strong> Structured/Tabular data. Train/Validation/Test split. XGBoost handles missing values internally.</li>
-                <li><strong>Initialization:</strong> Starts with a simple initial prediction — usually the mean of the target values (regression) or a log-odds probability (classification).</li>
-                <li><strong>The Forward Pass:</strong> The final prediction is the sum of the outputs from all trees: <Eq>{'ŷ = Σ fᵢ(x)'}</Eq>, where <Eq>fᵢ</Eq> is the prediction of the i-th tree.</li>
-                <li><strong>Loss Calculation:</strong> A differentiable loss (LogLoss for classification, MSE for regression). The core concept is the "residual" — the difference between the actual label and the current cumulative prediction.</li>
-                <li><strong>The Backward Pass (Gradient Approximation):</strong> The negative gradient of the loss points in the direction of the residual. XGBoost uses a second-order Taylor expansion of the loss to approximate the update.</li>
-                <li><strong>Parameter Update (Tree Building):</strong> A new tree is built to predict the negative gradient. Split finding maximizes the "gain." A regularization term penalizes complex trees (pruning).</li>
-                <li><strong>Iteration (Boosting Rounds):</strong> Trees are added one by one, each correcting the errors of the previous ensemble. Early stopping monitors validation loss.</li>
-              </ol>
-              <h4>2. Unsupervised Learning: K-Means Clustering</h4>
-              <ol>
-                <li><strong>Data Preparation:</strong> Unlabeled feature vectors. Features must be scaled (StandardScaler) because K-Means is distance-based.</li>
-                <li><strong>Initialization:</strong> Randomly select <Eq>k</Eq> data points as initial centroids (K-Means++ optimizes this selection).</li>
-                <li><strong>The Forward Pass (Assignment):</strong> For every point, calculate the Euclidean distance to each centroid; assign to the closest.</li>
-                <li><strong>Loss Calculation (Inertia):</strong> Minimize Within-Cluster Sum of Squares: <Eq>{'J = Σ ‖x⁽ⁱ⁾ − μ⁽ⁱ⁾‖²'}</Eq>, where <Eq>μ</Eq> is the centroid of the assigned cluster.</li>
-                <li><strong>The Backward Pass (Optimization Step):</strong> No calculus-based backpropagation. Expectation-Maximization (EM): <strong>E-Step</strong> = assigning points; <strong>M-Step</strong> = re-calculating centroids.</li>
-                <li><strong>Parameter Update (Centroid Recalculation):</strong> New centroid = mean of all points assigned to that cluster; it shifts to the geometric center.</li>
-                <li><strong>Iteration (Convergence):</strong> Steps repeat until centroids no longer move significantly or the max iterations are reached.</li>
-              </ol>
-              <h4>3. Semi-Supervised Learning: Self-Training (Pseudo-Labeling)</h4>
-              <ol>
-                <li><strong>Data Preparation:</strong> A small labeled set <Eq>L</Eq> and a large unlabeled set <Eq>U</Eq>; a hold-out test set for evaluation.</li>
-                <li><strong>Initialization:</strong> Initialize a standard supervised model using only labeled data <Eq>L</Eq>.</li>
-                <li><strong>The Forward Pass:</strong> Use the current model to generate predictions (probabilities) for the unlabeled set <Eq>U</Eq>.</li>
-                <li><strong>Loss Calculation:</strong> Standard supervised loss (Cross-Entropy) on <Eq>L</Eq>; examine the confidence of predictions on <Eq>U</Eq>.</li>
-                <li><strong>The Backward Pass (Pseudo-Labeling):</strong> Select unlabeled samples where the model is confident (e.g., predicted probability &gt; 0.95). Treat these as ground truth, adding them to create an expanded set <Eq>L′</Eq>.</li>
-                <li><strong>Parameter Update:</strong> Retrain the model on the expanded set <Eq>L′</Eq>, reinforcing confident decision boundaries.</li>
-                <li><strong>Iteration:</strong> Predict → Select confident samples → Add to training set → Retrain. Stops when no unlabeled samples remain, confidence drops below threshold, or validation performance saturates.</li>
-              </ol>
-              <h4>4. Reinforcement Learning: Proximal Policy Optimization (PPO)</h4>
-              <ol>
-                <li><strong>Environment Setup:</strong> A simulation (e.g., a robotic walker in PyBullet or a game like Atari).</li>
-                <li><strong>Initialization:</strong> <strong>Actor Network (Policy)</strong> — outputs action probabilities <Eq>{'π(a|s)'}</Eq>; <strong>Critic Network (Value)</strong> — outputs a scalar value <Eq>{'V(s)'}</Eq> estimating expected return. Both randomly initialized.</li>
-                <li><strong>The Forward Pass (Data Collection):</strong> Rollout — the Actor interacts with the environment for a set number of steps. Store the tuple <Eq>{'(s, a, r, s′)'}</Eq> in a buffer without updating weights yet.</li>
-                <li><strong>Loss Calculation (The PPO Objective):</strong> <strong>Advantage Estimation</strong> (how much better an action was compared to the average), the <strong>Probability Ratio</strong> (probability of the action under the new policy vs. the old policy), and the <strong>Clipped Surrogate Objective</strong> (encourages the policy to improve but clips the loss if the new policy deviates too drastically from the old, preventing collapse).</li>
-                <li><strong>The Backward Pass:</strong> Gradients for three combined losses — Policy Loss (the clipped objective), Value Loss (MSE between Critic prediction and actual return), and an Entropy Bonus (keeps the policy exploring).</li>
-                <li><strong>Parameter Update:</strong> Unlike standard RL, PPO performs multiple epochs of SGD/Adam on the same batch of collected data before discarding it and collecting new trajectories.</li>
-                <li><strong>Iteration:</strong> Collect data → Optimize → Collect new data with the updated policy. Stops when the average reward per episode reaches a target or converges.</li>
-              </ol>
-            </Msg>
-
+          <h2><FaThLarge /> The Four Training Paradigms</h2>
+          <p>
+            Training methods are categorized by how the algorithm receives data and updates its
+            model parameters. Each paradigm answers the same question differently: <em>where does
+            the learning signal come from?</em>
+          </p>
+          <div className="tm-grid">
+            <div className="tm-card">
+              <h4>Supervised Learning</h4>
+              <p>The model learns from labeled data — input pairs where the correct output is known. You're essentially teaching by example.</p>
+              <span className="tm-card-label">Use Cases</span>
+              <p>Image classification, spam detection, medical diagnosis, predictive maintenance.</p>
+              <span className="tm-card-label">Popular Algorithms</span>
+              <p>Linear/Logistic Regression, SVM, Random Forest, Neural Networks (CNNs, RNNs).</p>
+              <span className="tm-card-label">Origins</span>
+              <p>Statistical learning theory formalized in the 1950s (e.g., the Perceptron, 1957).</p>
+            </div>
+            <div className="tm-card">
+              <h4>Unsupervised Learning</h4>
+              <p>The model works with unlabeled data to find hidden structures or patterns on its own.</p>
+              <span className="tm-card-label">Use Cases</span>
+              <p>Customer segmentation, anomaly detection (fraud), recommendation systems, dimensionality reduction.</p>
+              <span className="tm-card-label">Popular Algorithms</span>
+              <p>K-Means, Hierarchical Clustering, PCA, Autoencoders.</p>
+              <span className="tm-card-label">Origins</span>
+              <p>K-Means developed in 1957 by Hugo Steinhaus; the field expanded significantly in the 1990s.</p>
+            </div>
+            <div className="tm-card">
+              <h4>Semi-Supervised Learning</h4>
+              <p>A hybrid approach using a small amount of labeled data with a larger amount of unlabeled data to improve learning accuracy.</p>
+              <span className="tm-card-label">Use Cases</span>
+              <p>Web page classification, speech recognition, protein sequence classification — where labels are scarce but raw data is abundant.</p>
+              <span className="tm-card-label">Popular Algorithms</span>
+              <p>Self-training, Co-training, Graph-based methods, Semi-Supervised SVMs.</p>
+              <span className="tm-card-label">Origins</span>
+              <p>Gained research traction in the mid-1990s.</p>
+            </div>
+            <div className="tm-card">
+              <h4>Reinforcement Learning</h4>
+              <p>An agent learns to make decisions by performing actions in an environment and receiving feedback through rewards or penalties.</p>
+              <span className="tm-card-label">Use Cases</span>
+              <p>Robotics, game playing (e.g., AlphaGo), autonomous driving, resource management.</p>
+              <span className="tm-card-label">Popular Algorithms</span>
+              <p>Q-Learning, Deep Q-Networks (DQN), PPO, Actor-Critic methods.</p>
+              <span className="tm-card-label">Origins</span>
+              <p>Markov Decision Processes formalized in the 1950s; Q-Learning breakthrough in 1989.</p>
+            </div>
           </div>
+        </section>
 
-          <p className="tm-transcript-note">
-            Captured from SchoolAI (AIML-500 space) on 2026-07-19. AI can make mistakes; verify important details.
+        {/* ─── The Training Loop ─── */}
+        <section className="tm-section">
+          <h2><FaCogs /> The Training Loop, Step by Step</h2>
+          <p>
+            Supervised training is at its core an optimization process: searching for the set of
+            parameters (weights) that make the model's predictions match the target labels as
+            closely as possible. These seven steps are the reference skeleton — the later sections
+            show how each other paradigm reinterprets them.
+          </p>
+          <div className="tm-steps">
+            <div className="tm-step">
+              <span className="tm-step-num">1</span>
+              <div className="tm-step-content">
+                <h4>Data Preparation and Splitting</h4>
+                <p>Prepare the dataset <Eq>{'D = {(x⁽ⁱ⁾, y⁽ⁱ⁾)}, i = 1…N'}</Eq>, where <Eq>x</Eq> is the input features and <Eq>y</Eq> the target label. Split into training, validation, and test sets — the model only "sees" the training data. Features are normalized or standardized so optimization converges efficiently.</p>
+              </div>
+            </div>
+            <div className="tm-step">
+              <span className="tm-step-num">2</span>
+              <div className="tm-step-content">
+                <h4>Initialization</h4>
+                <p>Weights <Eq>θ</Eq> are initialized with small random numbers. Starting from all zeros would make the model symmetric and unable to learn distinct features.</p>
+              </div>
+            </div>
+            <div className="tm-step">
+              <span className="tm-step-num">3</span>
+              <div className="tm-step-content">
+                <h4>The Forward Pass (Inference)</h4>
+                <p>Inputs are combined linearly with the weights, <Eq>{'z = θᵀx + b'}</Eq>, then passed through a non-linear activation (ReLU, Sigmoid, Tanh) to produce the prediction <Eq>ŷ</Eq>. The output layer formats the result for the task — a probability distribution for classification, a continuous value for regression.</p>
+              </div>
+            </div>
+            <div className="tm-step">
+              <span className="tm-step-num">4</span>
+              <div className="tm-step-content">
+                <h4>Loss Calculation (The Error)</h4>
+                <p>The prediction <Eq>ŷ</Eq> is compared against the ground truth <Eq>y</Eq> with a loss function — MSE <Eq>{'L = (1/N) Σ (y − ŷ)²'}</Eq> for regression, Cross-Entropy <Eq>{'L = −Σ y·log(ŷ)'}</Eq> for classification. Training aims to minimize this value.</p>
+              </div>
+            </div>
+            <div className="tm-step">
+              <span className="tm-step-num">5</span>
+              <div className="tm-step-content">
+                <h4>The Backward Pass (Backpropagation)</h4>
+                <p>The gradient of the loss with respect to each weight is computed via the chain rule, recursively from the output layer back to the input layer. The gradient is the "direction of steepest ascent."</p>
+              </div>
+            </div>
+            <div className="tm-step">
+              <span className="tm-step-num">6</span>
+              <div className="tm-step-content">
+                <h4>Parameter Update (Optimization)</h4>
+                <p>Weights move opposite the gradient: <Eq>{'θ_new = θ_old − η·∇L(θ)'}</Eq>, where <Eq>η</Eq> is the learning rate controlling the step size.</p>
+              </div>
+            </div>
+            <div className="tm-step">
+              <span className="tm-step-num">7</span>
+              <div className="tm-step-content">
+                <h4>Iteration (Epochs)</h4>
+                <p>One update per <strong>batch</strong>; one full pass through the data is an <strong>epoch</strong>. Training continues until the loss stops decreasing (convergence) or a stopping criterion is met.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── Practitioner's Questions ─── */}
+        <section className="tm-section">
+          <h2><FaQuestionCircle /> Practitioner's Questions</h2>
+          <p>Five decisions every implementation has to make — and the conventions that guide them.</p>
+          <div className="tm-grid">
+            <div className="tm-card">
+              <h4>How much data goes in each split?</h4>
+              <p>No hard rule — conventions scale with dataset size. Small datasets (thousands of examples): 60/20/20 Train/Validation/Test. Large datasets (millions): 98/1/1 or even 99/0.5/0.5, since 1% is still statistically significant. For classification, use stratified sampling so class proportions are preserved across splits.</p>
+            </div>
+            <div className="tm-card">
+              <h4>Are initial weights just random?</h4>
+              <p>Yes, but strategically. Weights that are too large saturate activations and kill gradients (the "vanishing gradient" problem). <strong>Xavier/Glorot</strong> initialization suits Sigmoid/Tanh; <strong>He</strong> initialization suits ReLU, accounting for its zeroed negative values.</p>
+            </div>
+            <div className="tm-card">
+              <h4>Which activation function where?</h4>
+              <ul>
+                <li><strong>ReLU</strong> <Eq>{'f(x) = max(0, x)'}</Eq> — default for hidden layers; efficient, mitigates vanishing gradients.</li>
+                <li><strong>Sigmoid</strong> <Eq>{'f(x) = 1 / (1 + e⁻ˣ)'}</Eq> — output layer for binary classification.</li>
+                <li><strong>Softmax</strong> — output layer for multi-class; produces a probability distribution summing to 1.</li>
+                <li><strong>Tanh</strong> — squashes to (−1, 1); common in RNNs or zero-centered data.</li>
+              </ul>
+            </div>
+            <div className="tm-card">
+              <h4>MSE or Cross-Entropy?</h4>
+              <p><strong>MSE</strong> for regression — continuous values like house prices. <strong>Cross-Entropy</strong> for classification — it penalizes confident wrong answers much more heavily than MSE, giving better convergence.</p>
+            </div>
+            <div className="tm-card">
+              <h4>Who sets the learning rate?</h4>
+              <p>The developer — it's a hyperparameter, but rarely static. Start around 0.001–0.01 depending on the optimizer (Adam, SGD), then let a scheduler adjust it: <strong>decay</strong> (start high, decrease to fine-tune) or <strong>warm-up</strong> (start low to prevent early instability).</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── Unsupervised ─── */}
+        <section className="tm-section">
+          <h2><FaProjectDiagram /> How Unsupervised Learning Differs</h2>
+          <p>
+            The fundamental difference is the objective. Supervised learning is about
+            <strong> prediction</strong> — mapping inputs to known labels. Unsupervised learning is
+            about <strong>representation</strong> — discovering the underlying structure of the data
+            with no guidance on what "correct" looks like. Walking the same seven steps shows
+            exactly what changes:
+          </p>
+          <ul>
+            <li><strong>Data:</strong> The dataset is <Eq>{'D = {x⁽ⁱ⁾}'}</Eq> — no labels <Eq>y</Eq>. A traditional test set for "accuracy" doesn't exist; splits are used to check stability and tune hyperparameters instead.</li>
+            <li><strong>Initialization:</strong> For clustering, randomly select <Eq>k</Eq> points as starting centroids; for autoencoders, use Xavier/He weight initialization as usual.</li>
+            <li><strong>Forward pass:</strong> The model transforms rather than predicts — an autoencoder compresses input to a code <Eq>z</Eq>; K-Means measures each point's distance to the centroids.</li>
+            <li><strong>Loss:</strong> Reconstruction error for autoencoders (<Eq>{'L = ‖x − x̂‖²'}</Eq>) or cluster compactness (inertia) for clustering.</li>
+            <li><strong>Optimization:</strong> Autoencoders still use backpropagation; K-Means uses Expectation-Maximization — assign points (E-step), move centroids to the mean of their assigned points (M-step).</li>
+            <li><strong>Convergence:</strong> Reconstruction error stops improving, or points stop switching clusters.</li>
+          </ul>
+          <p>
+            In short: supervised gets <em>external</em> feedback (the label); unsupervised gets
+            <em> internal</em> feedback (the structure of the data itself).
           </p>
         </section>
+
+        {/* ─── Semi-supervised ─── */}
+        <section className="tm-section">
+          <h2><FaLink /> Semi-Supervised: The Bridge</h2>
+          <p>
+            Semi-supervised learning addresses a real-world constraint: labeled data is expensive
+            and scarce, while unlabeled data is cheap and abundant. It uses the unlabeled mass to
+            learn the shape of the input space, and the small labeled set to anchor what the classes
+            mean. Training combines a small labeled set <Eq>L</Eq> with a large unlabeled set{' '}
+            <Eq>U</Eq> (<Eq>{'u ≫ l'}</Eq>) under a hybrid objective:
+          </p>
+          <p><Eq>{'L_total = L_supervised + λ·L_unsupervised'}</Eq></p>
+          <ul>
+            <li><strong>Supervised term:</strong> standard Cross-Entropy on the labeled examples.</li>
+            <li><strong>Unsupervised term:</strong> a regularizer enforcing two assumptions — <strong>smoothness</strong> (nearby points share labels) and <strong>low-density separation</strong> (decision boundaries should pass through sparse regions). In consistency regularization, a noisy/augmented copy of an unlabeled input must produce the same prediction as the original.</li>
+            <li><strong>λ:</strong> a hyperparameter weighting how much influence the unlabeled data has.</li>
+          </ul>
+          <p>
+            As the model improves, confident predictions on unlabeled data can be promoted to
+            <strong> pseudo-labels</strong> and folded into the training set — effectively growing
+            the labeled data each epoch (Self-Training).
+          </p>
+        </section>
+
+        {/* ─── Reinforcement ─── */}
+        <section className="tm-section">
+          <h2><FaGamepad /> Reinforcement Learning: The Dynamic Paradigm</h2>
+          <p>
+            The first three paradigms are <strong>static</strong> — they learn from a fixed dataset.
+            Reinforcement learning is <strong>dynamic</strong>: an <strong>agent</strong> interacts
+            with an <strong>environment</strong>, learning a <strong>policy</strong> <Eq>{'π(a|s)'}</Eq> that
+            maximizes cumulative reward through trial and error. There is no dataset — data is
+            generated on the fly, and its distribution shifts as the policy improves.
+          </p>
+          <ul>
+            <li><strong>Interaction loop:</strong> observe state <Eq>sₜ</Eq> → select action <Eq>aₜ</Eq> → environment transitions to <Eq>{'sₜ₊₁'}</Eq> and returns reward <Eq>rₜ</Eq>.</li>
+            <li><strong>The goal:</strong> maximize the return <Eq>{'Gₜ = rₜ + γ·rₜ₊₁ + γ²·rₜ₊₂ + …'}</Eq>, where the discount factor <Eq>γ</Eq> (0 to 1) sets how farsighted the agent is.</li>
+            <li><strong>The learning signal:</strong> a Critic network estimates state value <Eq>{'V(s)'}</Eq>; the temporal-difference error against the target <Eq>{'y = rₜ + γ·V(sₜ₊₁)'}</Eq> drives updates (MSE or Huber loss).</li>
+            <li><strong>Policy improvement:</strong> policy gradients increase the probability of actions that beat expectations, with occasional random actions (exploration) to avoid locking into sub-optimal strategies.</li>
+            <li><strong>The hard part:</strong> rewards are delayed and scalar, so the agent must figure out which past actions earned them — the "credit assignment problem."</li>
+          </ul>
+
+          <h3>When Do You Stop Training? (The Chess Problem)</h3>
+          <p>
+            Chess has roughly <Eq>10¹²⁰</Eq> possible game states — exhaustive exploration is
+            impossible, so stopping is a judgment call balancing performance, compute, and stability:
+          </p>
+          <ul>
+            <li><strong>Reward plateau:</strong> the moving-average reward over the last N episodes stabilizes within a small variance.</li>
+            <li><strong>Target beaten:</strong> AlphaGo Zero-style self-play — stop promoting a new champion when it can't beat the old one; or stop at a known expert threshold (e.g., a 3000 Stockfish rating).</li>
+            <li><strong>Value-function stability:</strong> with sparse rewards (+1 win / −1 loss), stop when TD error stops decreasing — the agent evaluates positions accurately.</li>
+            <li><strong>Compute budget:</strong> a hard stop ("40 days" or "10 million steps"), keeping the checkpoint that scored best on validation games.</li>
+            <li><strong>Instability:</strong> if performance collapses and doesn't recover (catastrophic forgetting), revert to a checkpoint and adjust hyperparameters.</li>
+          </ul>
+        </section>
+
+        {/* ─── Algorithm Landscape ─── */}
+        <section className="tm-section">
+          <h2><FaListOl /> The Algorithm Landscape, by Popularity</h2>
+          <div className="tm-grid">
+            <div className="tm-card">
+              <h4>Supervised</h4>
+              <ul>
+                <li><strong>Gradient Boosted Trees</strong> (XGBoost, LightGBM, CatBoost) — the king of structured data; credit scoring, fraud, churn.</li>
+                <li><strong>Random Forest</strong> — robust out-of-the-box; hard to overfit.</li>
+                <li><strong>Logistic Regression</strong> — the interpretable, cheap baseline.</li>
+                <li><strong>SVM</strong> — smaller, complex datasets where margin matters.</li>
+                <li><strong>CNNs</strong> — the computer-vision standard (ResNet, EfficientNet).</li>
+              </ul>
+            </div>
+            <div className="tm-card">
+              <h4>Unsupervised</h4>
+              <ul>
+                <li><strong>K-Means</strong> — the "Hello World" of clustering; segmentation.</li>
+                <li><strong>PCA</strong> — the go-to for dimensionality reduction and noise removal.</li>
+                <li><strong>Hierarchical Clustering</strong> — data taxonomies (dendrograms); biology and genomics.</li>
+                <li><strong>Autoencoders</strong> — deep approach; anomaly detection, denoising.</li>
+                <li><strong>DBSCAN</strong> — irregular cluster shapes; treats outliers as noise.</li>
+              </ul>
+            </div>
+            <div className="tm-card">
+              <h4>Semi-Supervised</h4>
+              <ul>
+                <li><strong>Self-Training (Pseudo-Labeling)</strong> — simplest; wraps any supervised model.</li>
+                <li><strong>Label Propagation / Spreading</strong> — graph-based; labels "flow" to similar neighbors.</li>
+                <li><strong>Consistency Regularization</strong> (FixMatch, Pi-Model) — the modern deep standard.</li>
+                <li><strong>Semi-Supervised GANs</strong> — the discriminator doubles as a classifier.</li>
+              </ul>
+            </div>
+            <div className="tm-card">
+              <h4>Reinforcement</h4>
+              <ul>
+                <li><strong>PPO</strong> — the default (and how ChatGPT was fine-tuned); stable and sample-efficient.</li>
+                <li><strong>DQN</strong> — the Deep-Learning-meets-RL breakthrough (Atari).</li>
+                <li><strong>Soft Actor-Critic</strong> — dominant for continuous control in robotics.</li>
+                <li><strong>Q-Learning</strong> — the classic tabular foundation of modern deep RL.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── Flagship Deep Dives ─── */}
+        <section className="tm-section tm-algo-detail">
+          <h2><FaSearch /> Flagship Algorithms Through the Same Lens</h2>
+          <p>
+            Each paradigm's most popular algorithm, walked through the identical seven-step
+            structure. Seeing them side by side makes the differences concrete: what replaces the
+            label, what replaces the gradient, and what "convergence" means in each world.
+          </p>
+
+          <h3>Supervised — Gradient Boosted Trees (XGBoost)</h3>
+          <ol>
+            <li><strong>Data:</strong> structured/tabular; Train/Validation/Test split; missing values handled internally.</li>
+            <li><strong>Initialization:</strong> a trivial first prediction — the target mean (regression) or log-odds (classification).</li>
+            <li><strong>Forward pass:</strong> the prediction is the sum of all trees, <Eq>{'ŷ = Σ fᵢ(x)'}</Eq>.</li>
+            <li><strong>Loss:</strong> differentiable loss (LogLoss / MSE); the key concept is the <em>residual</em> — actual minus current cumulative prediction.</li>
+            <li><strong>Backward pass:</strong> the negative gradient points along the residual; XGBoost uses a second-order Taylor expansion of the loss.</li>
+            <li><strong>Update:</strong> a new tree is fit to predict the negative gradient; split "gain" is maximized while regularization prunes complexity.</li>
+            <li><strong>Iteration:</strong> trees added one by one, each correcting the ensemble's errors; early stopping monitors validation loss.</li>
+          </ol>
+
+          <h3>Unsupervised — K-Means Clustering</h3>
+          <ol>
+            <li><strong>Data:</strong> unlabeled feature vectors, scaled (K-Means is distance-based).</li>
+            <li><strong>Initialization:</strong> <Eq>k</Eq> random points as centroids (K-Means++ improves the choice).</li>
+            <li><strong>Forward pass:</strong> each point is assigned to its nearest centroid by Euclidean distance.</li>
+            <li><strong>Loss:</strong> within-cluster sum of squares, <Eq>{'J = Σ ‖x⁽ⁱ⁾ − μ⁽ⁱ⁾‖²'}</Eq>.</li>
+            <li><strong>Optimization:</strong> no backpropagation — Expectation-Maximization: assign (E), recompute centroids (M).</li>
+            <li><strong>Update:</strong> each centroid moves to the mean of its assigned points.</li>
+            <li><strong>Iteration:</strong> repeat until centroids stop moving or max iterations reached.</li>
+          </ol>
+
+          <h3>Semi-Supervised — Self-Training (Pseudo-Labeling)</h3>
+          <ol>
+            <li><strong>Data:</strong> small labeled set <Eq>L</Eq>, large unlabeled set <Eq>U</Eq>, labeled hold-out for evaluation.</li>
+            <li><strong>Initialization:</strong> train a standard supervised model on <Eq>L</Eq> only.</li>
+            <li><strong>Forward pass:</strong> predict probabilities for every example in <Eq>U</Eq>.</li>
+            <li><strong>Loss:</strong> Cross-Entropy on <Eq>L</Eq>; prediction confidence examined on <Eq>U</Eq>.</li>
+            <li><strong>Pseudo-labeling:</strong> samples above a confidence threshold (e.g., &gt; 0.95) are treated as ground truth, forming an expanded set <Eq>L′</Eq>.</li>
+            <li><strong>Update:</strong> retrain on <Eq>L′</Eq>, reinforcing confident decision boundaries.</li>
+            <li><strong>Iteration:</strong> predict → select → add → retrain, until no samples remain, confidence drops, or validation performance saturates.</li>
+          </ol>
+
+          <h3>Reinforcement — Proximal Policy Optimization (PPO)</h3>
+          <ol>
+            <li><strong>Environment:</strong> a simulation — a robotic walker in PyBullet, an Atari game.</li>
+            <li><strong>Initialization:</strong> an Actor network outputs <Eq>{'π(a|s)'}</Eq>; a Critic network estimates <Eq>{'V(s)'}</Eq>. Both start random.</li>
+            <li><strong>Forward pass (rollout):</strong> the Actor interacts for a set number of steps, storing <Eq>{'(s, a, r, s′)'}</Eq> tuples without updating yet.</li>
+            <li><strong>Loss:</strong> advantage estimates (how much better than average an action was), the new/old policy probability ratio, and a <em>clipped surrogate objective</em> that prevents destructive policy jumps.</li>
+            <li><strong>Backward pass:</strong> gradients from three combined losses — clipped policy loss, value loss (MSE), and an entropy bonus that keeps exploring.</li>
+            <li><strong>Update:</strong> multiple epochs of SGD/Adam on the same batch before discarding it — unusual among RL methods.</li>
+            <li><strong>Iteration:</strong> collect → optimize → collect with the new policy, until average reward converges or hits target.</li>
+          </ol>
+        </section>
+
+        {/* ─── Value Proposition ─── */}
+        <section className="tm-section">
+          <h2><FaLightbulb /> Value Proposition</h2>
+          <p>
+            This project demonstrates how a course AI tutor can be driven, through deliberate
+            questioning, to produce a coherent reference rather than isolated answers. The value is
+            in the method: each follow-up prompt pinned the bot to the same seven-step training-loop
+            structure, forcing four very different paradigms — and their flagship algorithms — into
+            a directly comparable format. The result turns a one-off chat session into a durable
+            study guide covering the full training pipeline: data splitting, initialization,
+            forward/backward passes, loss selection, optimization, and stopping criteria, from
+            first principles down to XGBoost, K-Means, Self-Training, and PPO.
+          </p>
+        </section>
+
+        {/* ─── Unique Value ─── */}
+        <section className="tm-section">
+          <h2><FaGem /> Unique Value</h2>
+          <p>
+            Unlike a textbook chapter or a generic chatbot answer, this guide is built on a single
+            unifying lens: <strong>every training method is the same seven-step loop with different
+            parts swapped out.</strong> Holding the structure constant makes the real differences
+            unmissable —
+          </p>
+          <ol>
+            <li><strong>What replaces the label:</strong> ground truth <Eq>y</Eq> (supervised) → the data's own structure (unsupervised) → pseudo-labels and consistency (semi-supervised) → delayed scalar rewards (reinforcement).</li>
+            <li><strong>What replaces the gradient step:</strong> backpropagation → Expectation-Maximization → retraining on expanded data → clipped policy gradients.</li>
+            <li><strong>What "convergence" means:</strong> validation loss plateaus → centroids stop moving → confidence saturates → reward plateaus or a champion stops being beaten.</li>
+          </ol>
+          <p>
+            The guide also documents its own construction: it shows that careful, adversarially
+            curious prompting — asking "why," "what if," and "keep the same structure" — is itself
+            a learning technique that produces better material than passive reading.
+          </p>
+        </section>
+
+        <p className="tm-transcript-note">
+          Source conversation captured from SchoolAI (AIML-500 space) on 2026-07-19. AI can make
+          mistakes; key details were reviewed against course material.
+        </p>
 
         {/* Final Back Link */}
         <div className="tm-bottom-nav">

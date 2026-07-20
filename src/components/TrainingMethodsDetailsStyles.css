@@ -107,7 +107,13 @@
   gap: 0.8rem;
 }
 
-.tm-section > p {
+.tm-section h3 {
+  font-size: 1.35rem;
+  color: #fff;
+  margin: 2rem 0 1rem 0;
+}
+
+.tm-section p {
   font-size: 1.05rem;
   line-height: 1.7;
   color: #c5c6c7;
@@ -115,91 +121,149 @@
   text-align: left;
 }
 
-/* Chat transcript */
-.tm-chat {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-  margin: 2rem 0;
+.tm-section > ul,
+.tm-section > ol {
+  margin: 0 0 1.2rem 0;
+  padding-left: 1.4rem;
 }
 
-.tm-msg {
-  border-radius: 12px;
-  padding: 1.1rem 1.4rem;
-  max-width: 92%;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.tm-msg-user {
-  align-self: flex-end;
-  background: rgba(0, 210, 255, 0.07);
-  border-color: rgba(0, 210, 255, 0.25);
-  border-bottom-right-radius: 4px;
-}
-
-.tm-msg-ai {
-  align-self: flex-start;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom-left-radius: 4px;
-}
-
-.tm-msg-role {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.6rem;
-}
-
-.tm-msg-user .tm-msg-role {
-  color: #00d2ff;
-}
-
-.tm-msg-ai .tm-msg-role {
-  color: #7ee0a1;
-}
-
-.tm-msg p {
-  font-size: 0.97rem;
+.tm-section li {
+  font-size: 1rem;
   line-height: 1.65;
   color: #c5c6c7;
-  margin: 0 0 0.8rem 0;
+  margin-bottom: 0.45rem;
+}
+
+/* Card grid (paradigms, algorithm landscape, practitioner notes) */
+.tm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.tm-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1.3rem;
+  transition: border-color 0.2s ease;
+}
+
+.tm-card:hover {
+  border-color: rgba(0, 210, 255, 0.2);
+}
+
+.tm-card h4 {
+  font-size: 1.1rem;
+  color: #00d2ff;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tm-card p {
+  font-size: 0.92rem;
+  color: #c5c6c7;
+  line-height: 1.55;
+  margin: 0 0 0.6rem 0;
   text-align: left;
 }
 
-.tm-msg p:last-child,
-.tm-msg ul:last-child,
-.tm-msg ol:last-child {
+.tm-card p:last-child,
+.tm-card ul:last-child {
   margin-bottom: 0;
 }
 
-.tm-msg h4 {
-  font-size: 1.02rem;
-  color: #fff;
-  margin: 1.1rem 0 0.5rem 0;
+.tm-card ul {
+  margin: 0 0 0.6rem 0;
+  padding-left: 1.2rem;
 }
 
-.tm-msg h4:first-of-type {
-  margin-top: 0.2rem;
-}
-
-.tm-msg ul,
-.tm-msg ol {
-  margin: 0 0 0.9rem 0;
-  padding-left: 1.3rem;
-}
-
-.tm-msg li {
-  font-size: 0.95rem;
-  line-height: 1.6;
+.tm-card li {
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: #c5c6c7;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
-.tm-msg .tm-eq {
+.tm-card .tm-card-label {
+  color: #8f9499;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Numbered step timeline */
+.tm-steps {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tm-step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.2rem;
+}
+
+.tm-step-num {
+  background: rgba(0, 210, 255, 0.1);
+  color: #00d2ff;
+  font-weight: 700;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+.tm-step-content h4 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.tm-step-content p {
+  font-size: 0.95rem;
+  color: #c5c6c7;
+  line-height: 1.6;
+  margin: 0 0 0.5rem 0;
+  text-align: left;
+}
+
+.tm-step-content p:last-child,
+.tm-step-content ul:last-child {
+  margin-bottom: 0;
+}
+
+.tm-step-content ul {
+  margin: 0.3rem 0 0.5rem 0;
+  padding-left: 1.2rem;
+}
+
+.tm-step-content li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #c5c6c7;
+  margin-bottom: 0.3rem;
+}
+
+/* Inline equation chip */
+.tm-eq {
   display: inline-block;
   background: rgba(0, 210, 255, 0.07);
   border: 1px solid rgba(0, 210, 255, 0.12);
@@ -209,6 +273,19 @@
   font-size: 0.88em;
   color: #9fe8ff;
   white-space: nowrap;
+}
+
+/* Ordered deep-dive lists */
+.tm-algo-detail ol {
+  margin: 0.6rem 0 1.6rem 0;
+  padding-left: 1.4rem;
+}
+
+.tm-algo-detail li {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: #c5c6c7;
+  margin-bottom: 0.45rem;
 }
 
 .tm-transcript-note {
@@ -227,7 +304,7 @@
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  .tm-msg {
-    max-width: 100%;
+  .tm-grid {
+    grid-template-columns: 1fr;
   }
 }

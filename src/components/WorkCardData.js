@@ -38,8 +38,8 @@ const ProjectCardData = [
     {
         category: "ai",
         imgsrc: trainingMethods,
-        title: "ML Training Methods — SchoolAI Chat",
-        text: "A guided conversation with the AIML-500 course chatbot working through supervised, unsupervised, semi-supervised, and reinforcement learning — from loss functions and learning rates to XGBoost, K-Means, and PPO.",
+        title: "ML Training Methods Guide",
+        text: "A practical guide to supervised, unsupervised, semi-supervised, and reinforcement learning — from loss functions and learning rates to XGBoost, K-Means, and PPO — distilled from a guided conversation with the AIML-500 course chatbot.",
         view: "/project/ml-training-methods"
     },
     {
