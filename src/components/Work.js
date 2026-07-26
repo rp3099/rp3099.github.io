@@ -12,7 +12,6 @@ const ProjectSection = ({ heading, projects }) => (
         <ProjectCard
           key={value.view}
           imgsrc={value.imgsrc}
-          videosrc={value.videosrc}
           title={value.title}
           text={value.text}
           view={value.view}

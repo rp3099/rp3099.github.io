@@ -17,7 +17,6 @@ const ProjectCardData = [
     {
         category: "aerospace",
         imgsrc: pro1,
-        videosrc: "/cfd_media3.mp4",
         title: "CFD Project",
         text: "Simulation Of A Rotating Propeller Using StarCCM+",
         view: "/project/cfd"
