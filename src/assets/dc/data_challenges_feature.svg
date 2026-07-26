@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Data Challenges in Machine Learning - the pipeline where data defects compound">
+  <defs>
+    <linearGradient id="dcBgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1526"/>
+      <stop offset="0.55" stop-color="#0b0c10"/>
+      <stop offset="1" stop-color="#08090c"/>
+    </linearGradient>
+    <radialGradient id="dcGlow" cx="0.5" cy="0.4" r="0.58">
+      <stop offset="0" stop-color="#00d2ff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00d2ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dcPipe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00d2ff" stop-opacity="0.75"/>
+      <stop offset="0.55" stop-color="#ffb86b" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ff6b6b" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#dcBgGrad)"/>
+  <circle cx="600" cy="270" r="410" fill="url(#dcGlow)"/>
+
+  <!-- Faint grid -->
+  <g stroke="#00d2ff" stroke-opacity="0.05" stroke-width="1.5">
+    <line x1="0" y1="150" x2="1200" y2="150"/>
+    <line x1="0" y1="430" x2="1200" y2="430"/>
+    <line x1="240" y1="0" x2="240" y2="675"/>
+    <line x1="960" y1="0" x2="960" y2="675"/>
+  </g>
+
+  <!-- Top status pill -->
+  <g transform="translate(600 58)">
+    <rect x="-292" y="-25" width="584" height="50" rx="25" fill="#ffffff" fill-opacity="0.05" stroke="#00d2ff" stroke-opacity="0.4"/>
+    <circle cx="-258" cy="0" r="6" fill="#ff6b6b"/>
+    <text x="16" y="6" text-anchor="middle" fill="#c9eef8" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="2.4">AI500 · 19 CHALLENGES · 37 CITED SOURCES</text>
+  </g>
+
+  <!-- Pipeline spine -->
+  <g font-family="Helvetica Neue, Arial, sans-serif">
+    <line x1="150" y1="255" x2="1050" y2="255" stroke="url(#dcPipe)" stroke-width="4"/>
+
+    <!-- Stage 1: Collect -->
+    <g transform="translate(150 255)">
+      <circle r="17" fill="#0b0c10" stroke="#00d2ff" stroke-opacity="0.8" stroke-width="3"/>
+      <circle r="6" fill="#00d2ff"/>
+      <text y="-40" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700" letter-spacing="1.6">COLLECT</text>
+      <text y="48" text-anchor="middle" fill="#8f9499" font-size="15">availability · privacy</text>
+      <text y="70" text-anchor="middle" fill="#8f9499" font-size="15">provenance · bias</text>
+    </g>
+
+    <!-- Stage 2: Label -->
+    <g transform="translate(450 255)">
+      <circle r="17" fill="#0b0c10" stroke="#00d2ff" stroke-opacity="0.8" stroke-width="3"/>
+      <circle r="6" fill="#00d2ff"/>
+      <text y="-40" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700" letter-spacing="1.6">LABEL</text>
+      <text y="48" text-anchor="middle" fill="#8f9499" font-size="15">quality · cost</text>
+      <text y="70" text-anchor="middle" fill="#8f9499" font-size="15">annotator agreement</text>
+    </g>
+
+    <!-- Stage 3: Train -->
+    <g transform="translate(750 255)">
+      <circle r="17" fill="#0b0c10" stroke="#ffb86b" stroke-opacity="0.85" stroke-width="3"/>
+      <circle r="6" fill="#ffb86b"/>
+      <text y="-40" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700" letter-spacing="1.6">TRAIN</text>
+      <text y="48" text-anchor="middle" fill="#8f9499" font-size="15">leakage · imbalance</text>
+      <text y="70" text-anchor="middle" fill="#8f9499" font-size="15">versioning · scale</text>
+    </g>
+
+    <!-- Stage 4: Deploy -->
+    <g transform="translate(1050 255)">
+      <circle r="17" fill="#0b0c10" stroke="#ff6b6b" stroke-opacity="0.9" stroke-width="3"/>
+      <circle r="6" fill="#ff6b6b"/>
+      <text y="-40" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700" letter-spacing="1.6">DEPLOY</text>
+      <text y="48" text-anchor="middle" fill="#8f9499" font-size="15">drift · feedback loops</text>
+      <text y="70" text-anchor="middle" fill="#8f9499" font-size="15">skew · false assurance</text>
+    </g>
+
+    <!-- Cascade arrows: a defect introduced upstream widens downstream -->
+    <path d="M150 255 C 330 168, 570 168, 750 255" fill="none" stroke="#ffb86b" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="5 9"/>
+    <path d="M450 255 C 640 172, 880 172, 1050 255" fill="none" stroke="#ff6b6b" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="5 9"/>
+    <text x="600" y="150" text-anchor="middle" fill="#ffb86b" fill-opacity="0.8" font-size="16" font-weight="600" letter-spacing="3.5">DATA CASCADES</text>
+  </g>
+
+  <!-- Headline stats -->
+  <g font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(300 395)">
+      <rect x="-118" y="-6" width="236" height="82" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#00d2ff" stroke-opacity="0.22"/>
+      <text y="36" fill="#00d2ff" font-size="34" font-weight="800">92%</text>
+      <text y="61" fill="#8f9499" font-size="14" letter-spacing="1.1">practitioners hit a cascade</text>
+    </g>
+    <g transform="translate(600 395)">
+      <rect x="-118" y="-6" width="236" height="82" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#00d2ff" stroke-opacity="0.22"/>
+      <text y="36" fill="#00d2ff" font-size="34" font-weight="800">6%</text>
+      <text y="61" fill="#8f9499" font-size="14" letter-spacing="1.1">ImageNet label errors</text>
+    </g>
+    <g transform="translate(900 395)">
+      <rect x="-118" y="-6" width="236" height="82" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#00d2ff" stroke-opacity="0.22"/>
+      <text y="36" fill="#00d2ff" font-size="34" font-weight="800">$304M</text>
+      <text y="61" fill="#8f9499" font-size="14" letter-spacing="1.1">Zillow drift write-down</text>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="562" text-anchor="middle" fill="#ffffff" font-family="Helvetica Neue, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="4">DATA CHALLENGES IN ML</text>
+  <text x="600" y="606" text-anchor="middle" fill="#00d2ff" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="7">WHY MODELS FAIL BEFORE THEY TRAIN</text>
+</svg>
