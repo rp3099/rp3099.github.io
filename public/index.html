@@ -30,6 +30,24 @@
         }
       })(window.location);
     </script>
+    <!-- Resolve the theme before first paint so there is no flash of the
+         wrong palette. A saved choice wins; otherwise follow the OS setting. -->
+    <script type="text/javascript">
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var theme =
+            saved === 'light' || saved === 'dark'
+              ? saved
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+              ? 'light'
+              : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
     <title>Rudra Patel — Aerospace Engineer</title>
   </head>
   <body>

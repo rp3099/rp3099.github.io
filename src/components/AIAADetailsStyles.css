@@ -1,6 +1,6 @@
 .aiaa-details-section {
-  background-color: #0b0c10;
-  color: #fff;
+  background-color: var(--bg);
+  color: var(--text-strong);
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: burlywood;
+  color: var(--accent-ink);
   font-weight: 600;
   text-decoration: none;
   margin-bottom: 2rem;
@@ -23,7 +23,7 @@
 }
 
 .back-link:hover {
-  color: #fff;
+  color: var(--text-strong);
   transform: translateX(-3px);
 }
 
@@ -32,8 +32,8 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   font-size: 0.9rem;
-  color: #8f9499;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--line-2);
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
@@ -43,14 +43,14 @@
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 2rem;
-  background: linear-gradient(to right, #ffffff, #c5a880);
+  background: linear-gradient(to right, var(--text-strong), var(--accent-ink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .download-card {
-  background: rgba(222, 184, 135, 0.05);
-  border: 1px dashed burlywood;
+  background: var(--accent-a05);
+  border: 1px dashed var(--accent);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;
@@ -61,13 +61,13 @@
 }
 
 .download-text h3 {
-  color: burlywood;
+  color: var(--accent-ink);
   margin-bottom: 0.4rem;
   font-size: 1.3rem;
 }
 
 .download-text p {
-  color: #c5c6c7;
+  color: var(--text-body);
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -83,7 +83,7 @@
 
 .download-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(222, 184, 135, 0.3);
+  box-shadow: 0 4px 15px var(--accent-a40);
 }
 
 .featured-image-container {
@@ -94,13 +94,13 @@
 .featured-image {
   max-width: 100%;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--line-2);
+  box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 .image-caption {
   font-size: 0.9rem;
-  color: #8f9499;
+  color: var(--text-muted);
   margin-top: 0.8rem;
   font-style: italic;
   text-align: center;
@@ -112,9 +112,9 @@
 
 .report-section h2 {
   font-size: 1.8rem;
-  color: burlywood;
+  color: var(--accent-ink);
   margin-bottom: 1.2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--line-1);
   padding-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -123,14 +123,14 @@
 
 .report-section h3 {
   font-size: 1.3rem;
-  color: #fff;
+  color: var(--text-strong);
   margin: 1.5rem 0 1rem 0;
 }
 
 .report-section p {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #c5c6c7;
+  color: var(--text-body);
   margin-bottom: 1.2rem;
   text-align: left;
 }
@@ -144,8 +144,8 @@
 }
 
 .driver-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.2rem;
   display: flex;
@@ -155,11 +155,11 @@
 }
 
 .driver-card:hover {
-  border-color: rgba(222, 184, 135, 0.2);
+  border-color: var(--accent-a20);
 }
 
 .driver-card .driver-icon {
-  color: burlywood;
+  color: var(--accent-ink);
   font-size: 1.1rem;
   margin-top: 0.15rem;
   flex-shrink: 0;
@@ -167,13 +167,13 @@
 
 .driver-card h4 {
   font-size: 1rem;
-  color: #fff;
+  color: var(--text-strong);
   margin-bottom: 0.3rem;
 }
 
 .driver-card p {
   font-size: 0.9rem;
-  color: #8f9499;
+  color: var(--text-muted);
   line-height: 1.5;
   margin: 0;
   text-align: left;
@@ -188,8 +188,8 @@
 }
 
 .team-member-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 6px;
   padding: 1.2rem;
   text-align: center;
@@ -198,36 +198,36 @@
 
 .team-member-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(222, 184, 135, 0.2);
+  border-color: var(--accent-a20);
 }
 
 .team-member-card h4 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-strong);
   margin-bottom: 0.4rem;
 }
 
 .team-member-card p {
   font-size: 0.85rem;
-  color: #8f9499;
+  color: var(--text-muted);
   margin: 0;
 }
 
 .team-member-card.active-user {
-  border: 1px solid burlywood;
-  background: rgba(222, 184, 135, 0.05);
+  border: 1px solid var(--accent);
+  background: var(--accent-a05);
 }
 
 .team-member-card.active-user h4 {
-  color: burlywood;
+  color: var(--accent-ink);
 }
 
 /* Table styles */
 .table-wrapper {
   overflow-x: auto;
   margin: 2rem 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--line-2);
   border-radius: 8px;
 }
 
@@ -235,18 +235,18 @@
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
 }
 
 .specs-table th, .specs-table td {
   padding: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--line-2);
   font-size: 1rem;
 }
 
 .specs-table th {
-  background: rgba(222, 184, 135, 0.1);
-  color: burlywood;
+  background: var(--accent-a10);
+  color: var(--accent-ink);
   font-weight: 700;
 }
 
@@ -255,7 +255,7 @@
 }
 
 .status-green {
-  color: #4caf50;
+  color: var(--ok);
   font-weight: 700;
 }
 
@@ -268,8 +268,8 @@
 }
 
 .spec-item {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1rem 1.2rem;
   text-align: center;
@@ -277,7 +277,7 @@
 
 .spec-item .spec-label {
   font-size: 0.8rem;
-  color: #8f9499;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.8px;
   margin-bottom: 0.4rem;
@@ -287,7 +287,7 @@
 .spec-item .spec-value {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-strong);
   display: block;
 }
 
@@ -300,7 +300,7 @@
 .details-list li {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #c5c6c7;
+  color: var(--text-body);
   margin-bottom: 0.6rem;
   list-style-type: disc;
 }
@@ -315,8 +315,8 @@
 
 /* Card boxes */
 .card-box {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.5rem;
 }
@@ -325,7 +325,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  color: burlywood;
+  color: var(--accent-ink);
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
@@ -337,7 +337,7 @@
 .card-box li {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #c5c6c7;
+  color: var(--text-body);
   margin-bottom: 0.6rem;
   list-style-type: square;
 }
@@ -355,20 +355,20 @@
 }
 
 .surv-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.3rem;
   transition: border-color 0.2s ease;
 }
 
 .surv-card:hover {
-  border-color: rgba(222, 184, 135, 0.15);
+  border-color: var(--accent-a20);
 }
 
 .surv-card h4 {
   font-size: 1rem;
-  color: burlywood;
+  color: var(--accent-ink);
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -377,7 +377,7 @@
 
 .surv-card p {
   font-size: 0.92rem;
-  color: #c5c6c7;
+  color: var(--text-body);
   line-height: 1.5;
   margin: 0;
   text-align: left;
@@ -395,8 +395,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.2rem;
 }
@@ -415,7 +415,7 @@
 
 .fig-caption {
   font-size: 0.85rem;
-  color: #8f9499;
+  color: var(--text-muted);
   margin-top: 0.8rem;
   text-align: center;
   font-style: italic;
@@ -425,8 +425,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.5rem;
   margin: 2rem 0;
@@ -448,8 +448,8 @@
 }
 
 .result-metric-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--surface-1);
+  border: 1px solid var(--line-2);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -467,12 +467,12 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: burlywood;
+  background: var(--accent);
 }
 
 .metric-label {
   font-size: 0.95rem;
-  color: #8f9499;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.8rem;
@@ -481,14 +481,14 @@
 .metric-value {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-strong);
   margin-bottom: 0.8rem;
 }
 
 .metric-comparison {
   font-size: 0.85rem;
-  color: #c5c6c7;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-body);
+  border-top: 1px solid var(--line-1);
   padding-top: 0.8rem;
   width: 100%;
 }
@@ -498,17 +498,17 @@
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
 }
 
 .cost-table th, .cost-table td {
   padding: 0.8rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--line-1);
   font-size: 0.95rem;
 }
 
 .cost-table th {
-  color: burlywood;
+  color: var(--accent-ink);
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -516,7 +516,7 @@
 }
 
 .cost-table td {
-  color: #c5c6c7;
+  color: var(--text-body);
 }
 
 .cost-table td:last-child {
@@ -529,8 +529,8 @@
 }
 
 .cost-table .cost-total-row td {
-  border-top: 2px solid rgba(222, 184, 135, 0.3);
-  color: #fff;
+  border-top: 2px solid var(--accent-a40);
+  color: var(--text-strong);
   font-weight: 700;
   font-size: 1.05rem;
 }
@@ -540,12 +540,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(222, 184, 135, 0.08);
-  border: 1px solid rgba(222, 184, 135, 0.15);
+  background: var(--accent-a10);
+  border: 1px solid var(--accent-a20);
   border-radius: 6px;
   padding: 0.3rem 0.8rem;
   font-size: 0.95rem;
-  color: burlywood;
+  color: var(--accent-ink);
   font-weight: 600;
   margin: 0 0.2rem;
 }
@@ -556,7 +556,7 @@
 
 .bottom-nav {
   margin-top: 4rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--line-2);
   padding-top: 2rem;
 }
 

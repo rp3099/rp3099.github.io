@@ -1,0 +1,42 @@
+/* Inherits its color from .Header / .Header-background so it stays readable
+   over the photo hero and over the scrolled bar in both themes. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 0.5rem;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  opacity: 0.75;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 1;
+  transform: rotate(-15deg);
+  color: var(--accent-ink);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  opacity: 1;
+}
+
+@media screen and (max-width: 1040px) {
+  /* The nav list becomes a full-screen drawer on mobile, so the toggle moves
+     out of it and sits next to the hamburger instead. */
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+}

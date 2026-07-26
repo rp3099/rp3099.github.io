@@ -1,7 +1,36 @@
 .footer{
     width: 100%;
     padding: 6rem 0;
-    background-color: rgba(19,19,19,0.8);
+    background-color: var(--bg-footer);
+    border-top: 1px solid var(--line-1);
+}
+
+.footer-icon{
+    color: var(--accent-ink);
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.social-icon{
+    margin-right: 1rem;
+    transition: color 0.2s ease;
+}
+
+.social a:hover .social-icon{
+    color: var(--accent-strong);
+}
+
+.footer a{
+    color: var(--text-body);
+    transition: color 0.2s ease;
+}
+
+.footer a:hover{
+    color: var(--accent-ink);
+}
+
+.footer h4{
+    color: var(--text-strong);
 }
 
 .footer-container{
@@ -41,12 +70,14 @@
     margin-top: 1rem;
 }
 
-h4{
+/* Scoped to the footer — these were previously bare element selectors that
+   set typography for every h4 and p on the site. */
+.footer h4{
     font-size: 1.2rem;
     padding-bottom: 0.7rem;
 }
 
-p{
+.footer p{
     font-size: 1.2rem;
 }
 

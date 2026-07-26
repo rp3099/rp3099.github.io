@@ -24,7 +24,7 @@ const Form = () => {
 
   return (
     <div className="form">
-      <form onSubmit={handleSubmit}>
+      <form className="contact-form" onSubmit={handleSubmit}>
         <label htmlFor="name">Your Name</label>
         <input id="name" name="name" type="text" value={form.name} onChange={update} required />
         <label htmlFor="email">Email</label>

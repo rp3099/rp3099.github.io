@@ -1,6 +1,6 @@
 .cfd-details-section {
-  background-color: #0b0c10;
-  color: #fff;
+  background-color: var(--bg);
+  color: var(--text-strong);
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: burlywood;
+  color: var(--accent-ink);
   font-weight: 600;
   text-decoration: none;
   margin-bottom: 2rem;
@@ -23,7 +23,7 @@
 }
 
 .back-link:hover {
-  color: #fff;
+  color: var(--text-strong);
   transform: translateX(-3px);
 }
 
@@ -32,8 +32,8 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   font-size: 0.9rem;
-  color: #8f9499;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--line-2);
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
@@ -43,14 +43,14 @@
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 2rem;
-  background: linear-gradient(to right, #ffffff, #c5a880);
+  background: linear-gradient(to right, var(--text-strong), var(--accent-ink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .download-card {
-  background: rgba(222, 184, 135, 0.05);
-  border: 1px dashed burlywood;
+  background: var(--accent-a05);
+  border: 1px dashed var(--accent);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;
@@ -61,13 +61,13 @@
 }
 
 .download-text h3 {
-  color: burlywood;
+  color: var(--accent-ink);
   margin-bottom: 0.4rem;
   font-size: 1.3rem;
 }
 
 .download-text p {
-  color: #c5c6c7;
+  color: var(--text-body);
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -83,7 +83,7 @@
 
 .download-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(222, 184, 135, 0.3);
+  box-shadow: 0 4px 15px var(--accent-a40);
 }
 
 .featured-image-container {
@@ -94,13 +94,13 @@
 .featured-image {
   max-width: 100%;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--line-2);
+  box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 .image-caption {
   font-size: 0.9rem;
-  color: #8f9499;
+  color: var(--text-muted);
   margin-top: 0.8rem;
   font-style: italic;
 }
@@ -111,22 +111,22 @@
 
 .report-section h2 {
   font-size: 1.8rem;
-  color: burlywood;
+  color: var(--accent-ink);
   margin-bottom: 1.2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--line-1);
   padding-bottom: 0.5rem;
 }
 
 .report-section h3 {
   font-size: 1.3rem;
-  color: #fff;
+  color: var(--text-strong);
   margin: 1.5rem 0 1rem 0;
 }
 
 .report-section p {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #c5c6c7;
+  color: var(--text-body);
   margin-bottom: 1.2rem;
   text-align: left;
 }
@@ -139,7 +139,7 @@
 .details-list li {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #c5c6c7;
+  color: var(--text-body);
   margin-bottom: 0.6rem;
   list-style-type: disc;
 }
@@ -147,7 +147,7 @@
 .table-wrapper {
   overflow-x: auto;
   margin: 2rem 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--line-2);
   border-radius: 8px;
 }
 
@@ -155,18 +155,18 @@
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-1);
 }
 
 .specs-table th, .specs-table td {
   padding: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--line-2);
   font-size: 1rem;
 }
 
 .specs-table th {
-  background: rgba(222, 184, 135, 0.1);
-  color: burlywood;
+  background: var(--accent-a10);
+  color: var(--accent-ink);
   font-weight: 700;
 }
 
@@ -182,8 +182,8 @@
 }
 
 .card-box {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.5rem;
 }
@@ -192,7 +192,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  color: burlywood;
+  color: var(--accent-ink);
   margin-bottom: 1.2rem;
   font-size: 1.1rem;
 }
@@ -204,7 +204,7 @@
 .card-box li {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #c5c6c7;
+  color: var(--text-body);
   margin-bottom: 0.6rem;
   list-style-type: square;
 }
@@ -213,8 +213,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 6px;
   padding: 1rem;
   margin: 1.5rem 0;
@@ -237,7 +237,7 @@
 .equation-num {
   position: absolute;
   right: 1.5rem;
-  color: #8f9499;
+  color: var(--text-muted);
   font-size: 0.9rem;
   font-style: normal;
 }
@@ -251,7 +251,7 @@
 }
 
 .num {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--line-2);
   padding-bottom: 2px;
   text-align: center;
   width: 100%;
@@ -269,13 +269,13 @@
 }
 
 .radicand {
-  border-top: 1px solid #fff;
+  border-top: 1px solid var(--line-2);
   padding-top: 1px;
 }
 
 .physics-models {
-  background: rgba(222, 184, 135, 0.03);
-  border-left: 3px solid burlywood;
+  background: var(--accent-a05);
+  border-left: 3px solid var(--accent);
   padding: 1.5rem;
   margin: 2rem 0;
   border-radius: 0 8px 8px 0;
@@ -283,7 +283,7 @@
 
 .physics-models h4 {
   margin-bottom: 1rem;
-  color: burlywood;
+  color: var(--accent-ink);
 }
 
 .tags-grid {
@@ -293,12 +293,12 @@
 }
 
 .tags-grid span {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface-2);
+  border: 1px solid var(--line-2);
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   font-size: 0.85rem;
-  color: #c5c6c7;
+  color: var(--text-body);
 }
 
 .equations-grid {
@@ -309,15 +309,15 @@
 }
 
 .eq-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.2rem;
   text-align: center;
 }
 
 .eq-card h5 {
-  color: burlywood;
+  color: var(--accent-ink);
   font-size: 1rem;
   margin-bottom: 0.8rem;
 }
@@ -337,8 +337,8 @@
 }
 
 .result-metric-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--surface-1);
+  border: 1px solid var(--line-2);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -356,12 +356,12 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: burlywood;
+  background: var(--accent);
 }
 
 .metric-label {
   font-size: 0.95rem;
-  color: #8f9499;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.8rem;
@@ -370,7 +370,7 @@
 .metric-value {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-strong);
   margin-bottom: 1rem;
 }
 
@@ -379,9 +379,9 @@
   flex-direction: column;
   gap: 0.4rem;
   font-size: 0.85rem;
-  color: #c5c6c7;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-body);
+  border-top: 1px solid var(--line-1);
+  border-bottom: 1px solid var(--line-1);
   padding: 0.8rem 0;
   width: 100%;
   margin-bottom: 1rem;
@@ -396,7 +396,7 @@
 }
 
 .metric-error.green {
-  color: #4caf50;
+  color: var(--ok);
 }
 
 .mt-1 { margin-top: 1rem; }
@@ -404,7 +404,7 @@
 
 .bottom-nav {
   margin-top: 4rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--line-2);
   padding-top: 2rem;
 }
 
@@ -447,8 +447,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.2rem;
 }
@@ -467,7 +467,7 @@
 
 .fig-caption {
   font-size: 0.85rem;
-  color: #8f9499;
+  color: var(--text-muted);
   margin-top: 0.8rem;
   text-align: center;
   font-style: italic;
@@ -477,8 +477,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.5rem;
 }
@@ -523,8 +523,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 3rem;
@@ -534,9 +534,12 @@
   width: 100%;
   max-height: 480px;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--line-2);
+  box-shadow: 0 8px 24px var(--shadow-color);
+  /* Letterbox is black in both themes, so its fallback text is always light
+     (unlike --on-media, which flips with the hero art). */
   background: #000;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 962px) {
