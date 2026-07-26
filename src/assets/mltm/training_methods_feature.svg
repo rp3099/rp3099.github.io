@@ -6,8 +6,8 @@
       <stop offset="1" stop-color="#08090c"/>
     </linearGradient>
     <radialGradient id="tmGlow" cx="0.5" cy="0.42" r="0.55">
-      <stop offset="0" stop-color="#00d2ff" stop-opacity="0.18"/>
-      <stop offset="1" stop-color="#00d2ff" stop-opacity="0"/>
+      <stop offset="0" stop-color="#deb887" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#deb887" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
@@ -16,7 +16,7 @@
   <circle cx="600" cy="284" r="400" fill="url(#tmGlow)"/>
 
   <!-- Faint grid -->
-  <g stroke="#00d2ff" stroke-opacity="0.05" stroke-width="1.5">
+  <g stroke="#deb887" stroke-opacity="0.05" stroke-width="1.5">
     <line x1="0" y1="160" x2="1200" y2="160"/>
     <line x1="0" y1="440" x2="1200" y2="440"/>
     <line x1="240" y1="0" x2="240" y2="675"/>
@@ -25,17 +25,17 @@
 
   <!-- Top status pill -->
   <g transform="translate(600 60)">
-    <rect x="-262" y="-25" width="524" height="50" rx="25" fill="#ffffff" fill-opacity="0.05" stroke="#00d2ff" stroke-opacity="0.4"/>
+    <rect x="-262" y="-25" width="524" height="50" rx="25" fill="#ffffff" fill-opacity="0.05" stroke="#deb887" stroke-opacity="0.4"/>
     <circle cx="-230" cy="0" r="6" fill="#7ee0a1"/>
-    <text x="16" y="6" text-anchor="middle" fill="#c9eef8" font-family="Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="600" letter-spacing="2.5">AIML-500 · GUIDED CHAT EXPLORATION</text>
+    <text x="16" y="6" text-anchor="middle" fill="#f3e2c6" font-family="Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="600" letter-spacing="2.5">AIML-500 · GUIDED CHAT EXPLORATION</text>
   </g>
 
   <!-- Four method quadrant cards -->
   <g font-family="Helvetica Neue, Arial, sans-serif">
     <!-- Supervised: labeled points on a fit line -->
     <g transform="translate(210 130)">
-      <rect width="360" height="150" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#00d2ff" stroke-opacity="0.25"/>
-      <line x1="40" y1="115" x2="320" y2="45" stroke="#00d2ff" stroke-opacity="0.6" stroke-width="2.5"/>
+      <rect width="360" height="150" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#deb887" stroke-opacity="0.25"/>
+      <line x1="40" y1="115" x2="320" y2="45" stroke="#deb887" stroke-opacity="0.6" stroke-width="2.5"/>
       <g fill="#7ee0a1"><circle cx="80" cy="100" r="5"/><circle cx="150" cy="85" r="5"/><circle cx="230" cy="62" r="5"/></g>
       <g fill="none" stroke="#ffb86b" stroke-width="2"><circle cx="120" cy="112" r="5"/><circle cx="200" cy="92" r="5"/><circle cx="285" cy="68" r="5"/></g>
       <text x="20" y="32" fill="#ffffff" font-size="19" font-weight="700" letter-spacing="1.5">SUPERVISED</text>
@@ -43,8 +43,8 @@
 
     <!-- Unsupervised: two clusters with centroids -->
     <g transform="translate(630 130)">
-      <rect width="360" height="150" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#00d2ff" stroke-opacity="0.25"/>
-      <g fill="#00d2ff" fill-opacity="0.65">
+      <rect width="360" height="150" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#deb887" stroke-opacity="0.25"/>
+      <g fill="#deb887" fill-opacity="0.65">
         <circle cx="95" cy="80" r="4"/><circle cx="118" cy="65" r="4"/><circle cx="130" cy="92" r="4"/><circle cx="105" cy="105" r="4"/>
       </g>
       <g fill="#ffb86b" fill-opacity="0.75">
@@ -59,7 +59,7 @@
 
     <!-- Semi-supervised: few labeled among many unlabeled -->
     <g transform="translate(210 310)">
-      <rect width="360" height="150" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#00d2ff" stroke-opacity="0.25"/>
+      <rect width="360" height="150" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#deb887" stroke-opacity="0.25"/>
       <g fill="none" stroke="#8f9499" stroke-opacity="0.7" stroke-width="1.5">
         <circle cx="80" cy="75" r="5"/><circle cx="130" cy="105" r="5"/><circle cx="175" cy="60" r="5"/>
         <circle cx="225" cy="100" r="5"/><circle cx="270" cy="70" r="5"/><circle cx="310" cy="105" r="5"/>
@@ -71,13 +71,13 @@
 
     <!-- Reinforcement: agent-environment loop -->
     <g transform="translate(630 310)">
-      <rect width="360" height="150" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#00d2ff" stroke-opacity="0.25"/>
-      <rect x="45" y="60" width="100" height="44" rx="8" fill="none" stroke="#00d2ff" stroke-opacity="0.6" stroke-width="2"/>
-      <text x="95" y="87" text-anchor="middle" fill="#c9eef8" font-size="15" letter-spacing="1">AGENT</text>
+      <rect width="360" height="150" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#deb887" stroke-opacity="0.25"/>
+      <rect x="45" y="60" width="100" height="44" rx="8" fill="none" stroke="#deb887" stroke-opacity="0.6" stroke-width="2"/>
+      <text x="95" y="87" text-anchor="middle" fill="#f3e2c6" font-size="15" letter-spacing="1">AGENT</text>
       <rect x="220" y="60" width="100" height="44" rx="8" fill="none" stroke="#ffb86b" stroke-opacity="0.6" stroke-width="2"/>
       <text x="270" y="87" text-anchor="middle" fill="#ffd9ae" font-size="15" letter-spacing="1">ENV</text>
-      <path d="M145 70 H210" stroke="#00d2ff" stroke-opacity="0.7" stroke-width="2"/>
-      <polygon points="218,70 206,64 206,76" fill="#00d2ff" fill-opacity="0.7"/>
+      <path d="M145 70 H210" stroke="#deb887" stroke-opacity="0.7" stroke-width="2"/>
+      <polygon points="218,70 206,64 206,76" fill="#deb887" fill-opacity="0.7"/>
       <path d="M220 95 H155" stroke="#7ee0a1" stroke-opacity="0.7" stroke-width="2"/>
       <polygon points="147,95 159,89 159,101" fill="#7ee0a1" fill-opacity="0.7"/>
       <text x="182" y="60" text-anchor="middle" fill="#8f9499" font-size="13" letter-spacing="1">action</text>
@@ -88,5 +88,5 @@
 
   <!-- Title -->
   <text x="600" y="566" text-anchor="middle" fill="#ffffff" font-family="Helvetica Neue, Arial, sans-serif" font-size="60" font-weight="800" letter-spacing="5">ML TRAINING METHODS</text>
-  <text x="600" y="608" text-anchor="middle" fill="#00d2ff" font-family="Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="9">A CONVERSATION WITH SCHOOLAI</text>
+  <text x="600" y="608" text-anchor="middle" fill="#deb887" font-family="Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="9">A CONVERSATION WITH SCHOOLAI</text>
 </svg>

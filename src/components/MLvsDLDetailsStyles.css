@@ -1,6 +1,6 @@
 .ml-details-section {
-  background-color: #0b0c10;
-  color: #fff;
+  background-color: var(--bg);
+  color: var(--text-strong);
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #deb887;
+  color: var(--accent-ink);
   font-weight: 600;
   text-decoration: none;
   margin-bottom: 2rem;
@@ -23,7 +23,7 @@
 }
 
 .ml-back-link:hover {
-  color: #fff;
+  color: var(--text-strong);
   transform: translateX(-3px);
 }
 
@@ -32,8 +32,8 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   font-size: 0.9rem;
-  color: #8f9499;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--line-2);
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
@@ -43,7 +43,7 @@
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 2rem;
-  background: linear-gradient(to right, #ffffff, #deb887);
+  background: linear-gradient(to right, var(--text-strong), var(--accent-ink));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -57,13 +57,13 @@
 .ml-figure img {
   max-width: 100%;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--line-2);
+  box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 .ml-caption {
   font-size: 0.9rem;
-  color: #8f9499;
+  color: var(--text-muted);
   margin-top: 0.8rem;
   font-style: italic;
 }
@@ -74,9 +74,9 @@
 
 .ml-section h2 {
   font-size: 1.8rem;
-  color: #deb887;
+  color: var(--accent-ink);
   margin-bottom: 1.2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--line-1);
   padding-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -85,7 +85,7 @@
 
 .ml-section h3 {
   font-size: 1.25rem;
-  color: #fff;
+  color: var(--text-strong);
   margin: 1.6rem 0 0.8rem 0;
   display: flex;
   align-items: center;
@@ -93,24 +93,24 @@
 }
 
 .ml-section h3 .ml-yes {
-  color: #7ee0a1;
+  color: var(--ok);
 }
 
 .ml-section h3 .ml-no {
-  color: #e8896b;
+  color: var(--bad);
 }
 
 .ml-section p {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: #c5c6c7;
+  color: var(--text-body);
   margin-bottom: 1.2rem;
   text-align: left;
 }
 
 .ml-example {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 10px;
   padding: 1.8rem 1.8rem 0.8rem;
   margin-bottom: 2.5rem;
@@ -121,14 +121,14 @@
 }
 
 .ml-equation {
-  background: rgba(222, 184, 135, 0.06);
-  border-left: 3px solid #deb887;
+  background: var(--accent-a05);
+  border-left: 3px solid var(--accent);
   border-radius: 4px;
   padding: 1rem 1.4rem;
   margin: 1.2rem 0;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 1.05rem;
-  color: #efe3d0;
+  color: var(--accent-strong);
   text-align: center;
   overflow-x: auto;
 }
@@ -142,18 +142,18 @@
 }
 
 .ml-tools li {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-left: 3px solid #deb887;
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
+  border-left: 3px solid var(--accent);
   border-radius: 6px;
   padding: 0.9rem 1.1rem;
-  color: #c5c6c7;
+  color: var(--text-body);
   font-size: 0.98rem;
   line-height: 1.5;
 }
 
 .ml-tools li strong {
-  color: #deb887;
+  color: var(--accent-ink);
 }
 
 .ml-refs {
@@ -163,24 +163,24 @@
 }
 
 .ml-refs li {
-  color: #8f9499;
+  color: var(--text-muted);
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 0.7rem;
 }
 
 .ml-refs a {
-  color: #deb887;
+  color: var(--accent-ink);
   word-break: break-word;
 }
 
 .ml-refs a:hover {
-  color: #fff;
+  color: var(--text-strong);
 }
 
 .ml-bottom-nav {
   margin-top: 4rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--line-2);
   padding-top: 2rem;
 }
 

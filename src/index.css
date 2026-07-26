@@ -1,5 +1,137 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/* ─────────────────────────────────────────────────────────────
+   Theme tokens
+
+   Every color in the site resolves through these variables so the
+   light/dark toggle is a single attribute flip on <html>. Dark is the
+   default; [data-theme="light"] overrides the same names below.
+
+   Naming:
+     --bg-*        page and surface backgrounds
+     --surface-*   translucent card washes, 1 = faintest
+     --line-*      borders, 1 = faintest
+     --text-*      foreground text by emphasis
+     --accent*     burlywood, the single site accent
+     --on-media    text sitting on a photo/hero, fixed across themes
+   ───────────────────────────────────────────────────────────── */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-page: #000000;
+  --bg: #0b0c10;
+  --bg-elevated: #1a1919;
+  --bg-footer: rgba(19, 19, 19, 0.8);
+
+  --surface-1: rgba(255, 255, 255, 0.02);
+  --surface-2: rgba(255, 255, 255, 0.05);
+  --surface-3: rgba(255, 255, 255, 0.1);
+
+  --line-1: rgba(255, 255, 255, 0.06);
+  --line-2: rgba(255, 255, 255, 0.1);
+
+  --text-strong: #ffffff;
+  --text-body: #c5c6c7;
+  --text-muted: #8f9499;
+
+  /* Accent used as a fill (buttons, bars, dots) */
+  --accent: #deb887;
+  /* Accent used as text or a link — must pass contrast on --bg */
+  --accent-ink: #deb887;
+  /* Slightly brighter accent for hover/gradient stops */
+  --accent-strong: #e5cba3;
+  /* Text placed on top of an --accent fill */
+  --accent-on: #0b0c10;
+
+  --accent-a05: rgba(222, 184, 135, 0.05);
+  --accent-a10: rgba(222, 184, 135, 0.1);
+  --accent-a20: rgba(222, 184, 135, 0.2);
+  --accent-a40: rgba(222, 184, 135, 0.4);
+  --accent-a60: rgba(222, 184, 135, 0.6);
+
+  --nav-bg: rgba(0, 0, 0, 0.85);
+  --nav-bg-mobile: rgba(0, 0, 0, 0.9);
+  --overlay: rgba(0, 0, 0, 0.92);
+
+  /* Shadow tint only — offsets and blur stay at each call site */
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --shadow-color-strong: rgba(0, 0, 0, 0.8);
+
+  --field-bg: rgba(255, 255, 255, 0.1);
+
+  /* Semantic, non-accent */
+  --warn: #ffb86b;
+  --warn-ink: #d9c3a5;
+  --warn-a05: rgba(255, 184, 107, 0.05);
+  --warn-a35: rgba(255, 184, 107, 0.35);
+  --code-ink: #e5cba3;
+  --ok: #7ee0a1;
+  --bad: #e8896b;
+
+  /* Text sitting on the hero art, and the scrim laid over that art.
+     Both flip with the theme because the hero itself swaps to light art. */
+  --on-media: #ffffff;
+  --hero-scrim: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-page: #f1ece4;
+  --bg: #faf8f5;
+  --bg-elevated: #ffffff;
+  --bg-footer: #efe9e0;
+
+  --surface-1: rgba(63, 47, 30, 0.03);
+  --surface-2: rgba(63, 47, 30, 0.06);
+  --surface-3: rgba(63, 47, 30, 0.1);
+
+  --line-1: rgba(63, 47, 30, 0.12);
+  --line-2: rgba(63, 47, 30, 0.2);
+
+  --text-strong: #1b1613;
+  --text-body: #423b34;
+  --text-muted: #6b6259;
+
+  /* Darkened so --accent-on white text clears 4.5:1 on an accent fill */
+  --accent: #96682f;
+  /* Dark enough to clear 4.5:1 on an --accent-a10 tinted fill, not just --bg */
+  --accent-ink: #7f5222;
+  --accent-strong: #7a4e20;
+  /* The light-mode accent fill is dark, so text on it flips to white */
+  --accent-on: #ffffff;
+
+  --accent-a05: rgba(150, 104, 47, 0.08);
+  --accent-a10: rgba(150, 104, 47, 0.14);
+  --accent-a20: rgba(150, 104, 47, 0.26);
+  --accent-a40: rgba(150, 104, 47, 0.48);
+  --accent-a60: rgba(150, 104, 47, 0.68);
+
+  --nav-bg: rgba(250, 248, 245, 0.92);
+  --nav-bg-mobile: rgba(250, 248, 245, 0.97);
+  --overlay: rgba(27, 22, 19, 0.8);
+
+  --shadow-color: rgba(63, 47, 30, 0.14);
+  --shadow-color-strong: rgba(63, 47, 30, 0.28);
+
+  --field-bg: rgba(63, 47, 30, 0.05);
+
+  --warn: #85500c;
+  --warn-ink: #5c4426;
+  --warn-a05: rgba(154, 93, 18, 0.07);
+  --warn-a35: rgba(154, 93, 18, 0.4);
+  --code-ink: #7a4e20;
+  --ok: #1c7a45;
+  --bad: #b0412a;
+
+  /* The light hero art is bright, so its text flips to dark ink and the
+     scrim lifts the image rather than darkening it. */
+  --on-media: #241d16;
+  --hero-scrim: rgba(255, 250, 243, 0.34);
+}
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -8,14 +140,15 @@
 }
 
 body{
-  background: black;
+  background: var(--bg-page);
+  color: var(--text-body);
 }
 
 h1,
 h4,
 p,
 a {
-  color: white;
+  color: var(--text-strong);
   text-decoration: none;
 }
 
@@ -27,26 +160,38 @@ ul{
   padding: 12px 32px;
   font-size: 1rem;
   text-transform: uppercase;
-  background: burlywood;
-  color: black;
-  border: 1px solid white;
+  background: var(--accent);
+  color: var(--accent-on);
+  border: 1px solid var(--accent);
   font-weight: 600;
   cursor: pointer;
 }
 
+.button:hover{
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--accent-on);
+}
+
+/* Only ever rendered on a themed section, never on the photo hero. */
 .button_light{
   background: transparent;
   padding: 12px 32px;
-  color: white;
+  color: var(--text-strong);
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  border: 1px solid white;
+  border: 1px solid var(--line-2);
   cursor: pointer;
 }
 
+.button_light:hover{
+  background: var(--surface-2);
+  border-color: var(--accent);
+}
+
 .button_hover{
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background: var(--surface-3);
+  color: var(--text-strong);
   transition: 0.3s;
 }

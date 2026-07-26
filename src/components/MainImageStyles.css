@@ -1,31 +1,52 @@
 .mask{
     width: 100%;
     height: 100vh;
-    position: relative;
-}
-
-.titleImage{
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
-}
-
-.mask::after{
-    content: "";
-    width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: black;
-    opacity: 0.5;
+    overflow: hidden;
+}
+
+/* Stacked hero art. Only one layer is opaque at a time; the pair crossfades
+   when the theme flips. */
+.mask-layer{
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.6s ease;
+}
+
+.mask-layer--dark{
+    background-image: url("https://images.unsplash.com/photo-1581088657139-d5a5cce14c87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    opacity: 1;
+}
+
+.mask-layer--light{
+    background-image: url("../assets/hero/hero_home_light.svg");
+    opacity: 0;
+}
+
+[data-theme="light"] .mask-layer--dark{
+    opacity: 0;
+}
+
+[data-theme="light"] .mask-layer--light{
+    opacity: 1;
+}
+
+.mask-scrim{
+    position: absolute;
+    inset: 0;
+    background-color: var(--hero-scrim);
+    transition: background-color 0.6s ease;
 }
 
 .Main{
-    height: 100%;
+    height: 100vh;
     width: 100%;
+    position: relative;
 }
 
 .Main .content{
@@ -34,17 +55,23 @@
     top: 50%;
     left: 50%;
     text-align: center;
+    z-index: 1;
 }
 
+/* Follows the hero art: light text on the dark photo, dark ink on the light art. */
 .Main .content h1{
     font-size: 3rem;
     padding: 0.6rem 0 1.5rem;
+    color: var(--on-media);
+    transition: color 0.6s ease;
 }
 
 .Main .content p{
     font-size: 1.4rem;
     font-weight: 200;
     text-transform: uppercase;
+    color: var(--on-media);
+    transition: color 0.6s ease;
 }
 
 .content .button{
@@ -55,7 +82,7 @@
     .Main .content h1{
         font-size: 2rem;
     }
-    
+
     .Main .content p{
         font-size: 1.4rem;
     }

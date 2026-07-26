@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Daylit view forward over the clouds from a flight deck">
+  <defs>
+    <!-- Clear morning air: blue above, warm haze at the horizon -->
+    <linearGradient id="hSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#a9c6e2"/>
+      <stop offset="0.26" stop-color="#c7dcee"/>
+      <stop offset="0.52" stop-color="#e6eef4"/>
+      <stop offset="0.72" stop-color="#f8efdf"/>
+      <stop offset="0.88" stop-color="#fdf4e6"/>
+      <stop offset="1"    stop-color="#f6e9d5"/>
+    </linearGradient>
+
+    <radialGradient id="hSun" cx="0.72" cy="0.62" r="0.46">
+      <stop offset="0"    stop-color="#fffaf0" stop-opacity="1"/>
+      <stop offset="0.35" stop-color="#fff1da" stop-opacity="0.5"/>
+      <stop offset="1"    stop-color="#fff1da" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Airframe: warm light grey so the frame never reads as a dark mass -->
+    <linearGradient id="hShell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cdc6bb"/>
+      <stop offset="1" stop-color="#aaa294"/>
+    </linearGradient>
+    <linearGradient id="hPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b8b0a3"/>
+      <stop offset="1" stop-color="#918a7d"/>
+    </linearGradient>
+
+    <filter id="hCloud" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="hHaze" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="hGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+
+    <radialGradient id="hCalm" cx="0.5" cy="0.46" r="0.42">
+      <stop offset="0"   stop-color="#fefaf3" stop-opacity="0.52"/>
+      <stop offset="0.7" stop-color="#fefaf3" stop-opacity="0.16"/>
+      <stop offset="1"   stop-color="#fefaf3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ── Sky, the dominant element ── -->
+  <rect width="1600" height="1000" fill="url(#hSky)"/>
+  <rect width="1600" height="1000" fill="url(#hSun)"/>
+
+  <!-- Horizon haze -->
+  <g filter="url(#hHaze)" opacity="0.9">
+    <ellipse cx="800" cy="690" rx="900" ry="34" fill="#fdf4e6"/>
+  </g>
+
+  <!-- Cumulus deck below, seen from above -->
+  <g filter="url(#hCloud)">
+    <g fill="#ffffff" opacity="0.97">
+      <ellipse cx="250"  cy="742" rx="196" ry="52"/>
+      <ellipse cx="430"  cy="726" rx="150" ry="42"/>
+      <ellipse cx="120"  cy="762" rx="140" ry="40"/>
+      <ellipse cx="1160" cy="734" rx="210" ry="50"/>
+      <ellipse cx="1360" cy="752" rx="170" ry="44"/>
+      <ellipse cx="980"  cy="756" rx="150" ry="38"/>
+      <ellipse cx="700"  cy="764" rx="140" ry="32"/>
+    </g>
+    <g fill="#f3e6d3" opacity="0.85">
+      <ellipse cx="330"  cy="784" rx="220" ry="40"/>
+      <ellipse cx="1240" cy="790" rx="250" ry="42"/>
+      <ellipse cx="800"  cy="800" rx="200" ry="34"/>
+    </g>
+    <!-- Distant tops catching light -->
+    <g fill="#ffffff" opacity="0.7">
+      <ellipse cx="560"  cy="668" rx="120" ry="20"/>
+      <ellipse cx="1020" cy="660" rx="140" ry="18"/>
+      <ellipse cx="1440" cy="676" rx="110" ry="16"/>
+      <ellipse cx="180"  cy="672" rx="130" ry="18"/>
+    </g>
+  </g>
+
+  <!-- High cirrus -->
+  <g filter="url(#hCloud)" opacity="0.5" fill="#ffffff">
+    <ellipse cx="420"  cy="228" rx="230" ry="14"/>
+    <ellipse cx="1080" cy="188" rx="270" ry="12"/>
+    <ellipse cx="760"  cy="300" rx="180" ry="10"/>
+    <ellipse cx="1380" cy="292" rx="200" ry="11"/>
+  </g>
+
+  <!-- ── Flight-deck framing, deliberately slim ── -->
+  <!-- Glare shield across the top -->
+  <path d="M0 0 H1600 V78 C1230 132, 1010 150, 800 150 S370 132, 0 78 Z" fill="url(#hShell)"/>
+  <path d="M0 72 C370 126, 590 144, 800 144 S1230 126, 1600 72 V92 C1230 146, 1010 164, 800 164 S370 146, 0 92 Z" fill="#8f887b" opacity="0.5"/>
+
+  <!-- Window posts, thin at the edges -->
+  <path d="M0 0 H104 L74 460 L92 1000 H0 Z" fill="url(#hShell)"/>
+  <path d="M1600 0 H1496 L1526 460 L1508 1000 H1600 Z" fill="url(#hShell)"/>
+
+  <!-- Indicator strip on the shield -->
+  <g opacity="0.9">
+    <rect x="628" y="176" width="104" height="10" rx="5" fill="#c9a877"/>
+    <rect x="756" y="176" width="52"  height="10" rx="5" fill="#9db4c6"/>
+    <rect x="832" y="176" width="104" height="10" rx="5" fill="#c9a877"/>
+  </g>
+
+  <!-- Instrument panel, only the top edge in frame -->
+  <path d="M60 1000 C 280 896, 540 852, 800 852 S1320 896, 1540 1000 Z" fill="url(#hPanel)"/>
+  <path d="M96 1000 C 300 920, 550 880, 800 880 S1300 920, 1504 1000 Z" fill="#837c70" opacity="0.55"/>
+
+  <g>
+    <rect x="470" y="916" width="196" height="84" rx="8" fill="#f2e8d7"/>
+    <rect x="480" y="926" width="176" height="34" rx="4" fill="#bed2e2"/>
+    <rect x="480" y="960" width="176" height="30" rx="4" fill="#cdb794"/>
+
+    <rect x="700" y="906" width="196" height="94" rx="8" fill="#f2e8d7"/>
+    <circle cx="798" cy="960" r="36" fill="none" stroke="#9b9488" stroke-width="3"/>
+    <circle cx="798" cy="960" r="22" fill="none" stroke="#b3966a" stroke-width="2.5"/>
+    <line x1="798" y1="960" x2="798" y2="934" stroke="#7a5f36" stroke-width="3.5" stroke-linecap="round"/>
+
+    <rect x="930" y="916" width="196" height="84" rx="8" fill="#f2e8d7"/>
+    <path d="M946 976 L988 946 L1028 962 L1070 928 L1112 946" fill="none" stroke="#a8814c" stroke-width="3.5" stroke-linejoin="round"/>
+  </g>
+
+  <g filter="url(#hGlow)" opacity="0.35">
+    <rect x="470" y="906" width="656" height="94" rx="12" fill="#deb887"/>
+  </g>
+
+  <rect width="1600" height="1000" fill="url(#hCalm)"/>
+</svg>

@@ -1,10 +1,16 @@
 import "./MainImageStyles.css";
 import React from 'react';
 
+// Two stacked art layers crossfade on theme change: the dark cockpit photo for
+// dark mode, generated light flight-deck art for light mode. Both are
+// decorative, so they are background images on aria-hidden layers rather than
+// <img> elements needing alt text.
 const MainImage = () => {
   return <div className="Main">
     <div className="mask">
-        <img className="titleImage" src="https://images.unsplash.com/photo-1581088657139-d5a5cce14c87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="IntroImage"/>
+        <div className="mask-layer mask-layer--dark" aria-hidden="true" />
+        <div className="mask-layer mask-layer--light" aria-hidden="true" />
+        <div className="mask-scrim" aria-hidden="true" />
     </div>
     <div className="content">
         <p>Welcome to my website</p>

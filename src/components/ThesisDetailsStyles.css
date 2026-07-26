@@ -1,6 +1,6 @@
 .thesis-details-section {
-  background-color: #0b0c10;
-  color: #fff;
+  background-color: var(--bg);
+  color: var(--text-strong);
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: burlywood;
+  color: var(--accent-ink);
   font-weight: 600;
   text-decoration: none;
   margin-bottom: 2rem;
@@ -23,7 +23,7 @@
 }
 
 .back-link:hover {
-  color: #fff;
+  color: var(--text-strong);
   transform: translateX(-3px);
 }
 
@@ -32,8 +32,8 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   font-size: 0.9rem;
-  color: #8f9499;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--line-2);
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
@@ -43,14 +43,14 @@
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 2rem;
-  background: linear-gradient(to right, #ffffff, #c5a880);
+  background: linear-gradient(to right, var(--text-strong), var(--accent-ink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .download-card {
-  background: rgba(222, 184, 135, 0.05);
-  border: 1px dashed burlywood;
+  background: var(--accent-a05);
+  border: 1px dashed var(--accent);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;
@@ -61,13 +61,13 @@
 }
 
 .download-text h3 {
-  color: burlywood;
+  color: var(--accent-ink);
   margin-bottom: 0.4rem;
   font-size: 1.3rem;
 }
 
 .download-text p {
-  color: #c5c6c7;
+  color: var(--text-body);
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -80,8 +80,8 @@
   transition: all 0.3s ease;
   text-decoration: none;
   background: transparent;
-  color: burlywood;
-  border: 1px solid burlywood;
+  color: var(--accent-ink);
+  border: 1px solid var(--accent);
   padding: 12px 24px;
   border-radius: 4px;
   font-weight: 600;
@@ -90,9 +90,9 @@
 
 .download-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(222, 184, 135, 0.3);
-  background: burlywood;
-  color: #0b0c10;
+  box-shadow: 0 4px 15px var(--accent-a40);
+  background: var(--accent);
+  color: var(--accent-on);
 }
 
 .featured-image-container {
@@ -103,13 +103,13 @@
 .featured-image {
   max-width: 100%;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--line-2);
+  box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 .image-caption {
   font-size: 0.85rem;
-  color: #8f9499;
+  color: var(--text-muted);
   margin-top: 0.8rem;
   font-style: italic;
 }
@@ -121,30 +121,30 @@
 .report-section h2 {
   font-size: 1.8rem;
   margin-bottom: 1.2rem;
-  color: burlywood;
+  color: var(--accent-ink);
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--line-1);
   padding-bottom: 0.5rem;
 }
 
 .report-section h3 {
   font-size: 1.3rem;
   margin: 1.5rem 0 0.8rem 0;
-  color: #e5cba3;
+  color: var(--accent-strong);
 }
 
 .report-section p {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #c5c6c7;
+  color: var(--text-body);
   margin-bottom: 1.2rem;
   text-align: left;
 }
 
 .report-section p strong {
-  color: #fff;
+  color: var(--text-strong);
 }
 
 .key-drivers-grid {
@@ -155,8 +155,8 @@
 }
 
 .driver-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;
@@ -168,16 +168,16 @@
 
 .driver-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(222, 184, 135, 0.3);
+  border-color: var(--accent-a40);
 }
 
 .driver-icon {
   font-size: 2rem;
-  color: burlywood;
+  color: var(--accent-ink);
 }
 
 .driver-card h4 {
-  color: #fff;
+  color: var(--text-strong);
   font-size: 1.1rem;
   margin: 0;
 }
@@ -185,7 +185,7 @@
 .driver-card p {
   font-size: 0.9rem;
   line-height: 1.4;
-  color: #8f9499;
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -200,10 +200,10 @@
   flex: 1;
   min-width: 280px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.01);
+  background: var(--surface-1);
   padding: 1rem;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line-1);
 }
 
 .report-img {
@@ -216,7 +216,7 @@
 .fig-caption {
   display: block;
   font-size: 0.8rem;
-  color: #8f9499;
+  color: var(--text-muted);
   margin-top: 0.5rem;
   font-style: italic;
 }
@@ -231,29 +231,29 @@
 .specs-table th, .specs-table td {
   padding: 0.8rem 1rem;
   text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--line-1);
 }
 
 .specs-table th {
-  background-color: rgba(222, 184, 135, 0.05);
-  color: burlywood;
+  background-color: var(--accent-a05);
+  color: var(--accent-ink);
   font-weight: 600;
 }
 
 .specs-table tr:hover {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: var(--surface-1);
 }
 
 .table-wrapper {
   overflow-x: auto;
   margin-bottom: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line-1);
   border-radius: 6px;
 }
 
 .details-list {
   margin: 1rem 0 1.5rem 1.5rem;
-  color: #c5c6c7;
+  color: var(--text-body);
 }
 
 .details-list li {
@@ -262,7 +262,7 @@
 }
 
 .details-list strong {
-  color: #fff;
+  color: var(--text-strong);
 }
 
 @media screen and (max-width: 768px) {

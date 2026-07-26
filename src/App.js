@@ -19,7 +19,7 @@ const ThesisProject = lazy(() => import("./routes/ThesisProject.js"));
 function App() {
   return (
    <>
-   <Suspense fallback={<div style={{ minHeight: "100vh", backgroundColor: "#0b0c10" }} />}>
+   <Suspense fallback={<div style={{ minHeight: "100vh", backgroundColor: "var(--bg)" }} />}>
    <Routes>
     <Route path="/" element={<Home />}/>
     <Route path="/project" element={<Project />}/>
