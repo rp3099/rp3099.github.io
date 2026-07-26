@@ -3,6 +3,7 @@ import pro2 from "../assets/main/seniordesign.png";
 import ai3 from "../assets/vfr/vfr_assistant_feature.svg";
 import mlvsdl from "../assets/ml/ml_vs_dl_feature.svg";
 import trainingMethods from "../assets/mltm/training_methods_feature.svg";
+import dataChallenges from "../assets/dc/data_challenges_feature.svg";
 import thesisImg from "../assets/thesis/page_16_img_1.png";
 
 const ProjectCardData = [
@@ -41,6 +42,13 @@ const ProjectCardData = [
         title: "ML Training Methods Guide",
         text: "A practical guide to supervised, unsupervised, semi-supervised, and reinforcement learning — from loss functions and learning rates to XGBoost, K-Means, and PPO — distilled from a guided conversation with the AIML-500 course chatbot.",
         view: "/project/ml-training-methods"
+    },
+    {
+        category: "ai",
+        imgsrc: dataChallenges,
+        title: "Data Challenges in ML",
+        text: "A research report cataloging nineteen ways data breaks machine learning systems — availability, bias, drift, leakage, provenance — each tied to a documented failure and a mitigation with its trade-off named.",
+        view: "/project/data-challenges"
     },
     {
         category: "ai",
