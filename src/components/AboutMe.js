@@ -13,7 +13,7 @@ const AboutMe = () => {
           <h2 className="title">About Me</h2>
           <p className="bio-text">
             I'm an Aerospace Engineer at Honda Aircraft Company, where I develop and
-            certify advanced flight control systems — including autothrottle and Emergency
+            certify advanced flight control systems, including autothrottle and Emergency
             Autoland. I hold an M.S. in Aerospace Engineering from Virginia Tech, and I'm
             currently pursuing an M.S. in Computer Information Systems with an AI
             Specialization at Indiana Wesleyan University. My work spans flight controls,
@@ -32,14 +32,14 @@ const AboutMe = () => {
               <FaGraduationCap className="highlight-icon" />
               <div>
                 <h3>Education</h3>
-                <p>M.S. Aerospace Engineering — Virginia Tech (GPA 3.95)</p>
+                <p>M.S. Aerospace Engineering, Virginia Tech (GPA 3.95)</p>
               </div>
             </div>
             <div className="highlight-item">
               <FaBrain className="highlight-icon" />
               <div>
                 <h3>Currently Pursuing</h3>
-                <p>M.S. Computer Information Systems, AI Specialization — Indiana Wesleyan University</p>
+                <p>M.S. Computer Information Systems (AI Specialization), Indiana Wesleyan University</p>
               </div>
             </div>
           </div>

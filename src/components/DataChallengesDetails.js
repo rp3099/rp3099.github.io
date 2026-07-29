@@ -65,7 +65,7 @@ const DataChallengesDetails = () => {
             in the lesson list.
           </p>
           <p>
-            Every challenge is documented in the same four-part format — <strong>what the
+            Every challenge is documented in the same four-part format: <strong>what the
             challenge is</strong> (the mechanism, stated precisely enough to be actionable),{' '}
             <strong>impact</strong> (what breaks downstream and how it shows up in metrics),{' '}
             <strong>real-world evidence</strong> (a documented, cited incident or peer-reviewed
@@ -80,7 +80,7 @@ const DataChallengesDetails = () => {
           <img src={dcFeature} alt="Data challenges mapped across the ML pipeline: collect, label, train, deploy" />
           <p className="dc-caption">
             Figure 1: Where the nineteen challenges live. A defect introduced upstream stays
-            invisible at training time and compounds downstream — the defining property of a data
+            invisible at training time and compounds downstream, which is the defining property of a data
             cascade.
           </p>
         </div>
@@ -93,8 +93,8 @@ const DataChallengesDetails = () => {
             ML practitioner's time goes to data preparation rather than modeling.<Cite n={[1]} />{' '}
             Sambasivan et al. (Google Research, CHI 2021) put empirical structure behind that:
             interviewing 53 AI practitioners across India, East and West Africa, and the US, they
-            defined <strong>data cascades</strong> — compounding downstream failures originating in
-            upstream data problems — and found that 92% of practitioners had experienced at least
+            defined <strong>data cascades</strong>, compounding downstream failures originating in
+            upstream data problems, and found that 92% of practitioners had experienced at least
             one.<Cite n={[2]} /> The defining property of a cascade is that it is invisible at
             training time and expensive at deployment time. Every challenge below is a cascade
             trigger.
@@ -122,7 +122,7 @@ const DataChallengesDetails = () => {
 
         {/* ═══ PART I ═══ */}
         <div className="dc-part">
-          <h2><FaLayerGroup /> Part I — The Fourteen Core Data Challenges</h2>
+          <h2><FaLayerGroup /> Part I: The Fourteen Core Data Challenges</h2>
           <p>The challenges named in the AI500 4.2 lesson, each documented against a cited incident or peer-reviewed finding.</p>
         </div>
 
@@ -135,7 +135,7 @@ const DataChallengesDetails = () => {
             (machine failure, rare disease, adversarial attack); novel applications where no
             historical process was generating labeled data; and regulated or proprietary domains
             where the data exists but cannot cross institutional boundaries. Availability is not
-            the same as volume — a dataset can be enormous and still fail to cover the operational
+            the same as volume; a dataset can be enormous and still fail to cover the operational
             design domain.
           </p>
 
@@ -152,7 +152,7 @@ const DataChallengesDetails = () => {
               The March 2018 Uber ATG fatality in Tempe, Arizona is the clearest documented case of
               a coverage gap in a safety-critical system. The NTSB investigation found the
               automated driving system did not include a classification for a pedestrian crossing
-              outside a crosswalk — jaywalking was not represented as a scenario. The ADS
+              outside a crosswalk, so jaywalking was not represented as a scenario. The ADS
               reclassified the pedestrian repeatedly between "vehicle," "bicycle," and "other," and
               because each reclassification reset the object's tracked history, the system could
               not project a consistent path. It recognized an imminent collision only 1.2 seconds
@@ -197,7 +197,7 @@ const DataChallengesDetails = () => {
             Data quality is a multi-dimensional property, and treating it as one number hides the
             failure. The dimensions that matter for ML: <strong>completeness</strong> (missing
             values, records, time ranges), <strong>accuracy</strong> (values that do not reflect
-            physical or business reality — sensor drift, unit errors, entry mistakes),{' '}
+            physical or business reality, such as sensor drift, unit errors, or entry mistakes),{' '}
             <strong>consistency</strong> (the same entity represented differently across sources or
             time), <strong>timeliness</strong> (correct when recorded, stale at inference),{' '}
             <strong>validity</strong> (values outside possible ranges), and{' '}
@@ -209,7 +209,7 @@ const DataChallengesDetails = () => {
           <ul>
             <li>Noisy features inflate irreducible error and force the model to spend capacity fitting artifacts.</li>
             <li>Missing-not-at-random data injects bias: if a sensor drops out preferentially under high load, "missing" encodes a condition, and naive mean imputation destroys that signal.</li>
-            <li>Duplicates straddling a train/test split produce inflated test metrics — a form of leakage (Challenge 15).</li>
+            <li>Duplicates straddling a train/test split produce inflated test metrics, a form of leakage (Challenge 15).</li>
             <li>A defect introduced at collection is far cheaper to fix at collection than after three downstream transformations.<Cite n={[2]} /></li>
           </ul>
 
@@ -220,12 +220,12 @@ const DataChallengesDetails = () => {
               the test sets of ten of the most-used ML benchmarks using confident learning, then had
               humans validate the flagged samples. They found an average of at least 3.3% label
               errors across the ten datasets, and <strong>at least 6% in the ImageNet validation
-              set</strong>. Critically, on the corrected test sets model rankings change — lower-capacity
+              set</strong>. Critically, on the corrected test sets model rankings change: lower-capacity
               models sometimes outperform higher-capacity models that had been "winning" partly by
               fitting the errors.<Cite n={[5]} />
             </p>
             <p>
-              If the reference benchmarks the field calibrates against contain 3–6% errors, a
+              If the reference benchmarks the field calibrates against contain 3-6% errors, a
               typical production dataset assembled under schedule pressure is unlikely to do better.
             </p>
           </div>
@@ -263,7 +263,7 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Impact</span>
           <ul>
             <li>Label noise sets a ceiling on achievable accuracy. If 8% of labels are wrong, a model that fits them perfectly is 8% wrong by construction.</li>
-            <li>Systematic label noise — one annotator team consistently misinterpreting a guideline — is worse than random noise, because the model learns the misinterpretation as signal.</li>
+            <li>Systematic label noise, such as one annotator team consistently misinterpreting a guideline, is worse than random noise, because the model learns the misinterpretation as signal.</li>
             <li>Inter-annotator disagreement that is never measured means the reported test accuracy has no error bar.</li>
           </ul>
 
@@ -307,7 +307,7 @@ const DataChallengesDetails = () => {
           <ul>
             <li>Legal exposure. GDPR penalties reach €20M or 4% of global turnover; the EU AI Act reaches €35M or 6% for the most serious violations.<Cite n={[6]} /></li>
             <li>Restricted access reduces effective dataset size and forces working with less-representative proxies.</li>
-            <li>Anonymization is weaker than commonly assumed. The US Census Bureau ran a database reconstruction attack against its own published 2010 tabulations and reconstructed confidential microdata for <strong>144 million people — 46% of the US population</strong> — reidentifying roughly 52 million (17%) when combined with commercial data.<Cite n={[7]} /> Aggregate publication is not automatically safe.</li>
+            <li>Anonymization is weaker than commonly assumed. The US Census Bureau ran a database reconstruction attack against its own published 2010 tabulations and reconstructed confidential microdata for <strong>144 million people, 46% of the US population</strong>, reidentifying roughly 52 million (17%) when combined with commercial data.<Cite n={[7]} /> Aggregate publication is not automatically safe.</li>
           </ul>
 
           <span className="dc-label">Real-world evidence</span>
@@ -325,8 +325,8 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Mitigations</span>
           <ul>
             <li><strong>Differential privacy.</strong> Formal, composable guarantee bounded by a privacy budget ε. Adopted by the US Census Bureau for the 2020 Disclosure Avoidance System specifically because traditional swapping/suppression could not defend against reconstruction.<Cite n={[7]} /> DP-SGD applies the same idea to model training.</li>
-            <li><strong>Federated learning</strong> — gradients leave the device or institution, raw records do not. Pair with secure aggregation, since raw gradients themselves leak.</li>
-            <li><strong>Data minimization and purpose limitation</strong> — collect the fields required for the stated purpose, nothing more. Cheapest control available and the most often skipped.</li>
+            <li><strong>Federated learning.</strong> Gradients leave the device or institution; raw records do not. Pair with secure aggregation, since raw gradients themselves leak.</li>
+            <li><strong>Data minimization and purpose limitation.</strong> Collect the fields required for the stated purpose, nothing more. Cheapest control available and the most often skipped.</li>
             <li><strong>Pseudonymization, tokenization, k-anonymity/l-diversity</strong> for lower-risk releases, understood as heuristics rather than guarantees.</li>
             <li><strong>Synthetic data generation</strong> for development and test environments, with a membership-inference privacy audit on the generator itself.</li>
             <li><strong>Access control, encryption, audit logging, retention schedules</strong> applied to training corpora, which are often the least-governed data store in an organization.</li>
@@ -335,7 +335,7 @@ const DataChallengesDetails = () => {
           <div className="dc-tradeoff">
             <p>
               <strong>Trade-off:</strong> privacy budget directly costs utility. At the 2020 Census,
-              small-geography counts became noticeably noisier — a real, quantified accuracy loss
+              small-geography counts became noticeably noisier, a real, quantified accuracy loss
               accepted deliberately in exchange for a provable confidentiality guarantee. That is
               the correct way to frame the trade: an engineering decision with a number attached,
               not a compliance checkbox.
@@ -361,7 +361,7 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Impact</span>
           <p>
             Unfair or discriminatory outcomes in hiring, lending, healthcare, and criminal justice;
-            regulatory action; reputational damage; and — the point most often missed by engineers —
+            regulatory action; reputational damage; and, the point most often missed by engineers,
             degraded accuracy. A biased model is usually also a less accurate model on the
             underrepresented segment, so this is a performance defect, not only an ethics problem.
           </p>
@@ -369,7 +369,7 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Real-world evidence</span>
           <div className="dc-evidence">
             <p>
-              <strong>Measurement bias — Obermeyer et al., <em>Science</em>, 2019.</strong> A
+              <strong>Measurement bias: Obermeyer et al., <em>Science</em>, 2019.</strong> A
               commercial risk-prediction algorithm applied to roughly 200 million people annually
               used <em>predicted healthcare cost</em> as a proxy for <em>healthcare need</em>.
               Because less money is historically spent on Black patients at equal levels of illness,
@@ -379,7 +379,7 @@ const DataChallengesDetails = () => {
               problem; the label was.<Cite n={[10]} />
             </p>
             <p>
-              <strong>Representation bias — Buolamwini and Gebru, "Gender Shades," FAT* 2018.</strong>{' '}
+              <strong>Representation bias: Buolamwini and Gebru, "Gender Shades," FAT* 2018.</strong>{' '}
               Commercial gender-classification APIs from IBM, Microsoft, and Face++ showed error
               rates under 1% for lighter-skinned males (0.8% max) and up to <strong>34.7% for
               darker-skinned females</strong>. Aggregate accuracy on the vendors' own benchmarks
@@ -387,7 +387,7 @@ const DataChallengesDetails = () => {
               disaggregation.<Cite n={[11, 12]} />
             </p>
             <p>
-              <strong>Historical bias — Amazon's recruiting model, 2014–2017.</strong> Trained on
+              <strong>Historical bias: Amazon's recruiting model, 2014-2017.</strong> Trained on
               ten years of resumes submitted to a male-dominated engineering organization, the model
               learned to penalize resumes containing "women's" (as in "women's chess club captain")
               and to favor male-coded verbs. Amazon neutralized the specific terms it found, could
@@ -403,9 +403,9 @@ const DataChallengesDetails = () => {
             <li><strong>Disaggregated evaluation as a release gate.</strong> Report metrics per subgroup, including intersections. Aggregate accuracy is the metric that hid all three cases above.</li>
             <li><strong>Interrogate the label, not just the features.</strong> Ask what the target variable actually measures and for whom it measures something different. The Obermeyer fix was a target-variable change, not a fairness constraint.</li>
             <li><strong>Representative sampling and targeted collection</strong> for under-covered groups; reweighting or resampling where collection is not possible.</li>
-            <li><strong>Pre-processing</strong> (reweighing, disparate-impact remover), <strong>in-processing</strong> (adversarial debiasing, fairness-constrained optimization), and <strong>post-processing</strong> (per-group threshold adjustment) — noting that different fairness definitions (demographic parity, equalized odds, calibration) are mathematically incompatible in general, so the choice must be made explicitly and justified.</li>
+            <li><strong>Pre-processing</strong> (reweighing, disparate-impact remover), <strong>in-processing</strong> (adversarial debiasing, fairness-constrained optimization), and <strong>post-processing</strong> (per-group threshold adjustment). Note that different fairness definitions (demographic parity, equalized odds, calibration) are mathematically incompatible in general, so the choice must be made explicitly and justified.</li>
             <li><strong>Documentation</strong>: datasheets for datasets and model cards recording composition, collection process, and known limitations.<Cite n={[15, 16]} /></li>
-            <li><strong>Independent audit</strong> — external review found all three cases above; internal review found none of them.</li>
+            <li><strong>Independent audit.</strong> External review found all three cases above; internal review found none of them.</li>
           </ul>
 
           <div className="dc-tradeoff">
@@ -413,7 +413,7 @@ const DataChallengesDetails = () => {
               <strong>Trade-off:</strong> removing a protected attribute from the feature set does
               not remove bias, and it removes the ability to measure it. Fairness auditing generally
               requires collecting the sensitive attribute for evaluation while excluding it from the
-              model input — itself a privacy trade-off (Challenge 4).
+              model input, itself a privacy trade-off (Challenge 4).
             </p>
           </div>
         </Challenge>
@@ -425,7 +425,7 @@ const DataChallengesDetails = () => {
             Class imbalance occurs when the target distribution is heavily skewed. In fraud
             detection, industrial defect detection, rare disease diagnosis, and safety-critical
             anomaly detection, the positive class is often well under 1%. The standard ULB
-            credit-card fraud benchmark contains 492 frauds in 284,807 transactions —{' '}
+            credit-card fraud benchmark contains 492 frauds in 284,807 transactions, or{' '}
             <strong>0.172%</strong>.<Cite n={[17]} /> The problem is that most loss functions
             optimize aggregate error, and aggregate error is minimized by ignoring the minority
             class.
@@ -452,9 +452,9 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Mitigations</span>
           <ul>
             <li><strong>Change the metric first.</strong> Precision-recall AUC, F-beta weighted toward recall, Matthews correlation coefficient, cost-sensitive expected loss. Report the confusion matrix. ROC-AUC is optimistic under extreme imbalance because the false-positive-rate denominator is dominated by the majority class.</li>
-            <li><strong>Resampling.</strong> Random undersampling of the majority, random oversampling of the minority, or synthetic oversampling — SMOTE (Chawla et al., 2002) interpolates between a minority sample and its k nearest minority neighbors rather than duplicating.<Cite n={[18]} /> Variants: Borderline-SMOTE, ADASYN, SMOTE-Tomek.</li>
-            <li><strong>Cost-sensitive learning / class weighting</strong> in the loss function — often simpler and better-behaved than resampling, and it does not fabricate samples.</li>
-            <li><strong>Anomaly detection framing</strong> — when the minority class is heterogeneous, one-class SVM or isolation forest on the majority may beat binary classification.</li>
+            <li><strong>Resampling.</strong> Random undersampling of the majority, random oversampling of the minority, or synthetic oversampling. SMOTE (Chawla et al., 2002) interpolates between a minority sample and its k nearest minority neighbors rather than duplicating.<Cite n={[18]} /> Variants: Borderline-SMOTE, ADASYN, SMOTE-Tomek.</li>
+            <li><strong>Cost-sensitive learning / class weighting</strong> in the loss function. Often simpler and better-behaved than resampling, and it does not fabricate samples.</li>
+            <li><strong>Anomaly detection framing.</strong> When the minority class is heterogeneous, one-class SVM or isolation forest on the majority may beat binary classification.</li>
             <li><strong>Threshold tuning against operating cost</strong>, not against 0.5.</li>
           </ul>
 
@@ -463,7 +463,7 @@ const DataChallengesDetails = () => {
               <strong>Critical implementation detail:</strong> resample only inside the training
               fold, after the train/test split and inside each cross-validation fold. Applying SMOTE
               before splitting places synthetic points derived from test samples into the training
-              set — a documented and common source of inflated results.<Cite n={[19]} />
+              set, a documented and common source of inflated results.<Cite n={[19]} />
             </p>
           </div>
         </Challenge>
@@ -475,7 +475,7 @@ const DataChallengesDetails = () => {
             Dataset size can exceed what a single machine can store, load, or process in an
             acceptable time. Beyond raw volume, the challenge includes I/O throughput to keep
             accelerators fed, shuffle cost across a distributed store, and the fact that per-epoch
-            wall-clock time governs how many experiments a team can run — which governs how fast the
+            wall-clock time governs how many experiments a team can run, which governs how fast the
             model improves.
           </p>
 
@@ -491,7 +491,7 @@ const DataChallengesDetails = () => {
             <p>
               The "big data" framing of volume, velocity, variety, and veracity referenced in the
               course lesson captures the operational shape of this. In practice, most organizations
-              hit the I/O and cost walls well before they hit an algorithmic wall — the model would
+              hit the I/O and cost walls well before they hit an algorithmic wall; the model would
               train fine if the data could be delivered to it fast enough and affordably.
             </p>
           </div>
@@ -500,7 +500,7 @@ const DataChallengesDetails = () => {
           <ul>
             <li><strong>Efficient storage formats.</strong> Columnar (Parquet, ORC) with compression and predicate pushdown; sharded record formats (TFRecord, WebDataset) for sequential accelerator feeding. Avoid CSV at scale.</li>
             <li><strong>Data lakehouse table formats</strong> (Delta Lake, Apache Iceberg, Hudi) for ACID semantics, schema evolution, and time travel over object storage.</li>
-            <li><strong>Distributed processing</strong> — Spark, Dask, Ray Data — with the caveat that distribution has fixed overhead and is often slower than a single large machine below roughly 100 GB.</li>
+            <li><strong>Distributed processing</strong> (Spark, Dask, Ray Data), with the caveat that distribution has fixed overhead and is often slower than a single large machine below roughly 100 GB.</li>
             <li><strong>Sampling and coreset selection.</strong> Train on a statistically representative subset for architecture search and hyperparameter exploration; use the full dataset only for final runs.</li>
             <li><strong>Streaming/incremental learning</strong> where a full pass is infeasible.</li>
             <li><strong>Feature stores</strong> to compute expensive features once and reuse across models and between training and serving.</li>
@@ -521,8 +521,8 @@ const DataChallengesDetails = () => {
           <p>
             Model behavior is a function of code, hyperparameters, <em>and</em> data. Version
             control conventions treat the first two as first-class artifacts and the third as an
-            implementation detail. When a dataset is mutated in place — rows appended, labels
-            corrected, a source system backfilled — the experiment that produced last quarter's
+            implementation detail. When a dataset is mutated in place (rows appended, labels
+            corrected, a source system backfilled), the experiment that produced last quarter's
             model can no longer be reproduced, and there is no way to attribute a regression to a
             data change versus a code change.
           </p>
@@ -549,7 +549,7 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Mitigations</span>
           <ul>
             <li><strong>Immutable, content-addressed datasets.</strong> Never mutate in place; write a new version with a hash. DVC, LakeFS, Delta Lake time travel, or Iceberg snapshots all provide this.</li>
-            <li><strong>Log a complete provenance record with every training run</strong> — dataset version hash, code commit, container image digest, hyperparameters, random seeds, library versions (MLflow, Weights &amp; Biases, or equivalent).</li>
+            <li><strong>Log a complete provenance record with every training run:</strong> dataset version hash, code commit, container image digest, hyperparameters, random seeds, library versions (MLflow, Weights &amp; Biases, or equivalent).</li>
             <li><strong>Feature stores with point-in-time-correct joins</strong> to guarantee training and serving compute identical features and to prevent temporal leakage.</li>
             <li><strong>Datasheets and data cards</strong> as the human-readable companion to the machine-readable version.<Cite n={[15, 16]} /></li>
             <li><strong>Automated lineage capture</strong> so "what upstream table fed this model?" has an answer that does not depend on someone's memory.</li>
@@ -562,7 +562,7 @@ const DataChallengesDetails = () => {
           <p>
             Production ML rarely runs on one clean table. It runs on the join of a transactional
             database, an event stream, a third-party enrichment feed, a set of documents, and a
-            historical warehouse — each with its own schema, update cadence, identity convention,
+            historical warehouse, each with its own schema, update cadence, identity convention,
             and definition of a business concept. Entity resolution (is customer 4471 in system A
             the same person as cust_4471_x in system B?) and temporal alignment (which value of this
             slowly-changing dimension was true at the moment of the event?) are the hard parts.
@@ -572,7 +572,7 @@ const DataChallengesDetails = () => {
           <ul>
             <li>Inconsistent or contradictory inputs reduce model reliability in ways that are hard to trace back to a source.</li>
             <li>Incorrect temporal joins are one of the most common causes of leakage: joining a customer attribute as of <em>today</em> onto an event from <em>last year</em> imports future information into the training set.</li>
-            <li>Semantic mismatches — two systems defining "active user" differently — produce labels that mean different things for different rows.</li>
+            <li>Semantic mismatches, such as two systems defining "active user" differently, produce labels that mean different things for different rows.</li>
             <li>Integration work dominates project schedules and is chronically under-estimated.</li>
           </ul>
 
@@ -584,7 +584,7 @@ const DataChallengesDetails = () => {
               teams as a primary cascade trigger, with the resulting defects surfacing only after
               deployment.<Cite n={[2]} /> In healthcare specifically, integrating EHR data across
               systems with different coding practices is a recognized barrier to transportable
-              clinical models — part of why the Epic sepsis model performed differently at Michigan
+              clinical models, and part of why the Epic sepsis model performed differently at Michigan
               Medicine than the vendor reported (Challenge 10).
             </p>
           </div>
@@ -593,9 +593,9 @@ const DataChallengesDetails = () => {
           <ul>
             <li><strong>A canonical data model and a shared semantic layer.</strong> Define the business concepts once; make every pipeline conform.</li>
             <li><strong>Master data management / entity resolution</strong> with probabilistic matching and a human review queue for low-confidence matches.</li>
-            <li><strong>Point-in-time-correct joins as the default</strong> — the feature value as of the event timestamp, never the current value.</li>
+            <li><strong>Point-in-time-correct joins as the default:</strong> the feature value as of the event timestamp, never the current value.</li>
             <li><strong>Schema registry with compatibility enforcement</strong> (Avro/Protobuf + Confluent Schema Registry or equivalent) so upstream changes cannot silently break downstream consumers.</li>
-            <li><strong>Data contracts</strong> — explicit, tested agreements about schema, semantics, freshness, and null behavior between producing and consuming teams.</li>
+            <li><strong>Data contracts:</strong> explicit, tested agreements about schema, semantics, freshness, and null behavior between producing and consuming teams.</li>
             <li><strong>Orchestration with dependency awareness</strong> (Airflow, Dagster, Prefect) so a stale upstream table blocks rather than silently propagates.</li>
           </ul>
         </Challenge>
@@ -606,10 +606,10 @@ const DataChallengesDetails = () => {
           <p>
             Models assume the deployment distribution matches the training distribution. That
             assumption decays. Three distinct forms, with different detection strategies:{' '}
-            <strong>covariate shift</strong> (P(X) changes, P(Y|X) stable — the input mix changes
-            but the underlying relationship holds), <strong>concept drift</strong> (P(Y|X) changes —
+            <strong>covariate shift</strong> (P(X) changes, P(Y|X) stable, so the input mix changes
+            but the underlying relationship holds), <strong>concept drift</strong> (P(Y|X) changes, meaning
             the relationship itself changes; the dangerous one, because inputs can look entirely
-            normal), and <strong>label/prior shift</strong> (P(Y) changes — base rates move, so
+            normal), and <strong>label/prior shift</strong> (P(Y) changes, so base rates move and
             calibrated probabilities and thresholds are wrong). Drift can be gradual (customer
             preferences), sudden (a policy change, a pandemic), or cyclical (seasonality).
           </p>
@@ -627,7 +627,7 @@ const DataChallengesDetails = () => {
               <strong>Zillow Offers, 2021.</strong> Zillow's iBuying business used its valuation
               model to make automated cash offers on homes. The model was fit on a comparatively
               stable pre-pandemic market and did not track the volatility and regional divergence of
-              the 2020–2021 housing market, systematically overpaying. Zillow announced exit from
+              the 2020-2021 housing market, systematically overpaying. Zillow announced exit from
               the business in November 2021 with a <strong>$304 million Q3 inventory
               write-down</strong>, total losses in the range of $500M+, and a 25% workforce
               reduction (roughly 2,000 jobs).<Cite n={[20, 21]} /> The SEC 8-K attributes it to
@@ -636,10 +636,10 @@ const DataChallengesDetails = () => {
             </p>
             <p>
               <strong>Google Flu Trends.</strong> GFT estimated influenza prevalence from search
-              query volume. In the 2012–13 season it overestimated CDC-reported influenza-like
+              query volume. In the 2012-13 season it overestimated CDC-reported influenza-like
               illness by roughly a factor of two. Lazer et al. (<em>Science</em>, 2014) attributed
-              the failure partly to the model being "part flu detector, part winter detector" —
-              fitting seasonal correlates rather than flu — and partly to drift in the search
+              the failure partly to the model being "part flu detector, part winter detector,"
+              fitting seasonal correlates rather than flu, and partly to drift in the search
               platform itself, since Google continuously changed autocomplete and related-search
               behavior, altering the input distribution beneath a static model.<Cite n={[23, 24]} />{' '}
               The second mechanism is worth noting: the <em>measurement instrument</em> drifted, not
@@ -649,17 +649,17 @@ const DataChallengesDetails = () => {
               <strong>Epic Sepsis Model.</strong> Wong et al. (<em>JAMA Internal Medicine</em>, 2021)
               externally validated a widely deployed proprietary sepsis prediction model on 27,697
               patients and 38,455 hospitalizations at Michigan Medicine. The vendor reported AUC
-              0.76–0.83; measured AUC was <strong>0.63</strong>. The model missed 67% of sepsis
+              0.76-0.83; measured AUC was <strong>0.63</strong>. The model missed 67% of sepsis
               patients (1,709 of 2,552) while firing alerts on 18% of all hospitalizations,
               generating substantial alert fatigue.<Cite n={[25, 26]} /> This is population shift
-              plus the absence of local revalidation — a model validated on one population deployed
+              plus the absence of local revalidation: a model validated on one population deployed
               unchanged on another.
             </p>
           </div>
 
           <span className="dc-label">Mitigations</span>
           <ul>
-            <li><strong>Monitor inputs, outputs, and outcomes separately.</strong> Input distribution tests (PSI, KS, Jensen-Shannon divergence, KL), prediction-distribution monitoring, and — where labels eventually arrive — delayed ground-truth accuracy tracking.</li>
+            <li><strong>Monitor inputs, outputs, and outcomes separately.</strong> Input distribution tests (PSI, KS, Jensen-Shannon divergence, KL), prediction-distribution monitoring, and (where labels eventually arrive) delayed ground-truth accuracy tracking.</li>
             <li><strong>Drift detection algorithms</strong> for streaming settings: DDM, EDDM, ADWIN, Page-Hinkley.</li>
             <li><strong>Scheduled retraining with a rolling window</strong>, plus event-triggered retraining when a drift alarm fires. Both, not either.</li>
             <li><strong>Champion/challenger and shadow deployment</strong> so a retrained candidate is validated on live traffic before promotion.</li>
@@ -684,8 +684,8 @@ const DataChallengesDetails = () => {
             Annotation is a direct, per-sample cost in money and expert time. The cost scales with
             the granularity of the label: an image-level tag is cheap, a bounding box is more, a
             pixel-level segmentation mask is far more, and a 3D LiDAR point-cloud annotation or a
-            specialist medical read is more again. In domains requiring credentialed experts —
-            radiology, pathology, law, aerospace failure analysis — the annotator's hourly rate, not
+            specialist medical read is more again. In domains requiring credentialed experts
+            (radiology, pathology, law, aerospace failure analysis), the annotator's hourly rate, not
             the tooling, dominates.
           </p>
 
@@ -702,26 +702,26 @@ const DataChallengesDetails = () => {
               The economics are visible in the structure of the industry: a commercial
               data-annotation sector exists precisely because this cost is large enough to
               outsource. In autonomous driving, annotating multi-sensor scenes at the fidelity
-              required for perception training is a recurring, significant line item — a principal
+              required for perception training is a recurring, significant line item, and a principal
               reason simulation and auto-labeling pipelines receive heavy investment.
             </p>
           </div>
 
           <span className="dc-label">Mitigations</span>
           <ul>
-            <li><strong>Active learning</strong> — label only the samples the model is most uncertain about, or that maximize expected model change. Frequently reduces labeling volume substantially for the same accuracy.</li>
-            <li><strong>Semi-supervised and self-supervised pre-training</strong> — learn representations from unlabeled data (contrastive methods, masked modeling), then fine-tune on a small labeled set.</li>
-            <li><strong>Programmatic weak supervision</strong> — encode domain heuristics as labeling functions, model their accuracies and correlations, and generate probabilistic labels.</li>
-            <li><strong>Model-assisted / auto-labeling with human verification</strong> — the model proposes, the human corrects. Verification is much faster than annotation from scratch; guard against the reviewer anchoring on the model's proposal.</li>
+            <li><strong>Active learning.</strong> Label only the samples the model is most uncertain about, or that maximize expected model change. Frequently reduces labeling volume substantially for the same accuracy.</li>
+            <li><strong>Semi-supervised and self-supervised pre-training.</strong> Learn representations from unlabeled data (contrastive methods, masked modeling), then fine-tune on a small labeled set.</li>
+            <li><strong>Programmatic weak supervision.</strong> Encode domain heuristics as labeling functions, model their accuracies and correlations, and generate probabilistic labels.</li>
+            <li><strong>Model-assisted / auto-labeling with human verification.</strong> The model proposes, the human corrects. Verification is much faster than annotation from scratch; guard against the reviewer anchoring on the model's proposal.</li>
             <li><strong>Transfer learning</strong> to reduce the labeled sample requirement.</li>
-            <li><strong>Tiered annotation</strong> — cheap annotators on unambiguous cases, experts only on ambiguous ones routed by an uncertainty estimate.</li>
+            <li><strong>Tiered annotation.</strong> Cheap annotators on unambiguous cases, experts only on ambiguous ones routed by an uncertainty estimate.</li>
           </ul>
 
           <div className="dc-tradeoff">
             <p>
               <strong>Trade-off:</strong> every technique here trades label <em>quality</em> or{' '}
               <em>independence</em> for label <em>volume</em>. Whatever the strategy, a clean,
-              independently human-labeled evaluation set must be preserved — if the test set is
+              independently human-labeled evaluation set must be preserved. If the test set is
               auto-labeled by the model, the evaluation is circular.
             </p>
           </div>
@@ -737,7 +737,7 @@ const DataChallengesDetails = () => {
             expensive aggregations unless pre-materialized. Events arrive out of order and late.
             Ground-truth labels arrive after a delay, so online evaluation lags. And the batch
             pipeline that produced the training features is usually a different codebase from the
-            streaming pipeline that produces the serving features — the classic source of
+            streaming pipeline that produces the serving features, which is the classic source of
             training/serving skew.
           </p>
 
@@ -756,7 +756,7 @@ const DataChallengesDetails = () => {
               had to classify, track, and predict a path within a fraction of a second, and the
               repeated reclassification of the pedestrian reset the object's tracking history each
               time, destroying the temporal context needed for path prediction.<Cite n={[3]} /> The
-              failure was not only "the class was missing from training" — it was the interaction of
+              failure was not only "the class was missing from training." It was the interaction of
               a missing class with a real-time tracking pipeline that could not maintain state
               across a classification change.
             </p>
@@ -766,10 +766,10 @@ const DataChallengesDetails = () => {
           <ul>
             <li><strong>Unified feature computation.</strong> A feature store serving both offline training and online inference from a single definition is the strongest structural defense against training/serving skew.</li>
             <li><strong>Event-time processing with watermarking</strong> (Flink, Beam, Kafka Streams) to handle out-of-order and late data explicitly rather than implicitly.</li>
-            <li><strong>Lambda or kappa architecture</strong> — a documented, deliberate choice about whether batch and streaming paths share code.</li>
-            <li><strong>Train on data with realistic degradation</strong> — simulate dropped packets, sensor dropouts, and truncated windows during training so the model sees deployment-like inputs.</li>
+            <li><strong>Lambda or kappa architecture:</strong> a documented, deliberate choice about whether batch and streaming paths share code.</li>
+            <li><strong>Train on data with realistic degradation.</strong> Simulate dropped packets, sensor dropouts, and truncated windows during training so the model sees deployment-like inputs.</li>
             <li><strong>Online/incremental learning</strong> where the concept moves faster than a retraining cycle.</li>
-            <li><strong>Continuous online validation</strong> — log serving features and compare their distribution against the training features, not just the predictions.</li>
+            <li><strong>Continuous online validation.</strong> Log serving features and compare their distribution against the training features, not just the predictions.</li>
           </ul>
         </Challenge>
 
@@ -781,7 +781,7 @@ const DataChallengesDetails = () => {
             zones, and vocabularies. This is Challenge 9's problem viewed at the syntactic and
             representational level rather than the semantic level: not "do these two records refer
             to the same customer" but "does this column mean millimeters or inches, and is this
-            timestamp UTC or local." In engineering and scientific domains this is acute —
+            timestamp UTC or local." In engineering and scientific domains this is acute:
             instrument-specific binary formats, proprietary vendor exports, and domain ontologies
             that overlap without matching.
           </p>
@@ -806,7 +806,7 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Mitigations</span>
           <ul>
             <li><strong>Adopt a domain standard</strong> rather than inventing an internal one where a standard exists (FHIR/OMOP for clinical data, ASAM/MDF for automotive measurement, ISO 8601 everywhere for time).</li>
-            <li><strong>Canonicalize at ingest.</strong> Convert everything to a single internal representation — SI units, UTC, one coordinate frame — at the boundary, and validate the conversion with assertion tests.</li>
+            <li><strong>Canonicalize at ingest.</strong> Convert everything to a single internal representation (SI units, UTC, one coordinate frame) at the boundary, and validate the conversion with assertion tests.</li>
             <li><strong>Carry units and frames in the schema</strong>, not in a column name or a comment. Enforce them.</li>
             <li><strong>Package preprocessing with the model</strong> as a single serialized artifact (ONNX graph, sklearn pipeline, containerized transform) so it cannot be re-implemented differently at deployment.</li>
             <li><strong>Schema registry and format validation</strong> as pipeline gates.</li>
@@ -828,9 +828,9 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Impact</span>
           <ul>
             <li>Random label noise raises the achievable error floor and slows convergence.</li>
-            <li>Systematic annotator bias is learned as signal — the model reproduces the annotator's misinterpretation with high confidence.</li>
+            <li>Systematic annotator bias is learned as signal, so the model reproduces the annotator's misinterpretation with high confidence.</li>
             <li>Uneven quality across batches creates non-stationarity within the training set itself, so a model may behave differently on data annotated in different months.</li>
-            <li>Test-set annotation errors make the evaluation itself untrustworthy — worse than training-set errors, because it removes the ability to detect the problem.</li>
+            <li>Test-set annotation errors make the evaluation itself untrustworthy, worse than training-set errors, because it removes the ability to detect the problem.</li>
           </ul>
 
           <span className="dc-label">Real-world evidence</span>
@@ -845,8 +845,8 @@ const DataChallengesDetails = () => {
               The DeGrave et al. (<em>Nature Machine Intelligence</em>, 2021) study on COVID-19 chest
               radiograph classifiers is a related and subtler case. Models reported strong
               performance but were shown by explainable-AI analysis to be keying on{' '}
-              <strong>shortcuts</strong> — laterality markers, text annotations, patient positioning,
-              and other dataset-specific artifacts — rather than pulmonary pathology, and
+              <strong>shortcuts</strong> (laterality markers, text annotations, patient positioning,
+              and other dataset-specific artifacts) rather than pulmonary pathology, and
               consequently failed when tested on data from new hospitals.<Cite n={[28]} /> Here the
               labels were correct; the <em>data collection procedure</em> introduced a confound
               (COVID-positive and COVID-negative images sourced from different repositories) that
@@ -861,14 +861,14 @@ const DataChallengesDetails = () => {
             <li><strong>Redundant annotation with adjudication</strong> on a sampled subset even when single-pass annotation is the norm, so the error rate is always known.</li>
             <li><strong>Guideline iteration with a documented edge-case registry.</strong> Every adjudicated disagreement becomes a guideline example.</li>
             <li><strong>Confident learning / cleanlab</strong> to surface probable errors for targeted re-review rather than re-reviewing everything.</li>
-            <li><strong>Explainability checks on the trained model</strong> (Grad-CAM, saliency, counterfactual generation) specifically to detect shortcut learning — this is what caught the COVID radiograph problem.</li>
+            <li><strong>Explainability checks on the trained model</strong> (Grad-CAM, saliency, counterfactual generation) specifically to detect shortcut learning. This is what caught the COVID radiograph problem.</li>
             <li><strong>Held-out external validation on data from a different source</strong> as a standard release gate. Shortcut learning is invisible on an internal split and obvious on an external one.</li>
           </ul>
         </Challenge>
 
         {/* ═══ PART II ═══ */}
         <div className="dc-part">
-          <h2><FaSearchPlus /> Part II — Additional Challenges Identified Through Research</h2>
+          <h2><FaSearchPlus /> Part II: Additional Challenges Identified Through Research</h2>
           <p>
             Not in the course lesson list, but appearing consistently in the peer-reviewed
             literature and in post-mortems of deployed systems. A portfolio-level treatment of data
@@ -888,9 +888,9 @@ const DataChallengesDetails = () => {
           </p>
           <ul>
             <li>Applying scaling, imputation, feature selection, or resampling to the full dataset before splitting.</li>
-            <li><strong>Temporal leakage</strong> — random splits on time-series data, so the model trains on the future and tests on the past.</li>
-            <li><strong>Group leakage</strong> — records from the same patient, device, or user appearing on both sides of a split.</li>
-            <li><strong>Target leakage</strong> — a feature that is a downstream consequence of the label (e.g., "case_closed_reason" as a predictor of case outcome).</li>
+            <li><strong>Temporal leakage:</strong> random splits on time-series data, so the model trains on the future and tests on the past.</li>
+            <li><strong>Group leakage:</strong> records from the same patient, device, or user appearing on both sides of a split.</li>
+            <li><strong>Target leakage:</strong> a feature that is a downstream consequence of the label (e.g., "case_closed_reason" as a predictor of case outcome).</li>
             <li>Duplicate records straddling the split.</li>
           </ul>
 
@@ -913,10 +913,10 @@ const DataChallengesDetails = () => {
 
           <span className="dc-label">Mitigations</span>
           <ul>
-            <li><strong>Split first. Always.</strong> Every fit-transform operation — scaler, imputer, encoder, feature selector, SMOTE — is fit on the training fold only and applied to validation and test.</li>
+            <li><strong>Split first. Always.</strong> Every fit-transform operation (scaler, imputer, encoder, feature selector, SMOTE) is fit on the training fold only and applied to validation and test.</li>
             <li><strong>Use pipeline objects</strong> (<code>sklearn.pipeline.Pipeline</code> inside <code>cross_val_score</code>) so the fit/transform boundary is enforced structurally rather than by discipline.</li>
             <li><strong>Split by time for temporal data</strong> and by group (<code>GroupKFold</code>, <code>StratifiedGroupKFold</code>) when records cluster by entity.</li>
-            <li><strong>Audit features for target proxies</strong> — ask, for each feature, "would this value exist and be known at the moment I need the prediction?"</li>
+            <li><strong>Audit features for target proxies.</strong> Ask, for each feature, "would this value exist and be known at the moment I need the prediction?"</li>
             <li><strong>Deduplicate before splitting.</strong></li>
             <li><strong>Model info sheets</strong> as proposed by Kapoor and Narayanan, documenting explicitly how each leakage type was excluded.</li>
             <li><strong>Treat a suspiciously high result as a bug report.</strong> If a model beats the human agreement ceiling, look for leakage before celebrating.</li>
@@ -930,7 +930,7 @@ const DataChallengesDetails = () => {
             Where the training data came from, whether the collector had the right to collect it,
             and whether the model developer has the right to train on it. This has moved from a
             background concern to a primary constraint with the growth of web-scale scraped corpora.
-            A dataset can be technically accessible, high quality, and legally unusable — and the
+            A dataset can be technically accessible, high quality, and legally unusable, and the
             illegality may only surface after the model is deployed.
           </p>
 
@@ -938,7 +938,7 @@ const DataChallengesDetails = () => {
           <ul>
             <li>Regulatory fines and enforcement orders (see Challenge 4).</li>
             <li>Litigation risk from copyright holders over scraped training material.</li>
-            <li>Forced dataset withdrawal or model retraining — the most expensive possible remediation, because it invalidates every downstream artifact.</li>
+            <li>Forced dataset withdrawal or model retraining, the most expensive possible remediation, because it invalidates every downstream artifact.</li>
             <li>Contamination: illegal or harmful content in the corpus that no one audited for.</li>
           </ul>
 
@@ -946,8 +946,8 @@ const DataChallengesDetails = () => {
           <div className="dc-evidence">
             <p>
               In December 2023, the Stanford Internet Observatory reported that{' '}
-              <strong>LAION-5B</strong> — a 5.85-billion-pair image-text index used to train widely
-              deployed text-to-image models — contained links to at least 1,008 verified and roughly
+              <strong>LAION-5B</strong>, a 5.85-billion-pair image-text index used to train widely
+              deployed text-to-image models, contained links to at least 1,008 verified and roughly
               3,200 suspected instances of child sexual abuse material, ingested through
               indiscriminate Common Crawl scraping. LAION withdrew the dataset from distribution and
               later republished a cleaned Re-LAION-5B produced in partnership with the Internet Watch
@@ -968,7 +968,7 @@ const DataChallengesDetails = () => {
             <li><strong>Content safety filtering with third-party hash matching</strong> (e.g., IWF/NCMEC hash lists) for any web-scraped corpus.</li>
             <li><strong>Datasheets for datasets</strong> documenting motivation, composition, collection process, and recommended uses.<Cite n={[15]} /></li>
             <li><strong>Legal review as a pipeline gate for external data</strong>, at ingestion rather than at launch.</li>
-            <li><strong>Retention of the right to delete</strong> — architecture that can identify and remove a source's contribution without a full retrain from scratch where possible.</li>
+            <li><strong>Retention of the right to delete:</strong> architecture that can identify and remove a source's contribution without a full retrain from scratch where possible.</li>
           </ul>
         </Challenge>
 
@@ -978,7 +978,7 @@ const DataChallengesDetails = () => {
           <p>
             When a model's predictions influence the environment that generates its next training
             batch, the model stops observing the world and starts observing itself. This breaks the
-            IID assumption in a way that no amount of additional data corrects — more data makes it
+            IID assumption in a way that no amount of additional data corrects. More data makes it
             worse, because more data means more of the model's own output.
           </p>
 
@@ -993,7 +993,7 @@ const DataChallengesDetails = () => {
           <div className="dc-evidence">
             <p>
               <strong>Predictive policing.</strong> Ensign et al. (FAT* 2018) modeled the standard
-              predictive policing loop — historical crime data determines patrol allocation, patrol
+              predictive policing loop: historical crime data determines patrol allocation, patrol
               allocation determines discovered crime, discovered crime updates the model. They proved
               mathematically that this produces a runaway feedback loop in which officers are sent
               repeatedly to the same neighborhoods regardless of the true underlying crime rate, and
@@ -1038,7 +1038,7 @@ const DataChallengesDetails = () => {
             <li>Undocumented datasets are reused for purposes their collection design does not support.</li>
             <li>Institutional knowledge about known defects lives in individual memory and Slack history.</li>
             <li>Onboarding cost rises and iteration speed falls.</li>
-            <li>Compounding defects — this is the organizational root cause behind most of the data cascades in Sambasivan et al.</li>
+            <li>Compounding defects. This is the organizational root cause behind most of the data cascades in Sambasivan et al.</li>
           </ul>
 
           <span className="dc-label">Real-world evidence</span>
@@ -1047,7 +1047,7 @@ const DataChallengesDetails = () => {
               Sambasivan et al.'s title states the finding: <em>"Everyone wants to do the model work,
               not the data work."</em> Their interviews with 53 high-stakes AI practitioners
               identified data cascades as pervasive, opaque, and delayed in their manifestation, with
-              the incentive structure — model performance rewarded, data quality unrewarded — as a
+              the incentive structure (model performance rewarded, data quality unrewarded) as a
               primary driver.<Cite n={[2, 35]} />
             </p>
           </div>
@@ -1071,7 +1071,7 @@ const DataChallengesDetails = () => {
             measures interpolation, not generalization. It will not detect distribution shift,
             shortcut learning, subgroup failure, or robustness gaps, because all of those are
             properties of the <em>difference</em> between the training distribution and the
-            deployment distribution — and a random split has no such difference by construction.
+            deployment distribution, and a random split has no such difference by construction.
           </p>
 
           <span className="dc-label">Impact</span>
@@ -1086,9 +1086,9 @@ const DataChallengesDetails = () => {
             <p>
               The Epic sepsis model is the definitive example: internal validation supported
               deployment across hundreds of hospitals; external validation at a single independent
-              site found AUC 0.63 against a claimed 0.76–0.83, and 67% of sepsis cases
+              site found AUC 0.63 against a claimed 0.76-0.83, and 67% of sepsis cases
               missed.<Cite n={[25]} /> The DeGrave COVID radiograph work is the same lesson in a
-              different domain — internal splits looked excellent, external hospital data exposed
+              different domain: internal splits looked excellent, external hospital data exposed
               the shortcut.<Cite n={[28]} /> And Northcutt et al. showed that benchmark rankings
               themselves are unstable under test-set correction.<Cite n={[5]} />
             </p>
@@ -1096,10 +1096,10 @@ const DataChallengesDetails = () => {
 
           <span className="dc-label">Mitigations</span>
           <ul>
-            <li><strong>External validation set from a genuinely different source</strong> — different site, different time period, different collection device — as a release gate.</li>
+            <li><strong>External validation set from a genuinely different source</strong> (different site, different time period, different collection device) as a release gate.</li>
             <li><strong>Temporal holdout</strong> for any system deployed against a moving world: train on the past, test on the future, always.</li>
             <li><strong>Stratified/disaggregated reporting</strong> across subgroups and operating conditions, with confidence intervals.</li>
-            <li><strong>Targeted behavioral test suites</strong> (CheckList-style) — curated cases probing known failure modes and edge conditions, run like unit tests. This maps directly onto standard verification practice: the random test set is the regression suite; the behavioral suite is the requirements-based test.</li>
+            <li><strong>Targeted behavioral test suites</strong> (CheckList-style): curated cases probing known failure modes and edge conditions, run like unit tests. This maps directly onto standard verification practice: the random test set is the regression suite; the behavioral suite is the requirements-based test.</li>
             <li><strong>A locked, single-use final test set</strong> separate from the development validation set.</li>
             <li><strong>Report the human agreement ceiling</strong> alongside model accuracy so the number has a scale.</li>
           </ul>
@@ -1149,7 +1149,7 @@ const DataChallengesDetails = () => {
 
           <h3>NIST AI Risk Management Framework (AI RMF 1.0)</h3>
           <p>
-            Voluntary US framework organized around four functions — GOVERN, MAP, MEASURE, MANAGE —
+            Voluntary US framework organized around four functions (GOVERN, MAP, MEASURE, MANAGE)
             applied across the AI lifecycle and mapped to trustworthiness characteristics including
             validity, reliability, safety, security, accountability, transparency, and fairness. MAP
             establishes context and identifies risks; MEASURE applies quantitative and qualitative
@@ -1158,7 +1158,7 @@ const DataChallengesDetails = () => {
             evaluation).<Cite n={[37]} />
           </p>
 
-          <h3>EU AI Act, Article 10 — Data and Data Governance</h3>
+          <h3>EU AI Act, Article 10: Data and Data Governance</h3>
           <p>
             Legally binding for high-risk systems, with obligations enforceable from{' '}
             <strong>August 2, 2026</strong>. It requires that training, validation, and testing
@@ -1191,16 +1191,16 @@ const DataChallengesDetails = () => {
             This report demonstrates the judgment that separates a working ML engineer from someone
             who can only train models: the ability to look at a system and predict where it will
             fail before it does. Rather than listing challenges as abstractions, every one of the
-            nineteen is tied to a documented, cited failure with a number attached — the NTSB finding
+            nineteen is tied to a documented, cited failure with a number attached: the NTSB finding
             on the Uber ATG fatality, the 6% label-error rate in ImageNet, the Epic sepsis model's
-            measured AUC of 0.63 against a claimed 0.76–0.83, Zillow's $304M write-down. That is a
+            measured AUC of 0.63 against a claimed 0.76-0.83, Zillow's $304M write-down. That is a
             deliberate discipline: a claim about how ML fails is only useful if it can be traced to
             evidence.
           </p>
           <p>
             The report is also written to be <em>used</em>. Each challenge names the mechanism
             precisely enough to be actionable, states how the failure shows up in metrics, and gives
-            mitigations with the engineering trade-off attached — because "apply differential
+            mitigations with the engineering trade-off attached, because "apply differential
             privacy" is not advice until someone says what it costs. The summary table condenses all
             nineteen into a single review checklist, and the governance section maps them onto NIST
             AI RMF and EU AI Act Article 10, which becomes enforceable in August 2026. It functions
@@ -1214,8 +1214,8 @@ const DataChallengesDetails = () => {
           <p>
             Most treatments of this topic stop at the assigned list. This one extends the fourteen
             course challenges with <strong>five more drawn from the peer-reviewed literature</strong>{' '}
-            — leakage, provenance and licensing, feedback loops, organizational ownership, and
-            evaluation data design — because the post-mortems of real deployed systems keep landing
+            (leakage, provenance and licensing, feedback loops, organizational ownership, and
+            evaluation data design), because the post-mortems of real deployed systems keep landing
             there. Three specific arguments run through the report that a standard summary would
             miss:
           </p>
@@ -1230,14 +1230,14 @@ const DataChallengesDetails = () => {
             <li>
               <strong>The test set is a measurement instrument, and a random split is a broken
               one.</strong> Shift, shortcut learning, and subgroup failure are all properties of the
-              gap between training and deployment distributions — a gap a random split eliminates by
+              gap between training and deployment distributions, a gap a random split eliminates by
               construction. Epic and the COVID radiograph classifiers passed internal validation and
               failed externally for exactly this reason.
             </li>
             <li>
               <strong>Most data failures are organizational before they are technical.</strong>{' '}
               Sambasivan et al. found 92% of practitioners had hit a data cascade, and identified the
-              incentive structure — model work rewarded, data work invisible — as the driver. No
+              incentive structure (model work rewarded, data work invisible) as the driver. No
               amount of tooling fixes an ownership vacuum.
             </li>
           </ol>
@@ -1261,34 +1261,34 @@ const DataChallengesDetails = () => {
             <li id="dc-ref-3">National Transportation Safety Board. <em>Collision Between Vehicle Controlled by Developmental Automated Driving System and Pedestrian, Tempe, Arizona, March 18, 2018.</em> NTSB/HAR-19/03. <a href="https://www.ntsb.gov/investigations/AccidentReports/Reports/HAR1903.pdf" target="_blank" rel="noopener noreferrer">ntsb.gov</a></li>
             <li id="dc-ref-4">NPR. "Feds Say Self-Driving Uber SUV Did Not Recognize Jaywalking Pedestrian." November 7, 2019. <a href="https://www.npr.org/2019/11/07/777438412/feds-say-self-driving-uber-suv-did-not-recognize-jaywalking-pedestrian" target="_blank" rel="noopener noreferrer">npr.org</a></li>
             <li id="dc-ref-5">Northcutt, C.G., Athalye, A., Mueller, J. "Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks." <em>NeurIPS 2021 Datasets and Benchmarks Track</em>. <a href="https://arxiv.org/abs/2103.14749" target="_blank" rel="noopener noreferrer">arxiv.org/abs/2103.14749</a></li>
-            <li id="dc-ref-6">EU Artificial Intelligence Act, Article 10 — Data and Data Governance. <a href="https://artificialintelligenceact.eu/article/10/" target="_blank" rel="noopener noreferrer">artificialintelligenceact.eu/article/10</a></li>
+            <li id="dc-ref-6">EU Artificial Intelligence Act, Article 10: Data and Data Governance. <a href="https://artificialintelligenceact.eu/article/10/" target="_blank" rel="noopener noreferrer">artificialintelligenceact.eu/article/10</a></li>
             <li id="dc-ref-7">US Census Bureau. <em>Disclosure Avoidance for the 2020 Census: An Introduction.</em> November 2021. <a href="https://www2.census.gov/library/publications/decennial/2020/2020-census-disclosure-avoidance-handbook.pdf" target="_blank" rel="noopener noreferrer">census.gov</a></li>
             <li id="dc-ref-8">European Data Protection Board. "The French SA fines Clearview AI EUR 20 million." October 2022. <a href="https://edpb.europa.eu/news/national-news/2022/french-sa-fines-clearview-ai-eur-20-million_nl" target="_blank" rel="noopener noreferrer">edpb.europa.eu</a></li>
             <li id="dc-ref-9">Hunton Andrews Kurth. "Dutch Regulator Fines Clearview AI 30.5 Million Euros." 2024. <a href="https://www.hunton.com/privacy-and-information-security-law/dutch-regulator-fines-clearview-ai-30-5-million-euros" target="_blank" rel="noopener noreferrer">hunton.com</a></li>
-            <li id="dc-ref-10">Obermeyer, Z., Powers, B., Vogeli, C., Mullainathan, S. "Dissecting racial bias in an algorithm used to manage the health of populations." <em>Science</em> 366(6464):447–453, 2019. <a href="https://www.science.org/doi/10.1126/science.aax2342" target="_blank" rel="noopener noreferrer">science.org</a></li>
-            <li id="dc-ref-11">Buolamwini, J., Gebru, T. "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification." <em>PMLR</em> 81:77–91, 2018. <a href="https://proceedings.mlr.press/v81/buolamwini18a.html" target="_blank" rel="noopener noreferrer">proceedings.mlr.press</a></li>
+            <li id="dc-ref-10">Obermeyer, Z., Powers, B., Vogeli, C., Mullainathan, S. "Dissecting racial bias in an algorithm used to manage the health of populations." <em>Science</em> 366(6464):447-453, 2019. <a href="https://www.science.org/doi/10.1126/science.aax2342" target="_blank" rel="noopener noreferrer">science.org</a></li>
+            <li id="dc-ref-11">Buolamwini, J., Gebru, T. "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification." <em>PMLR</em> 81:77-91, 2018. <a href="https://proceedings.mlr.press/v81/buolamwini18a.html" target="_blank" rel="noopener noreferrer">proceedings.mlr.press</a></li>
             <li id="dc-ref-12">MIT News. "Study finds gender and skin-type bias in commercial artificial-intelligence systems." February 12, 2018. <a href="https://news.mit.edu/2018/study-finds-gender-skin-type-bias-artificial-intelligence-systems-0212" target="_blank" rel="noopener noreferrer">news.mit.edu</a></li>
             <li id="dc-ref-13">Dastin, J. "Amazon scraps secret AI recruiting tool that showed bias against women." Reuters, via CNBC, October 10, 2018. <a href="https://www.cnbc.com/2018/10/10/amazon-scraps-a-secret-ai-recruiting-tool-that-showed-bias-against-women.html" target="_blank" rel="noopener noreferrer">cnbc.com</a></li>
             <li id="dc-ref-14">MIT Technology Review. "Amazon ditched AI recruitment software because it was biased against women." October 10, 2018. <a href="https://www.technologyreview.com/2018/10/10/139858/amazon-ditched-ai-recruitment-software-because-it-was-biased-against-women/" target="_blank" rel="noopener noreferrer">technologyreview.com</a></li>
             <li id="dc-ref-15">Gebru, T. et al. "Datasheets for Datasets." <em>Communications of the ACM</em> 64(12), 2021. <a href="https://arxiv.org/abs/1803.09010" target="_blank" rel="noopener noreferrer">arxiv.org/abs/1803.09010</a></li>
             <li id="dc-ref-16">Mitchell, M. et al. "Model Cards for Model Reporting." <em>FAT* 2019</em>. <a href="https://arxiv.org/abs/1810.03993" target="_blank" rel="noopener noreferrer">arxiv.org/abs/1810.03993</a></li>
             <li id="dc-ref-17">Machine Learning Group, Université Libre de Bruxelles. Credit Card Fraud Detection dataset (492 frauds in 284,807 transactions; 0.172%). <a href="https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud" target="_blank" rel="noopener noreferrer">kaggle.com</a></li>
-            <li id="dc-ref-18">Chawla, N.V., Bowyer, K.W., Hall, L.O., Kegelmeyer, W.P. "SMOTE: Synthetic Minority Over-sampling Technique." <em>Journal of Artificial Intelligence Research</em> 16:321–357, 2002. <a href="https://arxiv.org/abs/1106.1813" target="_blank" rel="noopener noreferrer">arxiv.org/abs/1106.1813</a></li>
+            <li id="dc-ref-18">Chawla, N.V., Bowyer, K.W., Hall, L.O., Kegelmeyer, W.P. "SMOTE: Synthetic Minority Over-sampling Technique." <em>Journal of Artificial Intelligence Research</em> 16:321-357, 2002. <a href="https://arxiv.org/abs/1106.1813" target="_blank" rel="noopener noreferrer">arxiv.org/abs/1106.1813</a></li>
             <li id="dc-ref-19">Kapoor, S., Narayanan, A. "Leakage and the reproducibility crisis in machine-learning-based science." <em>Patterns</em> 4(9), 2023. <a href="https://www.cell.com/patterns/fulltext/S2666-3899(23)00159-9" target="_blank" rel="noopener noreferrer">cell.com/patterns</a></li>
             <li id="dc-ref-20">CNBC. "Zillow plunges 25% to lowest since July 2020, after company exits home-buying business." November 3, 2021. <a href="https://www.cnbc.com/2021/11/03/zillow-stock-plunges-24percent-after-company-exits-home-buying-business.html" target="_blank" rel="noopener noreferrer">cnbc.com</a></li>
             <li id="dc-ref-21">GeekWire. "Why the iBuying algorithms failed Zillow, and what it says about the business world's love affair with AI." 2021. <a href="https://www.geekwire.com/2021/ibuying-algorithms-failed-zillow-says-business-worlds-love-affair-ai/" target="_blank" rel="noopener noreferrer">geekwire.com</a></li>
             <li id="dc-ref-22">Zillow Group, Inc. Form 8-K, Q3 2021. US Securities and Exchange Commission. <a href="https://www.sec.gov/Archives/edgar/data/1617640/000161764021000085/q32021991.htm" target="_blank" rel="noopener noreferrer">sec.gov</a></li>
-            <li id="dc-ref-23">Lazer, D., Kennedy, R., King, G., Vespignani, A. "The Parable of Google Flu: Traps in Big Data Analysis." <em>Science</em> 343(6176):1203–1205, 2014.</li>
+            <li id="dc-ref-23">Lazer, D., Kennedy, R., King, G., Vespignani, A. "The Parable of Google Flu: Traps in Big Data Analysis." <em>Science</em> 343(6176):1203-1205, 2014.</li>
             <li id="dc-ref-24">Washington Post. "Google flu tracker overestimated cases, study argues, pointing to flaws in 'big data'." March 17, 2014. <a href="https://www.washingtonpost.com/national/health-science/google-flu-tracker-overestimated-cases-study-argues-pointing-to-flaws-in-big-data/2014/03/17/995c6656-adba-11e3-9627-c65021d6d572_story.html" target="_blank" rel="noopener noreferrer">washingtonpost.com</a></li>
-            <li id="dc-ref-25">Wong, A. et al. "External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients." <em>JAMA Internal Medicine</em> 181(8):1065–1070, 2021. <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2781307" target="_blank" rel="noopener noreferrer">jamanetwork.com</a></li>
+            <li id="dc-ref-25">Wong, A. et al. "External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients." <em>JAMA Internal Medicine</em> 181(8):1065-1070, 2021. <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2781307" target="_blank" rel="noopener noreferrer">jamanetwork.com</a></li>
             <li id="dc-ref-26">Michigan Medicine Health Lab. "Popular sepsis prediction tool less accurate than claimed." 2021. <a href="https://www.michiganmedicine.org/health-lab/popular-sepsis-prediction-tool-less-accurate-claimed" target="_blank" rel="noopener noreferrer">michiganmedicine.org</a></li>
             <li id="dc-ref-27">Mazumder, M. et al. "DataPerf: Benchmarks for Data-Centric AI Development." MLCommons. <a href="https://arxiv.org/abs/2207.10062" target="_blank" rel="noopener noreferrer">arxiv.org/abs/2207.10062</a></li>
-            <li id="dc-ref-28">DeGrave, A.J., Janizek, J.D., Lee, S.-I. "AI for radiographic COVID-19 detection selects shortcuts over signal." <em>Nature Machine Intelligence</em> 3:610–619, 2021. <a href="https://www.nature.com/articles/s42256-021-00338-7" target="_blank" rel="noopener noreferrer">nature.com</a></li>
+            <li id="dc-ref-28">DeGrave, A.J., Janizek, J.D., Lee, S.-I. "AI for radiographic COVID-19 detection selects shortcuts over signal." <em>Nature Machine Intelligence</em> 3:610-619, 2021. <a href="https://www.nature.com/articles/s42256-021-00338-7" target="_blank" rel="noopener noreferrer">nature.com</a></li>
             <li id="dc-ref-29">Thiel, D. "Identifying and Eliminating CSAM in Generative ML Training Data and Models." Stanford Internet Observatory, December 2023.</li>
             <li id="dc-ref-30">404 Media. "Largest Dataset Powering AI Images Removed After Discovery of Child Sexual Abuse Material." 2023. <a href="https://www.404media.co/laion-datasets-removed-stanford-csam-child-abuse/" target="_blank" rel="noopener noreferrer">404media.co</a></li>
             <li id="dc-ref-31">LAION. "Releasing Re-LAION-5B: transparent iteration on LAION-5B with additional safety fixes." 2024. <a href="https://laion.ai/blog/relaion-5b/" target="_blank" rel="noopener noreferrer">laion.ai</a></li>
-            <li id="dc-ref-32">Ensign, D., Friedler, S.A., Neville, S., Scheidegger, C., Venkatasubramanian, S. "Runaway Feedback Loops in Predictive Policing." <em>PMLR</em> 81:160–171, 2018. <a href="https://proceedings.mlr.press/v81/ensign18a.html" target="_blank" rel="noopener noreferrer">proceedings.mlr.press</a></li>
-            <li id="dc-ref-33">Shumailov, I. et al. "AI models collapse when trained on recursively generated data." <em>Nature</em> 631:755–759, 2024.</li>
+            <li id="dc-ref-32">Ensign, D., Friedler, S.A., Neville, S., Scheidegger, C., Venkatasubramanian, S. "Runaway Feedback Loops in Predictive Policing." <em>PMLR</em> 81:160-171, 2018. <a href="https://proceedings.mlr.press/v81/ensign18a.html" target="_blank" rel="noopener noreferrer">proceedings.mlr.press</a></li>
+            <li id="dc-ref-33">Shumailov, I. et al. "AI models collapse when trained on recursively generated data." <em>Nature</em> 631:755-759, 2024.</li>
             <li id="dc-ref-34">IBM. "What Is Model Collapse?" <a href="https://www.ibm.com/think/topics/model-collapse" target="_blank" rel="noopener noreferrer">ibm.com/think/topics/model-collapse</a></li>
             <li id="dc-ref-35">Google Research Blog. "Data Cascades in Machine Learning." <a href="https://research.google/blog/data-cascades-in-machine-learning/" target="_blank" rel="noopener noreferrer">research.google</a></li>
             <li id="dc-ref-36">Pushkarna, M., Zaldivar, A., Kjartansson, O. "Data Cards: Purposeful and Transparent Dataset Documentation for Responsible AI." <em>ACM FAccT 2022</em>. <a href="https://dl.acm.org/doi/10.1145/3531146.3533231" target="_blank" rel="noopener noreferrer">dl.acm.org/doi/10.1145/3531146.3533231</a></li>
@@ -1297,7 +1297,7 @@ const DataChallengesDetails = () => {
         </section>
 
         <p className="dc-source-note">
-          Written for AI500 — Fundamentals of Machine Learning, Assignment 4.2, July 2026. Fourteen
+          Written for AI500, Fundamentals of Machine Learning, Assignment 4.2, July 2026. Fourteen
           challenges from the course lesson; five added from the research literature. All incident
           figures are traceable to the cited primary sources.
         </p>

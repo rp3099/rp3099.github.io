@@ -70,7 +70,7 @@
     margin-top: 1rem;
 }
 
-/* Scoped to the footer — these were previously bare element selectors that
+/* Scoped to the footer. These were previously bare element selectors that
    set typography for every h4 and p on the site. */
 .footer h4{
     font-size: 1.2rem;

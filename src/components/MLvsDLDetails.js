@@ -31,7 +31,7 @@ const MLvsDLDetails = () => {
               buried in pixels, audio, or unstructured sequences.
             </p>
             <p>
-              This report examines two examples from the course lecture — <strong>customer churn
+              This report examines two examples from the course lecture: <strong>customer churn
               prediction</strong>, a simple ML task solved with a support vector machine (SVM), and
               <strong> autonomous driving</strong>, a deep learning task built on convolutional neural
               networks (CNNs). For both, I identify a real-world application and justify why the chosen
@@ -51,16 +51,16 @@ const MLvsDLDetails = () => {
             </p>
           </section>
 
-          {/* ─── Example 1: Customer Churn — SVM ─── */}
+          {/* ─── Example 1: Customer Churn (SVM) ─── */}
           <section className="ml-example">
-            <h2><FaChartLine /> Example 1 — Customer Churn Prediction (Simple ML: SVM)</h2>
+            <h2><FaChartLine /> Example 1: Customer Churn Prediction (Simple ML: SVM)</h2>
 
             <h3>Real-World Application</h3>
             <p>
               Telecommunications carriers use churn models to identify postpaid subscribers who are likely
               to cancel service, then target them with retention offers before they leave. A carrier trains
-              a model on historical account records — customer tenure, contract type, monthly charges, data
-              usage, number of support tickets, and payment history — labeled by whether each customer
+              a model on historical account records (customer tenure, contract type, monthly charges, data
+              usage, number of support tickets, and payment history), labeled by whether each customer
               eventually churned. The trained SVM scores active customers so the retention team can
               prioritize outreach.
             </p>
@@ -77,15 +77,15 @@ const MLvsDLDetails = () => {
             <p>
               The data is structured and tabular, with a small set of features that can be defined directly
               (tenure, charges, contract length). An SVM finds the maximum-margin boundary that separates
-              churners from non-churners, capturing nonlinear relationships — for example, an interaction
-              between short tenure and high monthly charges — without the massive data volumes a neural
+              churners from non-churners, capturing nonlinear relationships, such as an interaction
+              between short tenure and high monthly charges, without the massive data volumes a neural
               network demands. Formally, a linear SVM solves the convex optimization
             </p>
             <div className="ml-equation">
               min ½‖w‖²&nbsp;&nbsp;subject to&nbsp;&nbsp;y<sub>i</sub>(w·x<sub>i</sub> + b) ≥ 1
             </div>
             <p>
-              which has a stable, repeatable solution — an advantage when the model is retrained frequently
+              which has a stable, repeatable solution, which is an advantage when the model is retrained frequently
               as the customer base shifts. Training and inference are cheap, so the carrier can rebuild the
               model on commodity hardware. Because the features are already meaningful, the interpretability
               of a linear-kernel SVM also helps the business justify why a given customer was flagged, which
@@ -104,9 +104,9 @@ const MLvsDLDetails = () => {
             </p>
           </section>
 
-          {/* ─── Example 2: Autonomous Driving — CNN ─── */}
+          {/* ─── Example 2: Autonomous Driving (CNN) ─── */}
           <section className="ml-example">
-            <h2><FaCarSide /> Example 2 — Autonomous Driving (Deep Learning: CNN &amp; Deep RL)</h2>
+            <h2><FaCarSide /> Example 2: Autonomous Driving (Deep Learning: CNN &amp; Deep RL)</h2>
 
             <h3>Real-World Application</h3>
             <p>
@@ -122,8 +122,8 @@ const MLvsDLDetails = () => {
             <div className="ml-figure">
               <img loading="lazy" src={cnnHierarchy} alt="CNN feature hierarchy: raw pixels to edges to object parts to whole objects" />
               <div className="ml-caption">
-                Figure 2: A CNN learns a hierarchy of features directly from raw input — edges, then object
-                parts, then whole objects — removing the need for hand-engineered detectors.
+                Figure 2: A CNN learns a hierarchy of features directly from raw input: edges, then object
+                parts, then whole objects, which removes the need for hand-engineered detectors.
               </div>
             </div>
 
@@ -150,7 +150,7 @@ const MLvsDLDetails = () => {
               structure of an image. They treat each pixel as an independent input and scale poorly to the
               millions of pixels in a single frame. They also cannot capture the temporal context needed to
               track a moving object across frames. To make classical ML work at all, engineers would have to
-              hand-build detectors for every object class and condition — the manual bottleneck deep learning
+              hand-build detectors for every object class and condition, which is exactly the manual bottleneck deep learning
               removes. On this problem the accuracy ceiling of hand-engineered features is far below what
               safe driving demands, so simple ML is not viable.
             </p>
@@ -176,7 +176,7 @@ const MLvsDLDetails = () => {
             <h2><FaCogs /> Process</h2>
             <p>
               I started from the course lecture on machine learning versus deep learning, then selected
-              two contrasting real-world applications — customer churn prediction and autonomous driving.
+              two contrasting real-world applications: customer churn prediction and autonomous driving.
               For each, I researched why the chosen approach fits and why the alternative fails, grounding
               every claim in peer-reviewed and primary industry sources. I created original diagrams to
               illustrate the SVM decision margin and the CNN feature hierarchy, and organized the analysis
@@ -188,9 +188,9 @@ const MLvsDLDetails = () => {
           <section className="ml-section">
             <h2><FaToolbox /> Tools</h2>
             <ul className="ml-tools">
-              <li><strong>Microsoft Word</strong> — writing and formatting the report.</li>
-              <li><strong>Academic &amp; industry sources</strong> — IBM, Nature, NVIDIA, Tesla, and arXiv for evidence and citations.</li>
-              <li><strong>React portfolio</strong> — presenting the artifact on this website, with original SVG diagrams.</li>
+              <li><strong>Microsoft Word</strong> for writing and formatting the report.</li>
+              <li><strong>Academic &amp; industry sources</strong>: IBM, Nature, NVIDIA, Tesla, and arXiv for evidence and citations.</li>
+              <li><strong>React portfolio</strong> for presenting the artifact on this website, with original SVG diagrams.</li>
             </ul>
           </section>
 
@@ -201,7 +201,7 @@ const MLvsDLDetails = () => {
               This artifact demonstrates my ability to match model complexity to a problem rather than
               defaulting to the most powerful method available. It shows that I can analyze a problem's
               data type, scale, and constraints, justify an engineering decision with evidence, and
-              communicate the trade-offs clearly — the same judgment required to choose cost-effective,
+              communicate the trade-offs clearly. That is the same judgment required to choose cost-effective,
               maintainable solutions in real machine-learning work.
             </p>
           </section>
@@ -211,8 +211,8 @@ const MLvsDLDetails = () => {
             <h2><FaListOl /> References</h2>
             <ol className="ml-refs">
               <li>IBM. "What Is a Support Vector Machine (SVM)?" IBM Think Topics. <a href="https://www.ibm.com/think/topics/support-vector-machine" target="_blank" rel="noopener noreferrer">ibm.com/think/topics/support-vector-machine</a></li>
-              <li>C. Cortes and V. Vapnik, "Support-Vector Networks," <em>Machine Learning</em>, vol. 20, no. 3, pp. 273–297, 1995. <a href="https://doi.org/10.1007/BF00994018" target="_blank" rel="noopener noreferrer">doi.org/10.1007/BF00994018</a></li>
-              <li>Y. LeCun, Y. Bengio, and G. Hinton, "Deep Learning," <em>Nature</em>, vol. 521, pp. 436–444, 2015. <a href="https://doi.org/10.1038/nature14539" target="_blank" rel="noopener noreferrer">doi.org/10.1038/nature14539</a></li>
+              <li>C. Cortes and V. Vapnik, "Support-Vector Networks," <em>Machine Learning</em>, vol. 20, no. 3, pp. 273-297, 1995. <a href="https://doi.org/10.1007/BF00994018" target="_blank" rel="noopener noreferrer">doi.org/10.1007/BF00994018</a></li>
+              <li>Y. LeCun, Y. Bengio, and G. Hinton, "Deep Learning," <em>Nature</em>, vol. 521, pp. 436-444, 2015. <a href="https://doi.org/10.1038/nature14539" target="_blank" rel="noopener noreferrer">doi.org/10.1038/nature14539</a></li>
               <li>L. Grinsztajn, E. Oyallon, and G. Varoquaux, "Why Do Tree-Based Models Still Outperform Deep Learning on Tabular Data?" NeurIPS Datasets and Benchmarks, arXiv:2207.08815, 2022. <a href="https://arxiv.org/abs/2207.08815" target="_blank" rel="noopener noreferrer">arxiv.org/abs/2207.08815</a></li>
               <li>Tesla. "AI &amp; Robotics." Tesla, Inc. <a href="https://www.tesla.com/AI" target="_blank" rel="noopener noreferrer">tesla.com/AI</a></li>
               <li>M. Bojarski et al., "End to End Learning for Self-Driving Cars," NVIDIA Corporation, arXiv:1604.07316, 2016. <a href="https://arxiv.org/abs/1604.07316" target="_blank" rel="noopener noreferrer">arxiv.org/abs/1604.07316</a></li>

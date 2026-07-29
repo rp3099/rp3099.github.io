@@ -168,7 +168,7 @@ const ThesisDetails = () => {
 
           <div className="featured-image-container">
             <img loading="lazy" src={glycerolMatching} alt="Phantom Submerged in Glycerol-Water Matching Fluid" className="featured-image" />
-            <p className="image-caption">Figure 7: Phantom submerged in the glycerol-water matching fluid — the wall becomes nearly optically invisible against the PIV speckle background, confirming refractive index matching.</p>
+            <p className="image-caption">Figure 7: Phantom submerged in the glycerol-water matching fluid. The wall becomes nearly optically invisible against the PIV speckle background, confirming refractive index matching.</p>
           </div>
 
           <p>
