@@ -39,21 +39,21 @@ const ProjectCardData = [
         category: "ai",
         imgsrc: trainingMethods,
         title: "ML Training Methods Guide",
-        text: "A practical guide to supervised, unsupervised, semi-supervised, and reinforcement learning — from loss functions and learning rates to XGBoost, K-Means, and PPO — distilled from a guided conversation with the AIML-500 course chatbot.",
+        text: "A practical guide to supervised, unsupervised, semi-supervised, and reinforcement learning, from loss functions and learning rates to XGBoost, K-Means, and PPO, distilled from a guided conversation with the AIML-500 course chatbot.",
         view: "/project/ml-training-methods"
     },
     {
         category: "ai",
         imgsrc: dataChallenges,
         title: "Data Challenges in ML",
-        text: "A research report cataloging nineteen ways data breaks machine learning systems — availability, bias, drift, leakage, provenance — each tied to a documented failure and a mitigation with its trade-off named.",
+        text: "A research report cataloging nineteen ways data breaks machine learning systems (availability, bias, drift, leakage, provenance), each tied to a documented failure and a mitigation with its trade-off named.",
         view: "/project/data-challenges"
     },
     {
         category: "ai",
         imgsrc: mlvsdl,
         title: "Machine Learning vs. Deep Learning",
-        text: "When to use classical ML versus deep learning — SVM churn prediction vs. CNN autonomous driving — and the engineering trade-offs behind each choice.",
+        text: "When to use classical ML versus deep learning: SVM churn prediction vs. CNN autonomous driving, and the engineering trade-offs behind each choice.",
         view: "/project/ml-vs-dl"
     }
 ];

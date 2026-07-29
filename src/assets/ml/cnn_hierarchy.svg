@@ -65,5 +65,5 @@
 
   <!-- title -->
   <text x="450" y="55" text-anchor="middle" fill="#ffffff" font-family="Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="1">CNN Feature Hierarchy</text>
-  <text x="450" y="88" text-anchor="middle" fill="#8f9499" font-family="Helvetica Neue, Arial, sans-serif" font-size="16">Deeper layers learn increasingly abstract features — no hand-engineering required</text>
+  <text x="450" y="88" text-anchor="middle" fill="#8f9499" font-family="Helvetica Neue, Arial, sans-serif" font-size="16">Deeper layers learn increasingly abstract features, with no hand-engineering required</text>
 </svg>

@@ -14,7 +14,7 @@
   <rect width="1200" height="675" fill="url(#mlbg)"/>
   <circle cx="600" cy="300" r="380" fill="url(#mlglow)"/>
 
-  <!-- Left: classical ML — SVM separating hyperplane -->
+  <!-- Left: classical ML, SVM separating hyperplane -->
   <text x="300" y="120" text-anchor="middle" fill="#deb887" font-family="Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="4">CLASSICAL ML · SVM</text>
   <!-- margin band -->
   <line x1="150" y1="470" x2="470" y2="180" stroke="#deb887" stroke-width="3"/>
@@ -31,7 +31,7 @@
     <circle cx="450" cy="245" r="9"/><circle cx="330" cy="300" r="9"/>
   </g>
 
-  <!-- Right: deep learning — neural network -->
+  <!-- Right: deep learning, neural network -->
   <text x="895" y="120" text-anchor="middle" fill="#deb887" font-family="Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="4">DEEP LEARNING · NN</text>
   <g stroke="#deb887" stroke-opacity="0.18" stroke-width="1.2">
     <!-- edges layer1->2 -->

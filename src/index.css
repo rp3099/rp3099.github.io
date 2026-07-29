@@ -38,7 +38,7 @@
 
   /* Accent used as a fill (buttons, bars, dots) */
   --accent: #deb887;
-  /* Accent used as text or a link — must pass contrast on --bg */
+  /* Accent used as text or a link; must pass contrast on --bg */
   --accent-ink: #deb887;
   /* Slightly brighter accent for hover/gradient stops */
   --accent-strong: #e5cba3;
@@ -55,7 +55,7 @@
   --nav-bg-mobile: rgba(0, 0, 0, 0.9);
   --overlay: rgba(0, 0, 0, 0.92);
 
-  /* Shadow tint only — offsets and blur stay at each call site */
+  /* Shadow tint only; offsets and blur stay at each call site */
   --shadow-color: rgba(0, 0, 0, 0.5);
   --shadow-color-strong: rgba(0, 0, 0, 0.8);
 

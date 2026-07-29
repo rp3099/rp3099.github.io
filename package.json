@@ -1,7 +1,7 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "description": "Portfolio of Rudra Patel — aerospace engineer",
+  "description": "Portfolio of Rudra Patel, aerospace engineer",
   "homepage": "/",
   "main": "index.js",
   "scripts": {

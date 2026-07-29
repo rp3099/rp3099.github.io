@@ -42,8 +42,8 @@ const VFRAssistantDetails = () => {
 
         {/* Featured Image */}
         <div className="featured-image-container">
-          <img src={assistantUi} alt="VFR PPL Assistant — AI Flight Partner" className="featured-image" />
-          <p className="image-caption">Figure 1: The VFR PPL Assistant — an FAA-grounded, "cite or flag" AI study partner for private-pilot training.</p>
+          <img src={assistantUi} alt="VFR PPL Assistant, AI Flight Partner" className="featured-image" />
+          <p className="image-caption">Figure 1: The VFR PPL Assistant, an FAA-grounded, "cite or flag" AI study partner for private-pilot training.</p>
         </div>
 
         {/* ─── Field: Description ─── */}
@@ -70,7 +70,7 @@ const VFRAssistantDetails = () => {
             </div>
             <div className="feature-card">
               <h4><FaShieldAlt /> Safety Disclaimer</h4>
-              <p>Reminds users it is a study aid — not a substitute for a certified flight instructor or current official documentation.</p>
+              <p>Reminds users it is a study aid, not a substitute for a certified flight instructor or current official documentation.</p>
             </div>
           </div>
         </section>
@@ -140,7 +140,7 @@ const VFRAssistantDetails = () => {
             </div>
             <div className="tool-item">
               <h4>Pilot Institute Website</h4>
-              <p>Used to obtain training content — <a href="https://pilotinstitute.com" target="_blank" rel="noopener noreferrer">pilotinstitute.com</a>.</p>
+              <p>Used to obtain training content from <a href="https://pilotinstitute.com" target="_blank" rel="noopener noreferrer">pilotinstitute.com</a>.</p>
             </div>
             <div className="tool-item">
               <h4>Chatbase</h4>
@@ -166,7 +166,7 @@ const VFRAssistantDetails = () => {
             This project demonstrates how a general-purpose language model can be shaped into a
             domain-reliable study tool through structured prompting and source constraints. The VFR PPL
             Assistant helps student pilots prepare for their PPL by grounding every answer in FAA-published
-            material — the FARs, the AIM, the PHAK, and the Airplane Flying Handbook — and generating
+            material (the FARs, the AIM, the PHAK, and the Airplane Flying Handbook) and generating
             exam-style practice on demand. It serves as a proof of concept that accuracy, citation
             discipline, and approachable instruction can coexist in a conversational assistant, turning
             scattered regulatory documents into guided, verifiable learning.
@@ -187,7 +187,7 @@ const VFRAssistantDetails = () => {
             <li><strong>Regulations:</strong> FAA-published Federal Aviation Regulations (FARs / 14 CFR)</li>
             <li><strong>Procedures:</strong> FAA Aeronautical Information Manual (AIM)</li>
             <li><strong>General Concepts:</strong> Pilot's Handbook of Aeronautical Knowledge (PHAK), Airplane Flying Handbook (AFH), and other official FAA advisory circulars.</li>
-            <li><strong>Secondary References:</strong> Pilot Institute publications — used only when the answer is not present in official FAA documents.</li>
+            <li><strong>Secondary References:</strong> Pilot Institute publications, used only when the answer is not present in official FAA documents.</li>
           </ol>
           <p>
             If required information is not found in FAA or Pilot Institute sources, the assistant may search

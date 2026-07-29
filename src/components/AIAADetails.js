@@ -23,7 +23,7 @@ const AIAADetails = () => {
 
         {/* Header Metadata */}
         <div className="report-meta">
-          <span><strong>Project:</strong> AIAA 2020–2021 Undergraduate Team Aircraft Design</span>
+          <span><strong>Project:</strong> AIAA 2020-2021 Undergraduate Team Aircraft Design</span>
           <span><strong>Institution:</strong> Virginia Tech</span>
           <span><strong>RFP:</strong> Austere Field Light Attack Aircraft</span>
           <span><strong>Model:</strong> A-13 Lizardskin</span>
@@ -53,10 +53,10 @@ const AIAADetails = () => {
         <section className="report-section">
           <h2>Executive Summary</h2>
           <p>
-            In response to the 2020–2021 American Institute of Aeronautics and Astronautics (AIAA) Undergraduate Austere Field Light Attack Aircraft Competition Request for Proposal (RFP), LB Aerospace presents the <strong>A-13 Lizardskin</strong>. There is a significant need for a lightweight close air support (CAS) aircraft capable of taking off and landing on semi-prepared runways with a California Bearing Ratio (CBR) of 5, serving as a survivable and cost-effective alternative to helicopters that struggle with survivability criteria. The aircraft is designed to provide close air support to friendly ground forces with an entry into service by 2025.
+            In response to the 2020-2021 American Institute of Aeronautics and Astronautics (AIAA) Undergraduate Austere Field Light Attack Aircraft Competition Request for Proposal (RFP), LB Aerospace presents the <strong>A-13 Lizardskin</strong>. There is a significant need for a lightweight close air support (CAS) aircraft capable of taking off and landing on semi-prepared runways with a California Bearing Ratio (CBR) of 5, serving as a survivable and cost-effective alternative to helicopters that struggle with survivability criteria. The aircraft is designed to provide close air support to friendly ground forces with an entry into service by 2025.
           </p>
           <p>
-            The A-13 Lizardskin is a single-engine turboprop aircraft with a tricycle landing gear configuration and a takeoff gross weight of 12,403 lbs. It improves upon the comparator aircraft — the Embraer EMB 314 Super Tucano — by optimizing survivability from ground attacks, improving endurance with reserve fuel capacity, and reducing unit cost from $18M to <strong>$11.5 million USD</strong> per airframe across a 300-unit production run.
+            The A-13 Lizardskin is a single-engine turboprop aircraft with a tricycle landing gear configuration and a takeoff gross weight of 12,403 lbs. It improves upon the comparator aircraft, the Embraer EMB 314 Super Tucano, by optimizing survivability from ground attacks, improving endurance with reserve fuel capacity, and reducing unit cost from $18M to <strong>$11.5 million USD</strong> per airframe across a 300-unit production run.
           </p>
 
           <h3>Key Design Drivers</h3>
@@ -72,14 +72,14 @@ const AIAADetails = () => {
               <span className="driver-icon"><FaGasPump /></span>
               <div>
                 <h4>Endurance</h4>
-                <p>4+ hours on-station loiter without external tanks and sufficient reserve fuel to climb 3,000 ft and loiter for 45 minutes — exceeding the Super Tucano's reserve capacity.</p>
+                <p>4+ hours on-station loiter without external tanks and sufficient reserve fuel to climb 3,000 ft and loiter for 45 minutes, exceeding the Super Tucano's reserve capacity.</p>
               </div>
             </div>
             <div className="driver-card">
               <span className="driver-icon"><FaDollarSign /></span>
               <div>
                 <h4>Cost-Effectiveness</h4>
-                <p>Target unit cost under $18M and cost per flight hour below $1,125. Achieved $11.5M unit cost — 36% cheaper than the Super Tucano.</p>
+                <p>Target unit cost under $18M and cost per flight hour below $1,125. Achieved $11.5M unit cost, 36% cheaper than the Super Tucano.</p>
               </div>
             </div>
             <div className="driver-card">
@@ -226,17 +226,17 @@ const AIAADetails = () => {
         <section className="report-section">
           <h2><FaPlane /> Aircraft Configuration & Sizing</h2>
           <p>
-            Initial sizing estimates began by evaluating comparator aircraft — primarily the Embraer EMB 314 Super Tucano and the Beechcraft AT-6B Wolverine. The team targeted a TOGW 10% less than the Super Tucano (11,905 lbs) while maintaining a CBR of 5 for austere runway operations. The Preferred System Concept (PSC) positions the engine and propeller at the nose to ensure optimal tipback and ground rollover safety margins without requiring excessively heavy landing gear assemblies.
+            Initial sizing estimates began by evaluating comparator aircraft, primarily the Embraer EMB 314 Super Tucano and the Beechcraft AT-6B Wolverine. The team targeted a TOGW 10% less than the Super Tucano (11,905 lbs) while maintaining a CBR of 5 for austere runway operations. The Preferred System Concept (PSC) positions the engine and propeller at the nose to ensure optimal tipback and ground rollover safety margins without requiring excessively heavy landing gear assemblies.
           </p>
 
           <div className="single-image-frame">
             <img src={systemLayout} alt="Aircraft System Layout" className="report-img-full" loading="lazy" />
-            <span className="fig-caption">Figure 2: Preferred System Concept — internal airframe structural layout showing self-sealing fuel tanks, armor tub, landing gear bay, and weapons stations.</span>
+            <span className="fig-caption">Figure 2: Preferred System Concept. Internal airframe structural layout showing self-sealing fuel tanks, armor tub, landing gear bay, and weapons stations.</span>
           </div>
 
           <h3>Wing Design</h3>
           <p>
-            The wing uses a NACA 65(4)-421 airfoil selected for its high stalling angle (17°), low minimum drag coefficient, and high lift-to-drag ratio at cruise conditions. A low-wing configuration was chosen to improve takeoff performance, reduce structural weight, decrease wing-induced drag, and provide better field of view for the pilot. A single-slotted flap achieves the required C<sub>L,max</sub> of 2.13 for takeoff and landing — the simplest and cheapest high-lift device option, aligned with the cost design driver.
+            The wing uses a NACA 65(4)-421 airfoil selected for its high stalling angle (17°), low minimum drag coefficient, and high lift-to-drag ratio at cruise conditions. A low-wing configuration was chosen to improve takeoff performance, reduce structural weight, decrease wing-induced drag, and provide better field of view for the pilot. A single-slotted flap achieves the required C<sub>L,max</sub> of 2.13 for takeoff and landing, and it is the simplest and cheapest high-lift device option, which aligns with the cost design driver.
           </p>
 
           <div className="spec-grid">
@@ -268,7 +268,7 @@ const AIAADetails = () => {
 
           <h3>Propulsion</h3>
           <p>
-            The primary engine selection is the <strong>GE Catalyst™</strong> turboprop, which incorporates 3D-printed components to reduce part count and overall weight. Its Full Authority Digital Engine Control (FADEC) allows all engine performance to be managed by a single lever, greatly reducing pilot workload. The GE Catalyst offers 4,000–6,000 hours between overhauls and 15% better power-specific fuel consumption than leading turboprops, minimizing operating costs. The minimum power required from the analysis was 1,100 shp. As a backup, the Pratt & Whitney PT6A (TRL 9) is ready for integration if the GE Catalyst does not reach production readiness by the technology freeze date.
+            The primary engine selection is the <strong>GE Catalyst™</strong> turboprop, which incorporates 3D-printed components to reduce part count and overall weight. Its Full Authority Digital Engine Control (FADEC) allows all engine performance to be managed by a single lever, greatly reducing pilot workload. The GE Catalyst offers 4,000-6,000 hours between overhauls and 15% better power-specific fuel consumption than leading turboprops, minimizing operating costs. The minimum power required from the analysis was 1,100 shp. As a backup, the Pratt & Whitney PT6A (TRL 9) is ready for integration if the GE Catalyst does not reach production readiness by the technology freeze date.
           </p>
         </section>
 
@@ -312,13 +312,13 @@ const AIAADetails = () => {
         <section className="report-section">
           <h2><FaShieldAlt /> Survivability & Armor</h2>
           <p>
-            Survivability was the cornerstone of the A-13 Lizardskin design strategy. The aircraft is purpose-built for low-altitude close air support sorties where exposure to small arms fire is highly likely. The vulnerable engine area constitutes only approximately 2–5% of the total aircraft area, surrounded by light armor, and the turboprop configuration inherently reduces IR signature.
+            Survivability was the cornerstone of the A-13 Lizardskin design strategy. The aircraft is purpose-built for low-altitude close air support sorties where exposure to small arms fire is highly likely. The vulnerable engine area constitutes only approximately 2-5% of the total aircraft area, surrounded by light armor, and the turboprop configuration inherently reduces IR signature.
           </p>
 
           <div className="survivability-grid">
             <div className="surv-card">
               <h4><FaShieldAlt /> Titanium Armor Tub</h4>
-              <p>Grade 5 titanium "bathtub" surrounds the cockpit floor and sidewalls, rated to <strong>Level 5 bulletproofing</strong> — protecting pilot and WSO from .50 BMG rounds. Fastened to the powerplant firewall and an aluminum bulkhead aft of the cockpit.</p>
+              <p>Grade 5 titanium "bathtub" surrounds the cockpit floor and sidewalls, rated to <strong>Level 5 bulletproofing</strong>, protecting the pilot and WSO from .50 BMG rounds. Fastened to the powerplant firewall and an aluminum bulkhead aft of the cockpit.</p>
             </div>
             <div className="surv-card">
               <h4><FaShieldAlt /> Bulletproof Canopy</h4>
@@ -326,7 +326,7 @@ const AIAADetails = () => {
             </div>
             <div className="surv-card">
               <h4><FaPlane /> Twin-Tail Redundancy</h4>
-              <p>Twin vertical stabilizers ensure that damage or shearing of a single tail does not compromise aircraft controllability — the aircraft can safely return to base on one tail.</p>
+              <p>Twin vertical stabilizers ensure that damage or shearing of a single tail does not compromise aircraft controllability; the aircraft can safely return to base on one tail.</p>
             </div>
             <div className="surv-card">
               <h4><FaGasPump /> Self-Sealing Fuel Tanks</h4>
@@ -335,7 +335,7 @@ const AIAADetails = () => {
           </div>
 
           <p>
-            The fuselage skin panels use <strong>2024-T3 aluminum</strong>, selected for its advantageous ductility under compression and surface strikes — critical for an aircraft operating from poorly-conditioned dirt runways where FOD exposure is likely. The structural airframe uses <strong>7075-T6 aluminum</strong> for maximum fatigue strength, validated through stress-per-cycle trade studies to confirm superior cycle-to-failure performance over alternative alloys.
+            The fuselage skin panels use <strong>2024-T3 aluminum</strong>, selected for its advantageous ductility under compression and surface strikes, which is critical for an aircraft operating from poorly-conditioned dirt runways where FOD exposure is likely. The structural airframe uses <strong>7075-T6 aluminum</strong> for maximum fatigue strength, validated through stress-per-cycle trade studies to confirm superior cycle-to-failure performance over alternative alloys.
           </p>
         </section>
 
@@ -343,7 +343,7 @@ const AIAADetails = () => {
         <section className="report-section">
           <h2><FaWeight /> Design Evolution & Weight Analysis</h2>
           <p>
-            The A-13 Lizardskin evolved through iterative sizing optimizations using a bottom-to-top design approach. Initial viable concepts were evaluated through a downselection process using measures of merit — combat survivability, service life, lifetime cost, and TOGW — before refining the Preferred System Concept. As structural and survivability armor details were finalized, mass properties were updated to verify configuration balance, center-of-gravity stability, and static stability derivatives.
+            The A-13 Lizardskin evolved through iterative sizing optimizations using a bottom-to-top design approach. Initial viable concepts were evaluated through a downselection process using measures of merit (combat survivability, service life, lifetime cost, and TOGW) before refining the Preferred System Concept. As structural and survivability armor details were finalized, mass properties were updated to verify configuration balance, center-of-gravity stability, and static stability derivatives.
           </p>
 
           <div className="images-row">
@@ -451,7 +451,7 @@ const AIAADetails = () => {
           </div>
 
           <p className="mt-2">
-            The A-13 Lizardskin entry into service was planned for June 2025, with the preliminary design phase concluding at report submission, followed by detailed design, prototype fabrication, flight testing, and deployment — all structured around quarterly milestones typical of military-based contracts.
+            The A-13 Lizardskin entry into service was planned for June 2025, with the preliminary design phase concluding at report submission, followed by detailed design, prototype fabrication, flight testing, and deployment, all structured around quarterly milestones typical of military-based contracts.
           </p>
         </section>
 
