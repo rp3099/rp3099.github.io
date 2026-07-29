@@ -165,9 +165,9 @@ const MLvsDLDetails = () => {
               low-cost SVM is the right fit and deep learning would waste compute for no accuracy gain.
               Autonomous driving has raw high-dimensional input, effectively unlimited data, and accuracy as
               the binding constraint, so the high computational cost of deep networks is justified because
-              nothing simpler can reach the required performance. The decision is not which method is better
-              in the abstract, but matching model complexity to the structure and dimensionality of the data
-              and to the cost the problem can bear.
+              nothing simpler can reach the required performance. The decision is less about which method
+              wins in the abstract and more about matching model complexity to the structure and
+              dimensionality of the data, and to the cost the problem can bear.
             </p>
           </section>
 

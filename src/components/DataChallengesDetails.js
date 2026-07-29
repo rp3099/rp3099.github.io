@@ -57,8 +57,8 @@ const DataChallengesDetails = () => {
         <div className="dc-intro-card">
           <h3><FaBookOpen /> Purpose and Scope</h3>
           <p>
-            Most published ML failures are not model failures. The architecture is usually fine;
-            the data underneath it is not. This report documents the data challenges that arise
+            In most published ML failures the model was never the weak point. The architecture is
+            usually sound; what breaks is the data underneath it. This report documents the data challenges that arise
             when training and deploying machine learning applications, using the fourteen
             challenges outlined in the AI500 4.2 lesson as the base structure, extended with five
             additional challenges that appear consistently in the research literature but are not
@@ -142,7 +142,7 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Impact</span>
           <ul>
             <li><strong>Overfitting.</strong> With too few samples relative to model capacity, the model memorizes training noise.</li>
-            <li><strong>Coverage gaps become silent failure modes.</strong> The model has no calibrated behavior on inputs it never saw. It does not abstain; it extrapolates confidently.</li>
+            <li><strong>Coverage gaps become silent failure modes.</strong> The model has no calibrated behavior on inputs it never saw, and instead of abstaining it extrapolates with full confidence.</li>
             <li><strong>Statistical power for evaluation collapses.</strong> With 30 positive examples in a test set, a 5% accuracy difference between two candidate models is noise.</li>
           </ul>
 
@@ -159,8 +159,8 @@ const DataChallengesDetails = () => {
               before impact.<Cite n={[3, 4]} />
             </p>
             <p>
-              The engineering lesson is that the gap was not in the perception model's accuracy on
-              its own test set. It was in the definition of what the test set was supposed to cover.
+              The engineering lesson is about where the gap actually sat. The perception model scored
+              adequately on its own test set. The failure was in how that test set had been scoped.
             </p>
           </div>
 
@@ -184,8 +184,8 @@ const DataChallengesDetails = () => {
           <div className="dc-tradeoff">
             <p>
               <strong>Trade-off:</strong> simulation is cheap per sample and expensive to validate.
-              A synthetic dataset that has not been correlated against real measurements is an
-              assumption, not evidence.
+              A synthetic dataset that has not been correlated against real measurements only tells you
+              what you already assumed.
             </p>
           </div>
         </Challenge>
@@ -282,7 +282,7 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Mitigations</span>
           <ul>
             <li><strong>Written, versioned annotation guidelines with adjudicated edge-case examples.</strong> Treat the guideline as a controlled document; when it changes, re-label affected data or record the guideline version alongside each label.</li>
-            <li><strong>Measure inter-annotator agreement</strong> (Cohen's or Fleiss' κ, Krippendorff's α) and report it as a headline metric. Model accuracy above the human agreement ceiling is a sign of leakage, not skill.</li>
+            <li><strong>Measure inter-annotator agreement</strong> (Cohen's or Fleiss' κ, Krippendorff's α) and report it as a headline metric. When model accuracy climbs above the human agreement ceiling, suspect leakage.</li>
             <li><strong>Consensus labeling with adjudication</strong> for high-stakes classes; single-pass for low-stakes. Spend the budget where disagreement is highest.</li>
             <li><strong>Gold-standard probe items</strong> seeded into annotation batches to score annotators continuously.</li>
             <li><strong>Programmatic/weak supervision</strong> to bootstrap, with a human-labeled evaluation set kept clean and separate.</li>
@@ -337,8 +337,8 @@ const DataChallengesDetails = () => {
               <strong>Trade-off:</strong> privacy budget directly costs utility. At the 2020 Census,
               small-geography counts became noticeably noisier, a real, quantified accuracy loss
               accepted deliberately in exchange for a provable confidentiality guarantee. That is
-              the correct way to frame the trade: an engineering decision with a number attached,
-              not a compliance checkbox.
+              the correct way to frame the trade, as an engineering decision with a number attached
+              to it.
             </p>
           </div>
         </Challenge>
@@ -363,7 +363,7 @@ const DataChallengesDetails = () => {
             Unfair or discriminatory outcomes in hiring, lending, healthcare, and criminal justice;
             regulatory action; reputational damage; and, the point most often missed by engineers,
             degraded accuracy. A biased model is usually also a less accurate model on the
-            underrepresented segment, so this is a performance defect, not only an ethics problem.
+            underrepresented segment, so the damage shows up in the performance numbers as well.
           </p>
 
           <span className="dc-label">Real-world evidence</span>
@@ -375,8 +375,8 @@ const DataChallengesDetails = () => {
               Because less money is historically spent on Black patients at equal levels of illness,
               the algorithm systematically scored equally sick Black patients as healthier.
               Correcting the target variable raised the proportion of Black patients flagged for
-              additional care from <strong>17.7% to 46.5%</strong>. The features were not the
-              problem; the label was.<Cite n={[10]} />
+              additional care from <strong>17.7% to 46.5%</strong>. Nothing was wrong with the
+              features. The label itself was carrying the bias.<Cite n={[10]} />
             </p>
             <p>
               <strong>Representation bias: Buolamwini and Gebru, "Gender Shades," FAT* 2018.</strong>{' '}
@@ -401,7 +401,7 @@ const DataChallengesDetails = () => {
           <span className="dc-label">Mitigations</span>
           <ul>
             <li><strong>Disaggregated evaluation as a release gate.</strong> Report metrics per subgroup, including intersections. Aggregate accuracy is the metric that hid all three cases above.</li>
-            <li><strong>Interrogate the label, not just the features.</strong> Ask what the target variable actually measures and for whom it measures something different. The Obermeyer fix was a target-variable change, not a fairness constraint.</li>
+            <li><strong>Interrogate the label, not just the features.</strong> Ask what the target variable actually measures and for whom it measures something different. The Obermeyer fix worked by changing the target variable, with no fairness constraint involved.</li>
             <li><strong>Representative sampling and targeted collection</strong> for under-covered groups; reweighting or resampling where collection is not possible.</li>
             <li><strong>Pre-processing</strong> (reweighing, disparate-impact remover), <strong>in-processing</strong> (adversarial debiasing, fairness-constrained optimization), and <strong>post-processing</strong> (per-group threshold adjustment). Note that different fairness definitions (demographic parity, equalized odds, calibration) are mathematically incompatible in general, so the choice must be made explicitly and justified.</li>
             <li><strong>Documentation</strong>: datasheets for datasets and model cards recording composition, collection process, and known limitations.<Cite n={[15, 16]} /></li>
@@ -642,8 +642,8 @@ const DataChallengesDetails = () => {
               fitting seasonal correlates rather than flu, and partly to drift in the search
               platform itself, since Google continuously changed autocomplete and related-search
               behavior, altering the input distribution beneath a static model.<Cite n={[23, 24]} />{' '}
-              The second mechanism is worth noting: the <em>measurement instrument</em> drifted, not
-              only the world.
+              The second mechanism is worth noting: the <em>measurement instrument</em> drifted
+              along with the world it was measuring.
             </p>
             <p>
               <strong>Epic Sepsis Model.</strong> Wong et al. (<em>JAMA Internal Medicine</em>, 2021)
@@ -661,7 +661,7 @@ const DataChallengesDetails = () => {
           <ul>
             <li><strong>Monitor inputs, outputs, and outcomes separately.</strong> Input distribution tests (PSI, KS, Jensen-Shannon divergence, KL), prediction-distribution monitoring, and (where labels eventually arrive) delayed ground-truth accuracy tracking.</li>
             <li><strong>Drift detection algorithms</strong> for streaming settings: DDM, EDDM, ADWIN, Page-Hinkley.</li>
-            <li><strong>Scheduled retraining with a rolling window</strong>, plus event-triggered retraining when a drift alarm fires. Both, not either.</li>
+            <li><strong>Scheduled retraining with a rolling window</strong>, plus event-triggered retraining when a drift alarm fires. You want both mechanisms running together.</li>
             <li><strong>Champion/challenger and shadow deployment</strong> so a retrained candidate is validated on live traffic before promotion.</li>
             <li><strong>External and local revalidation before deployment on a new population.</strong> This is the explicit lesson of the Epic case.</li>
             <li><strong>Circuit breakers and human-in-the-loop escalation</strong> on high-value automated decisions. Zillow's model was making unbounded capital commitments without a drift-triggered kill switch.</li>
@@ -746,7 +746,7 @@ const DataChallengesDetails = () => {
             <li>Models trained on clean, complete batch data underperform on partial, out-of-order streaming inputs.</li>
             <li>Training/serving skew produces a model that is correct offline and wrong online, with no error message.</li>
             <li>Late-arriving data forces a choice between waiting (blowing the latency budget) and predicting on incomplete input (accepting degraded accuracy).</li>
-            <li>Infrastructure requirements differ substantially from batch training, so the cost and operational burden are additive, not shared.</li>
+            <li>Infrastructure requirements differ substantially from batch training, so the cost and operational burden stack on top of what training already consumes.</li>
           </ul>
 
           <span className="dc-label">Real-world evidence</span>
@@ -755,9 +755,9 @@ const DataChallengesDetails = () => {
               The Uber ATG case is again instructive on the real-time dimension specifically: the ADS
               had to classify, track, and predict a path within a fraction of a second, and the
               repeated reclassification of the pedestrian reset the object's tracking history each
-              time, destroying the temporal context needed for path prediction.<Cite n={[3]} /> The
-              failure was not only "the class was missing from training." It was the interaction of
-              a missing class with a real-time tracking pipeline that could not maintain state
+              time, destroying the temporal context needed for path prediction.<Cite n={[3]} /> A
+              missing class explains only part of it. What made the failure fatal was the interaction
+              between that missing class and a real-time tracking pipeline that could not maintain state
               across a classification change.
             </p>
           </div>
@@ -956,8 +956,8 @@ const DataChallengesDetails = () => {
             </p>
             <p>
               The generalizable point for any engineer assembling a dataset: at web scale, "we
-              scraped what was publicly available" is not a provenance record, and the absence of an
-              audit is not evidence of an absence of problems.
+              scraped what was publicly available" does not constitute a provenance record, and
+              skipping the audit tells you nothing about whether problems exist.
             </p>
           </div>
 
@@ -984,7 +984,7 @@ const DataChallengesDetails = () => {
 
           <span className="dc-label">Impact</span>
           <ul>
-            <li>Errors are reinforced rather than corrected. Confidence rises while accuracy does not.</li>
+            <li>Errors get reinforced instead of corrected, and the model grows more confident while its accuracy stays flat.</li>
             <li>Coverage collapses onto the region the model already favors.</li>
             <li>Offline evaluation on logged data is biased, because the logged data was generated under the current policy.</li>
           </ul>
@@ -1006,8 +1006,8 @@ const DataChallengesDetails = () => {
               generations degrade in a characteristic way: early collapse loses the tails of the true
               distribution, late collapse converges to a distribution bearing little resemblance to
               the original. As web-scraped corpora increasingly contain machine-generated text and
-              images, this becomes a live data-sourcing problem, not a theoretical
-              one.<Cite n={[33, 34]} />
+              images, this stops being theoretical and becomes a live
+              data-sourcing problem.<Cite n={[33, 34]} />
             </p>
           </div>
 
@@ -1057,7 +1057,7 @@ const DataChallengesDetails = () => {
             <li><strong>Datasheets for datasets, model cards, and data cards</strong> as required artifacts, reviewed like code.<Cite n={[15, 16, 36]} /></li>
             <li><strong>Named dataset owners</strong> with the same on-call and review expectations as service owners.</li>
             <li><strong>Data quality metrics on the same dashboards as model metrics</strong>, so degradation is visible to the same people who are accountable for outcomes.</li>
-            <li><strong>Credit data work in performance review.</strong> This is not a soft recommendation; the incentive misalignment is the mechanism identified in the research.</li>
+            <li><strong>Credit data work in performance review.</strong> The research identifies incentive misalignment as the mechanism behind these failures, which puts it squarely in scope as an engineering control.</li>
             <li><strong>Data catalogs with lineage</strong> so discoverability does not depend on tribal knowledge.</li>
           </ul>
         </Challenge>
@@ -1068,7 +1068,7 @@ const DataChallengesDetails = () => {
           <p>
             The test set is a measurement instrument, and most teams do not treat it as one. A test
             set drawn as a random split from the same collection process as the training data
-            measures interpolation, not generalization. It will not detect distribution shift,
+            only measures interpolation. It will not detect distribution shift,
             shortcut learning, subgroup failure, or robustness gaps, because all of those are
             properties of the <em>difference</em> between the training distribution and the
             deployment distribution, and a random split has no such difference by construction.
@@ -1203,8 +1203,8 @@ const DataChallengesDetails = () => {
             mitigations with the engineering trade-off attached, because "apply differential
             privacy" is not advice until someone says what it costs. The summary table condenses all
             nineteen into a single review checklist, and the governance section maps them onto NIST
-            AI RMF and EU AI Act Article 10, which becomes enforceable in August 2026. It functions
-            as a pre-deployment review artifact, not a term paper.
+            AI RMF and EU AI Act Article 10, which becomes enforceable in August 2026. It is built
+            to function as a pre-deployment review artifact.
           </p>
         </section>
 
@@ -1221,9 +1221,9 @@ const DataChallengesDetails = () => {
           </p>
           <ol>
             <li>
-              <strong>The label is a design decision, not a given.</strong> The Obermeyer healthcare
-              case was not fixed with a fairness constraint; it was fixed by changing the target
-              variable from predicted cost to predicted need, which moved the proportion of Black
+              <strong>The label is a design decision.</strong> The Obermeyer healthcare
+              case was fixed by changing the target variable from predicted cost to predicted
+              need, with no fairness constraint applied, which moved the proportion of Black
               patients flagged for extra care from 17.7% to 46.5%. Interrogating what the target
               actually measures is the highest-leverage and least-practiced audit step in ML.
             </li>
@@ -1247,8 +1247,8 @@ const DataChallengesDetails = () => {
             operational design domain, behavioral test suites as requirements-based testing against
             the random test set's regression suite, circuit breakers on automated decisions, and
             units carried in the schema because the Mars Climate Orbiter failure mode is alive and
-            well inside feature pipelines. The result is a document that reads as a risk register for
-            an ML system, not a literature review.
+            well inside feature pipelines. The result reads as a risk register for an ML
+            system.
           </p>
         </section>
 
