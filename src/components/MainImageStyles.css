@@ -18,13 +18,16 @@
     transition: opacity 0.6s ease;
 }
 
+/* Matched vector pair: identical geometry, night and day palettes, so the two
+   layers sit in exact register through the crossfade. Every readout is real
+   avionics text for one consistent state (hdg 047, 12,500 ft, 280 KIAS). */
 .mask-layer--dark{
-    background-image: url("https://images.unsplash.com/photo-1581088657139-d5a5cce14c87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    background-image: url("../assets/hero/hero_home_dark.svg");
     opacity: 1;
 }
 
 .mask-layer--light{
-    background-image: url("../assets/hero/hero_home_light.png");
+    background-image: url("../assets/hero/hero_home_light.svg");
     opacity: 0;
 }
 
