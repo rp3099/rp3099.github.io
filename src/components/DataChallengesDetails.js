@@ -2,9 +2,11 @@ import React from 'react';
 import './DataChallengesDetailsStyles.css';
 import {
   FaArrowLeft, FaBookOpen, FaLayerGroup, FaSearchPlus, FaTable,
-  FaBalanceScale, FaLightbulb, FaGem, FaListOl
+  FaBalanceScale, FaLightbulb, FaGem, FaListOl,
+  FaBullseye, FaCogs, FaToolbox, FaCompass, FaKey
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import ArtifactStats from './ArtifactStats.js';
 
 // Import assets
 import dcFeature from '../assets/dc/data_challenges_feature.svg';
@@ -53,6 +55,47 @@ const DataChallengesDetails = () => {
         {/* Main Title */}
         <h1 className="dc-title">Data Challenges in Machine Learning</h1>
 
+        {/* ─── At a Glance ─── */}
+        <ArtifactStats
+          items={[
+            { value: '19', label: 'data challenges cataloged, 14 from the lesson plus 5 from research' },
+            { value: '37', label: 'primary and peer-reviewed sources cited' },
+            { value: '4', label: 'part format applied to every single challenge' },
+            { value: '2', label: 'governance frameworks mapped: NIST AI RMF and EU AI Act' },
+          ]}
+        />
+
+        {/* Short read for first-time visitors */}
+        <div className="dc-takeaways">
+          <h3><FaKey /> The Short Version</h3>
+          <p>If you read nothing else, these are the three arguments the report is built to support:</p>
+          <ol>
+            <li>
+              <strong>The label is a design decision, not a given.</strong> Changing the target
+              variable in the Obermeyer healthcare model from predicted cost to predicted need,
+              with no fairness constraint added, moved the share of Black patients flagged for
+              extra care from 17.7% to 46.5%.
+            </li>
+            <li>
+              <strong>A random train/test split is a broken measuring instrument.</strong> It
+              erases by construction the exact training-to-deployment gap that causes drift,
+              shortcut learning, and subgroup failure. Epic's sepsis model and the COVID
+              radiograph classifiers passed internal validation and failed in the real world for
+              this reason.
+            </li>
+            <li>
+              <strong>Most data failures are organizational before they are technical.</strong>{' '}
+              92% of practitioners surveyed had hit a data cascade, and the driver was incentives:
+              model work is rewarded, data work is invisible. No tooling fixes an ownership
+              vacuum.
+            </li>
+          </ol>
+          <p className="dc-takeaways-note">
+            The full catalog below documents all nineteen challenges in detail. Use the summary
+            table near the end if you want the condensed checklist version.
+          </p>
+        </div>
+
         {/* Purpose and Scope */}
         <div className="dc-intro-card">
           <h3><FaBookOpen /> Purpose and Scope</h3>
@@ -84,6 +127,70 @@ const DataChallengesDetails = () => {
             cascade.
           </p>
         </div>
+
+        {/* ─── Objective ─── */}
+        <section className="dc-section">
+          <h2><FaBullseye /> Objective</h2>
+          <p>
+            The assignment asked for the data challenges that arise when training and deploying
+            machine learning applications. I set a higher bar for myself: produce something that
+            would still be useful as a working document after the course ended. That meant three
+            rules. Every challenge had to be stated as a <em>mechanism</em> precise enough to act
+            on, not a category name. Every claim about how ML fails had to be traceable to a
+            documented incident or a peer-reviewed finding, with a number attached. And every
+            mitigation had to name its cost, because advice without a trade-off is not advice.
+          </p>
+        </section>
+
+        {/* ─── Process ─── */}
+        <section className="dc-section">
+          <h2><FaCogs /> Process</h2>
+          <ol className="dc-process">
+            <li>
+              <strong>Took the lesson list as the skeleton.</strong> Started from the fourteen
+              challenges in the AI500 4.2 lesson so the report stays anchored to the course
+              material.
+            </li>
+            <li>
+              <strong>Searched the literature for what was missing.</strong> Reviewed data-centric
+              AI research and published post-mortems, which surfaced five recurring challenges
+              absent from the lesson list: leakage, provenance and licensing, feedback loops,
+              organizational ownership, and evaluation data design.
+            </li>
+            <li>
+              <strong>Sourced a real failure for each one.</strong> Traced every challenge to a
+              documented incident or peer-reviewed study (NTSB reports, <em>Science</em>,{' '}
+              <em>Nature</em>, CHI, NeurIPS, regulator decisions, and public financial
+              disclosures) rather than to a textbook illustration.
+            </li>
+            <li>
+              <strong>Fixed one format and held it.</strong> Wrote all nineteen in the same
+              four-part structure, mechanism, impact, real-world evidence, mitigations, so they
+              can be compared and used as a checklist.
+            </li>
+            <li>
+              <strong>Named the trade-off on every mitigation.</strong> Differential privacy costs
+              utility, external validation costs schedule, human review costs throughput. Each one
+              is stated.
+            </li>
+            <li>
+              <strong>Mapped it onto governance.</strong> Cross-referenced the catalog against the
+              NIST AI Risk Management Framework and EU AI Act Article 10, then condensed
+              everything into a single summary table for pre-deployment review.
+            </li>
+          </ol>
+        </section>
+
+        {/* ─── Tools and Tech Used ─── */}
+        <section className="dc-section">
+          <h2><FaToolbox /> Tools and Tech Used</h2>
+          <ul className="dc-tools">
+            <li><strong>Academic and primary sources</strong>: arXiv, ACM Digital Library, <em>Science</em>, <em>Nature</em>, PMLR, and NTSB accident reports for the evidence base.</li>
+            <li><strong>Regulatory and standards material</strong>: NIST AI Risk Management Framework, EU AI Act Article 10, and published regulator enforcement decisions.</li>
+            <li><strong>Microsoft Word</strong>: report drafting and structure.</li>
+            <li><strong>React portfolio</strong>: this page, including the original pipeline diagram and the linked citation system.</li>
+          </ul>
+        </section>
 
         {/* ─── Framing ─── */}
         <section className="dc-section">
@@ -1249,6 +1356,36 @@ const DataChallengesDetails = () => {
             units carried in the schema because the Mars Climate Orbiter failure mode is alive and
             well inside feature pipelines. The result reads as a risk register for an ML
             system.
+          </p>
+        </section>
+
+        {/* ─── Relevance ─── */}
+        <section className="dc-section">
+          <h2><FaCompass /> Relevance</h2>
+          <p>
+            Every organization now deploying machine learning is discovering the same thing in the
+            same order: the model was never the hard part. The failures that make the news are
+            data failures, and they are expensive in ways that show up on a balance sheet
+            (Zillow's $304M write-down), in a courtroom (Clearview's EUR 20M and EUR 30.5M fines),
+            in a hospital (Epic's sepsis model), and in a fatality report (Uber ATG in Tempe).
+            Anyone responsible for shipping an ML system needs a way to find those defects before
+            deployment, and that is precisely what this report was built to be.
+          </p>
+          <p>
+            It also arrives on a clock. EU AI Act Article 10, which sets binding data-governance
+            obligations for high-risk systems, becomes enforceable in August 2026, so data
+            documentation and provenance stop being best practice and become a compliance
+            requirement. The governance section maps the catalog directly onto those obligations
+            and onto the NIST AI RMF.
+          </p>
+          <p>
+            For me the connection is straightforward. Aerospace has spent decades formalizing how
+            you prove a system is safe before it flies: requirements traceability, coverage
+            against an operational design domain, and named failure modes with mitigations. This
+            report is that discipline applied to ML data, which is why it reads as a risk register
+            rather than a survey. To the audience of this portfolio, it is the clearest evidence I
+            can offer that I would be useful on a team that has to <em>defend</em> a model, not
+            just train one.
           </p>
         </section>
 

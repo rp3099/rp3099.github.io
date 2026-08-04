@@ -48,6 +48,71 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* Short-read summary for visitors who will not read all nineteen challenges */
+.dc-takeaways {
+  background: var(--surface-1);
+  border: 1px solid var(--line-2);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.dc-takeaways h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--accent-ink);
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.dc-takeaways p {
+  color: var(--text-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.dc-takeaways ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.dc-takeaways li {
+  color: var(--text-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.dc-takeaways li::marker {
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+.dc-takeaways strong {
+  color: var(--text-strong);
+}
+
+.dc-takeaways-note {
+  font-size: 0.9rem !important;
+  color: var(--text-muted) !important;
+  font-style: italic;
+  margin-bottom: 0 !important;
+}
+
+.dc-process li,
+.dc-tools li {
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
+
+.dc-process li::marker {
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
 .dc-intro-card {
   background: var(--accent-a05);
   border: 1px dashed var(--accent);

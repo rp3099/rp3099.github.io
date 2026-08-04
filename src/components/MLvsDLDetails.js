@@ -1,8 +1,9 @@
 import React from 'react';
 import './MLvsDLDetailsStyles.css';
-import { FaArrowLeft, FaBookOpen, FaBullseye, FaChartLine, FaCarSide, FaBalanceScale, FaCogs, FaToolbox, FaLightbulb, FaListOl, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import { FaArrowLeft, FaBookOpen, FaBullseye, FaChartLine, FaCarSide, FaBalanceScale, FaCogs, FaToolbox, FaLightbulb, FaListOl, FaCheckCircle, FaTimesCircle, FaCompass, FaGem } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Lightbox from './Lightbox.js';
+import ArtifactStats from './ArtifactStats.js';
 
 import svmMargin from '../assets/ml/svm_margin.svg';
 import cnnHierarchy from '../assets/ml/cnn_hierarchy.svg';
@@ -17,11 +18,42 @@ const MLvsDLDetails = () => {
             <FaArrowLeft /> Back to Projects
           </Link>
 
+          {/* Header Metadata */}
+          <div className="ml-meta">
+            <span><strong>Course:</strong> AIML-500</span>
+            <span><strong>Type:</strong> Analytical Report</span>
+            <span><strong>Assignment:</strong> 2.3</span>
+            <span><strong>Topic:</strong> Model Selection &amp; Trade-Offs</span>
+          </div>
+
           <h1 className="ml-title">Machine Learning vs. Deep Learning</h1>
 
-          {/* ─── Overview ─── */}
+          {/* ─── Introduction ─── */}
+          <div className="ml-intro-card">
+            <h3><FaCompass /> Introduction</h3>
+            <p>
+              "Use deep learning" is the default answer to almost every ML question right now, and
+              it is frequently the wrong one. This report takes the two examples from the course
+              lecture and pushes each to the point where the choice actually has to be defended:
+              a support vector machine for telecom churn, and convolutional networks for
+              autonomous driving. For both I argue not only why the chosen method works, but why
+              the other one fails, which is the harder and more useful half of the answer.
+            </p>
+          </div>
+
+          {/* ─── At a Glance ─── */}
+          <ArtifactStats
+            items={[
+              { value: '2', label: 'contrasting case studies argued in both directions' },
+              { value: '2', label: 'original diagrams created for the report' },
+              { value: '6', label: 'peer-reviewed and primary industry sources cited' },
+              { value: '4', label: 'decision factors: data type, volume, cost, interpretability' },
+            ]}
+          />
+
+          {/* ─── Description ─── */}
           <section className="ml-section">
-            <h2><FaBookOpen /> Overview</h2>
+            <h2><FaBookOpen /> Description</h2>
             <p>
               Machine learning (ML) and deep learning (DL) both learn from data, but it is crucial to
               identify which method to use when. Traditional ML relies on human-defined features fed into
@@ -203,6 +235,59 @@ const MLvsDLDetails = () => {
               data type, scale, and constraints, justify an engineering decision with evidence, and
               communicate the trade-offs clearly. That is the same judgment required to choose cost-effective,
               maintainable solutions in real machine-learning work.
+            </p>
+          </section>
+
+          {/* ─── Unique Value ─── */}
+          <section className="ml-section">
+            <h2><FaGem /> Unique Value</h2>
+            <p>
+              Most write-ups on this topic compare ML and DL feature by feature and stop there.
+              This one argues each case <strong>in both directions</strong>: for every example it
+              states why the chosen method fits <em>and</em> why the rejected method fails on that
+              specific problem. That second argument is where the engineering actually lives, and
+              it is the part a comparison table cannot give you.
+            </p>
+            <ol className="ml-refs">
+              <li>
+                <strong>The claims are anchored, not asserted.</strong> The statement that deep
+                networks rarely beat well-tuned classical models on tabular data is not an opinion
+                here; it is cited to Grinsztajn et al. (NeurIPS 2022), which benchmarked exactly
+                that question.
+              </li>
+              <li>
+                <strong>The deciding factor is named each time.</strong> Churn turns on
+                interpretability and cheap retraining; driving turns on the accuracy ceiling of
+                hand-engineered features. Naming the binding constraint is what makes the decision
+                transferable to a problem neither example covers.
+              </li>
+              <li>
+                <strong>The diagrams were built for the argument.</strong> The SVM margin figure
+                and the CNN feature hierarchy are original, drawn specifically to show the one
+                property each section depends on rather than borrowed as decoration.
+              </li>
+            </ol>
+          </section>
+
+          {/* ─── Relevance ─── */}
+          <section className="ml-section">
+            <h2><FaCompass /> Relevance</h2>
+            <p>
+              Choosing the wrong model class is an expensive mistake that usually goes undetected,
+              because an overpowered model still produces plausible numbers. It shows up later as
+              GPU spend that never had to exist, a retraining cycle too slow to keep up with the
+              business, or a decision no one can explain to a regulator. The skill this artifact
+              demonstrates, sizing the method to the problem, is the one that prevents that
+              category of waste.
+            </p>
+            <p>
+              It maps directly onto the work I do. In flight controls the equivalent question is
+              whether a linear analysis, a gain schedule, or a full nonlinear closed-loop
+              simulation is warranted, and the answer is decided the same way: by the structure of
+              the problem, the cost of verifying the approach, and whether anyone can explain the
+              result under scrutiny. For readers of this portfolio, this artifact is evidence that I reason
+              about AI in terms of constraints and consequences rather than in terms of whichever
+              method is currently fashionable.
             </p>
           </section>
 

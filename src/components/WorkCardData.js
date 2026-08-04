@@ -32,28 +32,28 @@ const ProjectCardData = [
         category: "ai",
         imgsrc: ai3,
         title: "VFR PPL Assistant",
-        text: "Custom GPT study aid grounded in official FAA source hierarchies and 'cite or flag' rules to assist student pilots in earning their Private Pilot License.",
+        text: "A deployed custom GPT that helps student pilots study for the FAA written test, built so it must cite an FAA source or flag that it could not.",
         view: "/project/vfr-assistant"
     },
     {
         category: "ai",
         imgsrc: trainingMethods,
         title: "ML Training Methods Guide",
-        text: "A practical guide to supervised, unsupervised, semi-supervised, and reinforcement learning, from loss functions and learning rates to XGBoost, K-Means, and PPO, distilled from a guided conversation with the AIML-500 course chatbot.",
+        text: "All four training paradigms explained through one seven-step lens, down to XGBoost, K-Means, and PPO. Built by interrogating the course AI tutor.",
         view: "/project/ml-training-methods"
     },
     {
         category: "ai",
         imgsrc: dataChallenges,
         title: "Data Challenges in ML",
-        text: "A research report cataloging nineteen ways data breaks machine learning systems (availability, bias, drift, leakage, provenance), each tied to a documented failure and a mitigation with its trade-off named.",
+        text: "Nineteen ways data breaks ML systems, each tied to a documented failure and a mitigation with its cost named. A pre-deployment risk register.",
         view: "/project/data-challenges"
     },
     {
         category: "ai",
         imgsrc: mlvsdl,
         title: "Machine Learning vs. Deep Learning",
-        text: "When to use classical ML versus deep learning: SVM churn prediction vs. CNN autonomous driving, and the engineering trade-offs behind each choice.",
+        text: "Why an SVM is right for churn prediction and a CNN is right for autonomous driving, argued in both directions for each case.",
         view: "/project/ml-vs-dl"
     }
 ];

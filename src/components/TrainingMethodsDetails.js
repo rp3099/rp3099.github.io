@@ -1,7 +1,8 @@
 import React from 'react';
 import './TrainingMethodsDetailsStyles.css';
-import { FaArrowLeft, FaComments, FaThLarge, FaCogs, FaQuestionCircle, FaProjectDiagram, FaLink, FaGamepad, FaListOl, FaSearch, FaLightbulb, FaGem } from 'react-icons/fa';
+import { FaArrowLeft, FaComments, FaThLarge, FaCogs, FaQuestionCircle, FaProjectDiagram, FaLink, FaGamepad, FaListOl, FaSearch, FaLightbulb, FaGem, FaBullseye, FaToolbox, FaCompass, FaBookOpen } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import ArtifactStats from './ArtifactStats.js';
 
 // Import assets
 import tmFeature from '../assets/mltm/training_methods_feature.svg';
@@ -29,6 +30,16 @@ const TrainingMethodsDetails = () => {
         {/* Main Title */}
         <h1 className="tm-title">Machine Learning Training Methods: From Paradigms to Practice</h1>
 
+        {/* ─── At a Glance ─── */}
+        <ArtifactStats
+          items={[
+            { value: '4', label: 'training paradigms held to one comparison structure' },
+            { value: '7', label: 'step lens applied identically to every method' },
+            { value: '18', label: 'algorithms mapped across the four paradigms' },
+            { value: '4', label: 'flagship algorithms walked through step by step' },
+          ]}
+        />
+
         {/* Provenance */}
         <div className="tm-intro-card">
           <h3><FaComments /> How This Guide Was Made</h3>
@@ -49,6 +60,36 @@ const TrainingMethodsDetails = () => {
           <img src={tmFeature} alt="The four machine learning training paradigms" />
           <p className="tm-caption">Figure 1: The four training paradigms covered in this guide: supervised, unsupervised, semi-supervised, and reinforcement learning.</p>
         </div>
+
+        {/* ─── Description ─── */}
+        <section className="tm-section">
+          <h2><FaBookOpen /> Description</h2>
+          <p>
+            This is a reference guide to how machine learning models are actually trained,
+            organized around a single claim: <strong>every training method is the same
+            seven-step loop with different parts swapped out.</strong> It walks the four
+            paradigms (supervised, unsupervised, semi-supervised, and reinforcement learning),
+            then the mechanics shared by all of them (data splitting, initialization, forward and
+            backward passes, loss functions, learning rates, and stopping criteria), then the
+            algorithm landscape for each paradigm, and finally four flagship algorithms
+            (XGBoost, K-Means, Self-Training, and PPO) traced through that identical seven-step
+            structure so they can be read side by side.
+          </p>
+        </section>
+
+        {/* ─── Objective ─── */}
+        <section className="tm-section">
+          <h2><FaBullseye /> Objective</h2>
+          <p>
+            I built this guide for AIML-500 with two goals. The first was to leave the course with
+            a working mental model of training rather than a vocabulary list, so that an
+            unfamiliar algorithm can be understood by asking where its label, its gradient, and
+            its convergence criterion come from. The second was methodological: to test whether a
+            course AI tutor can be driven, through deliberate and adversarial follow-up
+            questioning, to produce material with the coherence of a reference document instead
+            of a pile of disconnected answers.
+          </p>
+        </section>
 
         {/* ─── The Four Paradigms ─── */}
         <section className="tm-section">
@@ -375,6 +416,53 @@ const TrainingMethodsDetails = () => {
           </ol>
         </section>
 
+        {/* ─── Process ─── */}
+        <section className="tm-section">
+          <h2><FaCogs /> Process</h2>
+          <ol>
+            <li>
+              <strong>Opened broad, deliberately.</strong> Started the SchoolAI session with
+              "what are the primary training methods?" to establish the paradigm boundaries before
+              narrowing anything.
+            </li>
+            <li>
+              <strong>Drilled into mechanics.</strong> Took each paradigm apart in turn, pushing
+              past definitions into how the learning signal is produced and consumed.
+            </li>
+            <li>
+              <strong>Challenged the answers.</strong> Followed up on hyperparameters, learning
+              rates, and stopping criteria, including the "when do you stop training?" chess
+              problem, to find where the explanations became vague.
+            </li>
+            <li>
+              <strong>Imposed a fixed structure.</strong> Required that every paradigm and every
+              flagship algorithm be re-explained through the same seven steps, which is what makes
+              them comparable rather than merely adjacent.
+            </li>
+            <li>
+              <strong>Verified against course material.</strong> Checked key claims (loss
+              formulations, the EM analogy for K-Means, the PPO clipped objective) against
+              lecture content before keeping them.
+            </li>
+            <li>
+              <strong>Reorganized for reference use.</strong> Restructured the transcript into
+              this guide, adding equations, comparison tables, and an original diagram of the four
+              paradigms.
+            </li>
+          </ol>
+        </section>
+
+        {/* ─── Tools and Tech Used ─── */}
+        <section className="tm-section">
+          <h2><FaToolbox /> Tools and Tech Used</h2>
+          <ul>
+            <li><strong>SchoolAI (AIML-500 space)</strong>: the course chatbot that served as the primary source conversation.</li>
+            <li><strong>AIML-500 lecture material</strong>: used to verify the technical claims before they were kept.</li>
+            <li><strong>Prompt and context engineering</strong>: progressive questioning, structural constraints, and adversarial follow-ups as the actual method of the project.</li>
+            <li><strong>React portfolio</strong>: this page, with an original SVG diagram of the four paradigms.</li>
+          </ul>
+        </section>
+
         {/* ─── Value Proposition ─── */}
         <section className="tm-section">
           <h2><FaLightbulb /> Value Proposition</h2>
@@ -409,6 +497,46 @@ const TrainingMethodsDetails = () => {
             curious prompting (asking "why," "what if," and "keep the same structure") is itself
             a learning technique that produces better material than passive reading.
           </p>
+        </section>
+
+        {/* ─── Relevance ─── */}
+        <section className="tm-section">
+          <h2><FaCompass /> Relevance</h2>
+          <p>
+            Training is the part of machine learning that most quickly turns into cargo-culting.
+            Practitioners copy a learning rate, an early-stopping patience, or an optimizer from a
+            tutorial and never learn what those knobs are doing, which is exactly why so many
+            models are debugged by guesswork. A structural understanding of the loop, knowing
+            what the loss is measuring, what the update is moving, and what convergence actually
+            means for this method, is what turns training from trial and error into diagnosis.
+          </p>
+          <p>
+            The second half of the relevance is the method itself. Getting useful output from an
+            AI system by constraining its structure and interrogating its weak points is the same
+            skill the VFR PPL Assistant is built on and the same skill that separates people who
+            use AI tools well from people who paste the first answer they get. That skill
+            generalizes far past this course, and it is the one I expect to use most in the
+            AI-assisted engineering work I am moving toward.
+          </p>
+        </section>
+
+        {/* ─── References ─── */}
+        <section className="tm-section">
+          <h2><FaListOl /> References</h2>
+          <p>
+            The guide's content came from the SchoolAI conversation and AIML-500 course material.
+            The primary sources below define the four flagship algorithms and the optimizer
+            referenced throughout, and are listed for readers who want the original formulations.
+          </p>
+          <ol className="tm-refs">
+            <li>SchoolAI, AIML-500 course chatbot. Source conversation, July 19, 2026 (primary source for this guide).</li>
+            <li>T. Chen and C. Guestrin, "XGBoost: A Scalable Tree Boosting System," <em>KDD 2016</em>, arXiv:1603.02754. <a href="https://arxiv.org/abs/1603.02754" target="_blank" rel="noopener noreferrer">arxiv.org/abs/1603.02754</a></li>
+            <li>S. P. Lloyd, "Least Squares Quantization in PCM," <em>IEEE Transactions on Information Theory</em>, vol. 28, no. 2, pp. 129-137, 1982. <a href="https://doi.org/10.1109/TIT.1982.1056489" target="_blank" rel="noopener noreferrer">doi.org/10.1109/TIT.1982.1056489</a></li>
+            <li>D. Arthur and S. Vassilvitskii, "k-means++: The Advantages of Careful Seeding," <em>SODA 2007</em>. <a href="https://dl.acm.org/doi/10.5555/1283383.1283494" target="_blank" rel="noopener noreferrer">dl.acm.org/doi/10.5555/1283383.1283494</a></li>
+            <li>D.-H. Lee, "Pseudo-Label: The Simple and Efficient Semi-Supervised Learning Method for Deep Neural Networks," <em>ICML Workshop on Challenges in Representation Learning</em>, 2013. <a href="https://www.researchgate.net/publication/280581078" target="_blank" rel="noopener noreferrer">researchgate.net</a></li>
+            <li>J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, "Proximal Policy Optimization Algorithms," arXiv:1707.06347, 2017. <a href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener noreferrer">arxiv.org/abs/1707.06347</a></li>
+            <li>D. P. Kingma and J. Ba, "Adam: A Method for Stochastic Optimization," <em>ICLR 2015</em>, arXiv:1412.6980. <a href="https://arxiv.org/abs/1412.6980" target="_blank" rel="noopener noreferrer">arxiv.org/abs/1412.6980</a></li>
+          </ol>
         </section>
 
         <p className="tm-transcript-note">

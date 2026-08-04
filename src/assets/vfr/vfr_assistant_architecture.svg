@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="VFR PPL Assistant system architecture: a student question passes through the Chatbase system prompt, is matched against a crawled FAA knowledge base, then through a four-tier source hierarchy and a cite-or-flag gate before a cited answer is returned with a study-aid disclaimer.">
+  <defs>
+    <linearGradient id="vfrArchBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1526"/>
+      <stop offset="0.6" stop-color="#0b0c10"/>
+      <stop offset="1" stop-color="#08090c"/>
+    </linearGradient>
+    <marker id="vfrArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#deb887" fill-opacity="0.8"/>
+    </marker>
+  </defs>
+
+  <style>
+    .vfr-box   { fill: #ffffff; fill-opacity: 0.04; stroke: #deb887; stroke-opacity: 0.35; }
+    .vfr-panel { fill: #deb887; fill-opacity: 0.04; stroke: #deb887; stroke-opacity: 0.28; }
+    .vfr-chip  { fill: #ffffff; fill-opacity: 0.04; stroke: #deb887; stroke-opacity: 0.3; }
+    .vfr-t     { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    .vfr-head  { font-size: 21px; font-weight: 700; fill: #deb887; letter-spacing: 1.5px; }
+    .vfr-body  { font-size: 16px; fill: #c5c6c7; }
+    .vfr-small { font-size: 15px; fill: #c5c6c7; }
+    .vfr-label { font-size: 15px; font-weight: 700; fill: #deb887; letter-spacing: 2px; }
+    .vfr-line  { stroke: #deb887; stroke-opacity: 0.55; stroke-width: 2.5; fill: none; }
+  </style>
+
+  <rect width="1200" height="900" fill="url(#vfrArchBg)"/>
+
+  <!-- Faint sectional-chart lines, matching the project's feature art -->
+  <g stroke="#deb887" stroke-opacity="0.04" stroke-width="1.5">
+    <line x1="0" y1="230" x2="1200" y2="180"/>
+    <line x1="0" y1="640" x2="1200" y2="700"/>
+    <line x1="230" y1="0" x2="170" y2="900"/>
+    <line x1="990" y1="0" x2="1060" y2="900"/>
+  </g>
+
+  <text class="vfr-t" x="600" y="52" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff" letter-spacing="3">VFR PPL ASSISTANT · SYSTEM ARCHITECTURE</text>
+
+  <!-- ── Row A: the three-stage request path ── -->
+  <g>
+    <rect class="vfr-box" x="40" y="100" width="330" height="140" rx="12"/>
+    <circle cx="76" cy="136" r="17" fill="#deb887"/>
+    <text class="vfr-t" x="76" y="143" text-anchor="middle" font-size="18" font-weight="700" fill="#0b0c10">1</text>
+    <text class="vfr-t vfr-head" x="105" y="143">ASK</text>
+    <text class="vfr-t vfr-body" x="64" y="180">A student pilot asks a</text>
+    <text class="vfr-t vfr-body" x="64" y="202">regulations, weather, or systems</text>
+    <text class="vfr-t vfr-body" x="64" y="224">question.</text>
+  </g>
+
+  <line class="vfr-line" x1="378" y1="170" x2="424" y2="170" marker-end="url(#vfrArrow)"/>
+
+  <g>
+    <rect class="vfr-box" x="435" y="100" width="330" height="140" rx="12"/>
+    <circle cx="471" cy="136" r="17" fill="#deb887"/>
+    <text class="vfr-t" x="471" y="143" text-anchor="middle" font-size="18" font-weight="700" fill="#0b0c10">2</text>
+    <text class="vfr-t vfr-head" x="500" y="143">INTERPRET</text>
+    <text class="vfr-t vfr-body" x="459" y="180">Chatbase system prompt sets the</text>
+    <text class="vfr-t vfr-body" x="459" y="202">CFI persona, scope limits, and</text>
+    <text class="vfr-t vfr-body" x="459" y="224">plain-then-formal answer style.</text>
+  </g>
+
+  <line class="vfr-line" x1="773" y1="170" x2="819" y2="170" marker-end="url(#vfrArrow)"/>
+
+  <g>
+    <rect class="vfr-box" x="830" y="100" width="330" height="140" rx="12"/>
+    <circle cx="866" cy="136" r="17" fill="#deb887"/>
+    <text class="vfr-t" x="866" y="143" text-anchor="middle" font-size="18" font-weight="700" fill="#0b0c10">3</text>
+    <text class="vfr-t vfr-head" x="895" y="143">RETRIEVE</text>
+    <text class="vfr-t vfr-body" x="854" y="180">The question is matched against</text>
+    <text class="vfr-t vfr-body" x="854" y="202">the crawled FAA and Pilot</text>
+    <text class="vfr-t vfr-body" x="854" y="224">Institute knowledge base.</text>
+  </g>
+
+  <line class="vfr-line" x1="995" y1="242" x2="995" y2="274" marker-end="url(#vfrArrow)"/>
+
+  <!-- ── Row B: the prioritized source hierarchy ── -->
+  <g>
+    <rect class="vfr-panel" x="40" y="280" width="1120" height="190" rx="12"/>
+    <text class="vfr-t vfr-label" x="62" y="312">KNOWLEDGE BASE · PRIORITIZED SOURCE HIERARCHY</text>
+
+    <g>
+      <rect class="vfr-chip" x="62" y="332" width="260" height="120" rx="10"/>
+      <text class="vfr-t" x="82" y="360" font-size="14" font-weight="700" fill="#deb887" letter-spacing="2">TIER 1</text>
+      <text class="vfr-t" x="82" y="386" font-size="17" font-weight="600" fill="#ffffff">Regulations</text>
+      <text class="vfr-t vfr-small" x="82" y="412">FAA FARs / 14 CFR</text>
+      <text class="vfr-t vfr-small" x="82" y="432">Checked first, always.</text>
+    </g>
+
+    <g>
+      <rect class="vfr-chip" x="334" y="332" width="260" height="120" rx="10"/>
+      <text class="vfr-t" x="354" y="360" font-size="14" font-weight="700" fill="#deb887" letter-spacing="2">TIER 2</text>
+      <text class="vfr-t" x="354" y="386" font-size="17" font-weight="600" fill="#ffffff">Procedures</text>
+      <text class="vfr-t vfr-small" x="354" y="412">FAA Aeronautical</text>
+      <text class="vfr-t vfr-small" x="354" y="432">Information Manual (AIM)</text>
+    </g>
+
+    <g>
+      <rect class="vfr-chip" x="606" y="332" width="260" height="120" rx="10"/>
+      <text class="vfr-t" x="626" y="360" font-size="14" font-weight="700" fill="#deb887" letter-spacing="2">TIER 3</text>
+      <text class="vfr-t" x="626" y="386" font-size="17" font-weight="600" fill="#ffffff">General concepts</text>
+      <text class="vfr-t vfr-small" x="626" y="412">PHAK, Airplane Flying</text>
+      <text class="vfr-t vfr-small" x="626" y="432">Handbook, FAA ACs</text>
+    </g>
+
+    <g>
+      <rect class="vfr-chip" x="878" y="332" width="260" height="120" rx="10"/>
+      <text class="vfr-t" x="898" y="360" font-size="14" font-weight="700" fill="#deb887" letter-spacing="2">TIER 4</text>
+      <text class="vfr-t" x="898" y="386" font-size="17" font-weight="600" fill="#ffffff">Secondary reference</text>
+      <text class="vfr-t vfr-small" x="898" y="412">Pilot Institute, used only</text>
+      <text class="vfr-t vfr-small" x="898" y="432">when FAA sources are silent.</text>
+    </g>
+  </g>
+
+  <line class="vfr-line" x1="600" y1="472" x2="600" y2="504" marker-end="url(#vfrArrow)"/>
+
+  <!-- ── Row C: the cite-or-flag gate ── -->
+  <g>
+    <rect x="390" y="510" width="420" height="94" rx="12" fill="#deb887" fill-opacity="0.09" stroke="#deb887" stroke-opacity="0.55" stroke-width="2"/>
+    <text class="vfr-t vfr-head" x="600" y="546" text-anchor="middle">CITE OR FLAG GATE</text>
+    <text class="vfr-t vfr-body" x="600" y="576" text-anchor="middle">Is the answer in an FAA-published source?</text>
+  </g>
+
+  <path class="vfr-line" d="M 520 604 L 520 632 L 330 632 L 330 658" marker-end="url(#vfrArrow)"/>
+  <path class="vfr-line" d="M 690 604 L 690 632 L 890 632 L 890 658" marker-end="url(#vfrArrow)"/>
+  <text class="vfr-t" x="400" y="626" font-size="15" font-weight="700" fill="#7ee0a1" letter-spacing="2">YES</text>
+  <text class="vfr-t" x="800" y="626" font-size="15" font-weight="700" fill="#ffb86b" letter-spacing="2">NO</text>
+
+  <!-- ── Row D: the two possible outcomes ── -->
+  <g>
+    <rect x="70" y="666" width="490" height="140" rx="12" fill="#7ee0a1" fill-opacity="0.05" stroke="#7ee0a1" stroke-opacity="0.35"/>
+    <text class="vfr-t" x="95" y="706" font-size="18" font-weight="700" fill="#7ee0a1" letter-spacing="1.5">ANSWER WITH CITATION</text>
+    <text class="vfr-t vfr-body" x="95" y="736">Plain-language explanation first, then the</text>
+    <text class="vfr-t vfr-body" x="95" y="758">formal regulatory wording, with the exact</text>
+    <text class="vfr-t" x="95" y="784" font-size="16" fill="#deb887">reference named: 14 CFR 91.155 · AIM 4-1-3</text>
+  </g>
+
+  <g>
+    <rect x="640" y="666" width="490" height="140" rx="12" fill="#ffb86b" fill-opacity="0.05" stroke="#ffb86b" stroke-opacity="0.35"/>
+    <text class="vfr-t" x="665" y="706" font-size="18" font-weight="700" fill="#ffb86b" letter-spacing="1.5">SEARCH AND FLAG</text>
+    <text class="vfr-t vfr-body" x="665" y="736">If no listed source covers it, the assistant</text>
+    <text class="vfr-t vfr-body" x="665" y="758">may search the web, but must name the</text>
+    <text class="vfr-t" x="665" y="784" font-size="16" fill="#ffb86b">source and flag it as not FAA-published.</text>
+  </g>
+
+  <!-- ── Row E: the constant that applies to every response ── -->
+  <rect x="70" y="836" width="1060" height="52" rx="10" fill="#deb887" fill-opacity="0.06" stroke="#deb887" stroke-opacity="0.25"/>
+  <text class="vfr-t" x="600" y="868" text-anchor="middle" font-size="16" fill="#d9c3a5">Every response closes with a study-aid disclaimer: not a substitute for a CFI or current official documentation.</text>
+</svg>

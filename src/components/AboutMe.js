@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFilePdf, FaEnvelope, FaGraduationCap, FaBriefcase, FaBrain, FaCompass } from 'react-icons/fa';
+import { FaFilePdf, FaEnvelope, FaGraduationCap, FaBriefcase, FaBrain, FaCompass, FaLinkedin, FaGithub, FaGem } from 'react-icons/fa';
 import './AboutMeStyles.css';
 
 const AboutMe = () => {
@@ -12,8 +12,8 @@ const AboutMe = () => {
           <span className="subtitle">Biography</span>
           <h2 className="title">About Me</h2>
           <p className="bio-text">
-            I'm an Aerospace Engineer at Honda Aircraft Company, where I develop and
-            certify advanced flight control systems, including autothrottle and Emergency
+            I'm an Aerospace Engineer at Honda Aircraft Company, where I develop and verify
+            automatic flight control systems, including autothrottle and Emergency
             Autoland. I hold an M.S. in Aerospace Engineering from Virginia Tech, and I'm
             currently pursuing an M.S. in Computer Information Systems with an AI
             Specialization at Indiana Wesleyan University. My work spans flight controls,
@@ -44,6 +44,36 @@ const AboutMe = () => {
             </div>
           </div>
 
+          <div className="value-prop">
+            <h3><FaGem className="value-prop-icon" /> Unique Value &amp; Career Direction</h3>
+            <p>
+              Most people entering AI/ML arrive from software or data science. I arrive from
+              verification and validation. I work in automatic flight controls, where my job is to
+              show that a control law actually behaves the way it is supposed to across the flight
+              envelope: developing closed-loop nonlinear simulations, writing and executing
+              integrated and laboratory test plans, running regression testing for safety-of-flight
+              clearance, and analyzing flight test telemetry when the aircraft does something the
+              model did not predict. The work runs under DO-178C, ARP4754, and ARP4761, and on
+              Emergency Autoland it produced laboratory test plans I executed with the FAA
+              witnessing.
+            </p>
+            <p>
+              I bring the same question to machine learning: <em>how would I know if this were
+              wrong?</em> That is why the artifacts in this portfolio are built around evidence,
+              source hierarchies, failure modes, and stated trade-offs rather than around accuracy
+              numbers alone. A model that cannot be tested is not finished, and neither is a
+              control law.
+            </p>
+            <p>
+              My goal is to work at the point where those two disciplines meet: applied AI,
+              autonomy, and decision-support systems held to the standard of evidence that
+              safety-critical aerospace already demands. As a future technical leader, the
+              contribution I intend to make is exactly that translation, helping AI teams
+              understand what safety-critical engineering requires, and helping aerospace teams
+              understand what modern AI can genuinely deliver.
+            </p>
+          </div>
+
           <div className="about-buttons">
             <a
               href="/resume.pdf"
@@ -58,6 +88,25 @@ const AboutMe = () => {
               <FaEnvelope className="button-icon" /> Get in Touch
             </Link>
           </div>
+
+          <div className="about-profile-links">
+            <a
+              href="https://www.linkedin.com/in/rudra-patel-195879154/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-profile-link"
+            >
+              <FaLinkedin /> LinkedIn
+            </a>
+            <a
+              href="https://github.com/rp3099"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-profile-link"
+            >
+              <FaGithub /> GitHub
+            </a>
+          </div>
         </div>
 
         <div className="home-about-graphics">
@@ -70,6 +119,10 @@ const AboutMe = () => {
               <li>
                 <span className="tech-dot"></span>
                 <span><strong>Flight Control Systems</strong> (AFCS, Autothrottle, Emergency Autoland)</span>
+              </li>
+              <li>
+                <span className="tech-dot"></span>
+                <span><strong>Verification &amp; Validation</strong> (DO-178C, ARP4754, ARP4761, DOORS)</span>
               </li>
               <li>
                 <span className="tech-dot"></span>

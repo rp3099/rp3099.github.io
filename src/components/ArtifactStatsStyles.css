@@ -1,0 +1,65 @@
+.artifact-stats {
+  margin: 2rem 0 2.5rem;
+}
+
+/* Fixed 4 / 2 columns rather than auto-fit: every artifact reports exactly
+   four outcomes, and auto-fit produced a lopsided 3 + 1 wrap at mid widths. */
+.artifact-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media screen and (max-width: 860px) {
+  .artifact-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.artifact-stat {
+  background: var(--surface-1);
+  border: 1px solid var(--line-2);
+  border-top: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: center;
+  align-items: center;
+}
+
+.artifact-stat-num {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--accent-ink);
+}
+
+.artifact-stat-label {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.artifact-stats-caption {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  .artifact-stat {
+    padding: 1.1rem 0.8rem;
+  }
+
+  .artifact-stat-num {
+    font-size: 1.7rem;
+  }
+
+  .artifact-stat-label {
+    font-size: 0.8rem;
+  }
+}
