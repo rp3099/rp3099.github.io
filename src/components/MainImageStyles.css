@@ -59,6 +59,9 @@
     left: 50%;
     text-align: center;
     z-index: 1;
+    width: 100%;
+    max-width: min(90vw, 900px);
+    padding: 0 1rem;
 }
 
 /* Follows the hero art: light text on the dark photo, dark ink on the light art. */

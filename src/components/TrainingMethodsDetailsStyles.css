@@ -134,6 +134,23 @@
   margin-bottom: 0.45rem;
 }
 
+.tm-refs li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.tm-refs a {
+  color: var(--accent-ink);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.tm-refs a:hover {
+  text-decoration: underline;
+}
+
 /* Card grid (paradigms, algorithm landscape, practitioner notes) */
 .tm-grid {
   display: grid;

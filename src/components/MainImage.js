@@ -13,8 +13,8 @@ const MainImage = () => {
         <div className="mask-scrim" aria-hidden="true" />
     </div>
     <div className="content">
-        <p>Welcome to my website</p>
-        <h1>I'm an aerospace engineer</h1>
+        <p>Rudra Patel, Aerospace Engineer</p>
+        <h1>Flight Controls &amp; Applied AI</h1>
     </div>
 
   </div>

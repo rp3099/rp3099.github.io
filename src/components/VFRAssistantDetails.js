@@ -1,11 +1,13 @@
 import React from 'react';
 import './VFRAssistantDetailsStyles.css';
-import { FaArrowLeft, FaFileDownload, FaExternalLinkAlt, FaRobot, FaBullseye, FaBookOpen, FaClipboardList, FaCogs, FaToolbox, FaShieldAlt, FaLightbulb, FaGem } from 'react-icons/fa';
+import { FaArrowLeft, FaFileDownload, FaExternalLinkAlt, FaRobot, FaBullseye, FaBookOpen, FaClipboardList, FaCogs, FaToolbox, FaShieldAlt, FaLightbulb, FaGem, FaCompass, FaProjectDiagram, FaListOl } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Lightbox from './Lightbox.js';
+import ArtifactStats from './ArtifactStats.js';
 
 // Import assets
 import assistantUi from '../assets/vfr/vfr_assistant_feature.svg';
+import assistantArchitecture from '../assets/vfr/vfr_assistant_architecture.svg';
 
 const VFRAssistantDetails = () => {
   return (
@@ -29,6 +31,29 @@ const VFRAssistantDetails = () => {
         {/* Main Title */}
         <h1 className="report-title">VFR PPL ASSISTANT: Domain-Reliable AI Flight Partner</h1>
 
+        {/* ─── Field: Introduction ─── */}
+        <div className="intro-card">
+          <h3><FaCompass /> Introduction</h3>
+          <p>
+            Student pilots study for the FAA Private Pilot knowledge test out of four separate
+            official publications that cross-reference each other and none of which is written for a
+            beginner. General-purpose chatbots answer those questions fluently and, often enough to
+            be dangerous, incorrectly. This artifact is my answer to that gap: a custom GPT that is
+            allowed to be conversational but is <em>not</em> allowed to be unsourced.
+          </p>
+        </div>
+
+        {/* ─── At a Glance ─── */}
+        <ArtifactStats
+          items={[
+            { value: '4', label: 'FAA publications crawled into the knowledge base' },
+            { value: '4-tier', label: 'enforced source hierarchy, FARs first' },
+            { value: '5', label: 'stage build process, from research to iteration' },
+            { value: 'Live', label: 'publicly deployed and testable on Chatbase' },
+          ]}
+          caption="Outcomes are stated as the countable properties of the delivered assistant."
+        />
+
         {/* ─── Field: Link to Assistant ─── */}
         <div className="try-card">
           <div className="try-text">
@@ -45,6 +70,29 @@ const VFRAssistantDetails = () => {
           <img src={assistantUi} alt="VFR PPL Assistant, AI Flight Partner" className="featured-image" />
           <p className="image-caption">Figure 1: The VFR PPL Assistant, an FAA-grounded, "cite or flag" AI study partner for private-pilot training.</p>
         </div>
+
+        {/* ─── System Architecture ─── */}
+        <section className="report-section">
+          <h2><FaProjectDiagram /> System Architecture</h2>
+          <p>
+            The whole workflow in one view: what happens between a student's question and a
+            cited answer, and what the assistant is required to do when the official sources
+            do not cover the question.
+          </p>
+          <div className="featured-image-container">
+            <img
+              src={assistantArchitecture}
+              alt="System architecture: the student question passes through the Chatbase system prompt, is matched against the crawled FAA knowledge base, then through the four-tier source hierarchy and the cite-or-flag gate, producing either a cited FAA answer or a flagged non-FAA answer, always closing with the study-aid disclaimer."
+              className="featured-image"
+              loading="lazy"
+            />
+            <p className="image-caption">
+              Figure 2: Request path and the cite-or-flag decision. The source hierarchy is the
+              control: the assistant cannot answer from the open web without naming the source and
+              flagging it.
+            </p>
+          </div>
+        </section>
 
         {/* ─── Field: Description ─── */}
         <section className="report-section">
@@ -194,6 +242,64 @@ const VFRAssistantDetails = () => {
             the web, but it <strong>must name the source and explicitly flag that the information is not
             FAA-published data.</strong>
           </p>
+        </section>
+
+        {/* ─── Field: Relevance ─── */}
+        <section className="report-section">
+          <h2><FaCompass /> Relevance</h2>
+          <p>
+            The problem this artifact solves is the one blocking AI adoption in every regulated
+            industry: a fluent answer is worthless if nobody can tell whether it is true. Aviation
+            makes that visible because the correct answer is already written down in a public
+            document, so an unsourced response is not just unhelpful, it is checkably wrong. The
+            controls I built here, a ranked source hierarchy, a mandatory citation, an explicit
+            flag when the model leaves its authorized sources, and a standing scope disclaimer, are
+            the same controls that medicine, finance, and aerospace maintenance documentation all
+            need before a language model is allowed near a decision.
+          </p>
+          <p>
+            For my own work it is a direct rehearsal. I do verification and validation on flight
+            control systems, where nothing is accepted without traceability back to a requirement,
+            and this project was the first time I applied that habit to a generative system:
+            constrain the sources,
+            make the provenance visible to the user, and design the failure case (no FAA answer
+            available) deliberately instead of letting the model improvise. For the audience of
+            this portfolio, it demonstrates that I treat AI reliability as an engineering
+            requirement rather than a prompt-writing flourish.
+          </p>
+        </section>
+
+        {/* ─── Field: References ─── */}
+        <section className="report-section">
+          <h2><FaListOl /> References</h2>
+          <ol className="details-list">
+            <li>
+              Federal Aviation Administration. <em>Title 14 Code of Federal Regulations (14 CFR),
+              Parts 61 and 91.</em>{' '}
+              <a href="https://www.ecfr.gov/current/title-14" target="_blank" rel="noopener noreferrer">ecfr.gov/current/title-14</a>
+            </li>
+            <li>
+              Federal Aviation Administration. <em>Aeronautical Information Manual (AIM).</em>{' '}
+              <a href="https://www.faa.gov/air_traffic/publications/atpubs/aim_html/" target="_blank" rel="noopener noreferrer">faa.gov/air_traffic/publications/atpubs/aim_html</a>
+            </li>
+            <li>
+              Federal Aviation Administration. <em>Pilot's Handbook of Aeronautical Knowledge</em>,
+              FAA-H-8083-25C.{' '}
+              <a href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/phak" target="_blank" rel="noopener noreferrer">faa.gov/.../phak</a>
+            </li>
+            <li>
+              Federal Aviation Administration. <em>Airplane Flying Handbook</em>, FAA-H-8083-3C.{' '}
+              <a href="https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/airplane_handbook" target="_blank" rel="noopener noreferrer">faa.gov/.../airplane_handbook</a>
+            </li>
+            <li>
+              Pilot Institute. Private pilot ground-school reference material.{' '}
+              <a href="https://pilotinstitute.com" target="_blank" rel="noopener noreferrer">pilotinstitute.com</a>
+            </li>
+            <li>
+              Chatbase. Custom AI chatbot platform used to build, train, and deploy the assistant.{' '}
+              <a href="https://www.chatbase.co" target="_blank" rel="noopener noreferrer">chatbase.co</a>
+            </li>
+          </ol>
         </section>
 
         {/* Final Back Link */}

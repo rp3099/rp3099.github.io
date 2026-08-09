@@ -49,6 +49,30 @@
   -webkit-text-fill-color: transparent;
 }
 
+.ml-intro-card {
+  background: var(--accent-a05);
+  border: 1px dashed var(--accent);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.ml-intro-card h3 {
+  color: var(--accent-ink);
+  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ml-intro-card p {
+  color: var(--text-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
 .ml-figure {
   text-align: center;
   margin: 2rem 0 3rem;

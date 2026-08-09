@@ -1,6 +1,6 @@
 import React from 'react';
 import "./FooterStyles.css";
-import { FaHome, FaLinkedin, FaMailBulk } from 'react-icons/fa';
+import { FaHome, FaLinkedin, FaMailBulk, FaGithub, FaFilePdf } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -31,7 +31,9 @@ const Footer = () => {
                         <a href="https://create.centers.vt.edu">Center for Research and Engineering in Aero/Hydrodynamic Technologies</a>
                     </p>
                     <div className='social'>
-                        <a href="https://www.linkedin.com/in/rudra-patel-195879154/" aria-label="LinkedIn"><FaLinkedin size={30} className='footer-icon social-icon' /></a>
+                        <a href="https://www.linkedin.com/in/rudra-patel-195879154/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin size={30} className='footer-icon social-icon' /></a>
+                        <a href="https://github.com/rp3099" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub size={30} className='footer-icon social-icon' /></a>
+                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF)"><FaFilePdf size={28} className='footer-icon social-icon' /></a>
                     </div>
                 </div>
             </div>
